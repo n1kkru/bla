@@ -6,7 +6,7 @@ export default {
 		extend: {
 			colors: {
 				dark: '#0c0c0c',
-				ligth: '#f2f2f2'
+				light: '#f2f2f2'
 			},
 			screens: {
 				desktop: { max: '1201px' },
