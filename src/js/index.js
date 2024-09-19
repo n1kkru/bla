@@ -6,6 +6,10 @@ import config from './config'
 import cssDebug from './libs/css-debug/css-debug'
 import { barbaUi } from './libs/barba/barba'
 import { lenisInit } from './libs/lenis/lenis'
+import { scrollBarWidth } from './utils/scrollbarWidth'
+
+window.addEventListener('load', scrollBarWidth, false)
+window.addEventListener('resize', scrollBarWidth, false)
 
 document.addEventListener('DOMContentLoaded', function () {
 	// barbaUi()
