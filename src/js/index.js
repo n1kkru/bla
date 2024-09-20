@@ -7,6 +7,7 @@ import cssDebug from './libs/css-debug/css-debug'
 import { barbaUi } from './libs/barba/barba'
 import { lenisInit } from './libs/lenis/lenis'
 import { scrollBarWidth } from './utils/scrollbarWidth'
+import { remSelect } from '../pug/shared/_ui-rem/rem-select/rem-select'
 
 window.addEventListener('load', scrollBarWidth, false)
 window.addEventListener('resize', scrollBarWidth, false)
