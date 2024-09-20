@@ -16,4 +16,4 @@ node_modules/
 dist/
 
 # Генерируемые файлы
-src/shared/mixins.pug
+src/pug/mixins.pug
