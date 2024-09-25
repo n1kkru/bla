@@ -51,10 +51,10 @@ export default defineConfig({
         pretty: true
       }
     }),
-    viteEslint({
-      failOnError: false
-    }),
-    viteStylelint(),
+    // viteEslint({
+    //   failOnError: false
+    // }),
+    // viteStylelint(),
     viteSassGlob(),
     viteImagemin({
       gifsicle: {

@@ -12,7 +12,8 @@
 		"page": "node .create-page.js",
 		"stylelint": "stylelint '**/*{.css,.scss}'",
 		"stylelint:fix": "stylelint '**/*{.css,.scss}' --fix",
-		"prettier-fix": "npx prettier . --write"
+		"prettier-fix": "npx prettier . --write",
+		"prettier": "npx prettier . --check"
 	},
 	"browserslist": [
 		"> 5%",
