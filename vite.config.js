@@ -51,9 +51,9 @@ export default defineConfig({
         pretty: true
       }
     }),
-    // viteEslint({
-    //   failOnError: false
-    // }),
+    viteEslint({
+      failOnError: false
+    }),
     // viteStylelint(),
     viteSassGlob(),
     viteImagemin({

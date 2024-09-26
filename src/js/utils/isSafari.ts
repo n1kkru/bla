@@ -1,3 +1,3 @@
 export const isSafariFunction = (): boolean => {
-	return /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+  return /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
 }

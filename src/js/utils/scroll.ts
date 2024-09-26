@@ -5,16 +5,16 @@ import { isSafariFunction } from './isSafari'
 const isSafari = isSafariFunction()
 
 export function disableScroll() {
-	document.querySelector('body')!.classList.add('overflow-scroll')
+  document.querySelector('body')!.classList.add('overflow-scroll')
 
-	if (window.screen.width > BREAKPOINT_DESKTOP && !isSafari) {
-		stopLenis()
-	}
+  if (window.screen.width > BREAKPOINT_DESKTOP && !isSafari) {
+    stopLenis()
+  }
 }
 
 export function enableScroll() {
-	document.querySelector('body')!.classList.remove('overflow-hidden')
-	if (window.screen.width > BREAKPOINT_DESKTOP && !isSafari) {
-		resumeLenis()
-	}
+  document.querySelector('body')!.classList.remove('overflow-hidden')
+  if (window.screen.width > BREAKPOINT_DESKTOP && !isSafari) {
+    resumeLenis()
+  }
 }
