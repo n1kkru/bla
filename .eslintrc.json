@@ -5,7 +5,7 @@
     "plugin:import/recommended",
     "plugin:unicorn/recommended"
   ],
-  "plugins": ["import", "unicorn"],
+  "plugins": ["import", "unicorn", "prettier"],
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module"
@@ -39,6 +39,7 @@
     "import/no-unresolved": "off",
     "unicorn/prefer-dom-node-dataset": "off",
     "unicorn/no-null": "off",
-    "unicorn/no-array-for-each": "off"
+    "unicorn/no-array-for-each": "off",
+    "prettier/prettier": 2
   }
 }
