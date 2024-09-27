@@ -26,6 +26,7 @@
     "no-console": "error",
     "semi": ["error", "never"],
     "quotes": ["error", "single"],
+    "eqeqeq": "error",
     "comma-dangle": ["error", "never"],
     "no-multiple-empty-lines": ["error"],
     "space-before-function-paren": "off",
