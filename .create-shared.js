@@ -9,14 +9,14 @@ blockPath.slice(-1) === '/' ? (blockPath = blockPath.slice(0, -1)) : ''
 const blockName = blockPath.split('/').pop()
 
 fs.mkdir(`${blocksDir}/${blockPath}`, { recursive: true }, () => {
-	let error = false
-	if (fs.existsSync(`${blocksDir}/${blockPath}/${blockName}.pug`)) {
-		error = true
-		console.log('Файл шаблона уже существует')
-	} else {
-		fs.writeFileSync(
-			`${blocksDir}/${blockPath}/${blockName}.pug`,
-			`mixin ${blockName}(mods)
+  let error = false
+  if (fs.existsSync(`${blocksDir}/${blockPath}/${blockName}.pug`)) {
+    error = true
+    console.log('Файл шаблона уже существует')
+  } else {
+    fs.writeFileSync(
+      `${blocksDir}/${blockPath}/${blockName}.pug`,
+      `mixin ${blockName}(mods)
   -
     const baseName = '${blockName}'
     let allMods = ''
@@ -30,16 +30,19 @@ fs.mkdir(`${blocksDir}/${blockPath}`, { recursive: true }, () => {
 
   .${blockName}(class=allMods)&attributes(attributes)
     block`
-		)
-	}
-	if (fs.existsSync(`${blocksDir}/${blockPath}/${blockName}.scss`)) {
-		error = true
-		console.log('Файл стилей уже существует')
-	} else {
-		fs.writeFileSync(`${blocksDir}/${blockPath}/${blockName}.scss`, `.${blockName} {\n  position: relative;\n}\n`)
-	}
-	if (error === false) {
-		console.log('Блок успешно создан')
-	}
+    )
+  }
+  if (fs.existsSync(`${blocksDir}/${blockPath}/${blockName}.scss`)) {
+    error = true
+    console.log('Файл стилей уже существует')
+  } else {
+    fs.writeFileSync(
+      `${blocksDir}/${blockPath}/${blockName}.scss`,
+      `.${blockName} {\n  position: relative;\n}\n`
+    )
+  }
+  if (error === false) {
+    console.log('Блок успешно создан')
+  }
 })
 exec('gulp pugMixins')

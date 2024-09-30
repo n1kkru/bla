@@ -3,7 +3,7 @@
 @use 'sass:string';
 
 @function rem($size) {
-	@return math.div($size, $fs) * 1rem;
+  @return math.div($size, $fs) * 1rem;
 }
 
 // transitions
@@ -23,14 +23,14 @@ $custom-placeholder-scale: 0.6;
 //Custom placeholder
 
 $breakpoints: (
-	xxl: 1920px,
-	ll: 1440px,
-	d: 1201px,
-	t: 1024px,
-	lg: 992px,
-	m: 768px,
-	s: 576px,
-	xs: 375px
+  xxl: 1920px,
+  ll: 1440px,
+  d: 1201px,
+  t: 1024px,
+  lg: 992px,
+  m: 768px,
+  s: 576px,
+  xs: 375px
 );
 
 //Количество колонок
