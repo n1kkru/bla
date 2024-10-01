@@ -1,4 +1,5 @@
 import placemarkIco from '../../images/black-square.svg'
+
 //settings
 
 //настройка иконки и ее расположения

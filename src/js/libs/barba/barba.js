@@ -1,4 +1,5 @@
 import barba from '@barba/core'
+
 import { commonFunction } from '../..'
 import { disableScroll, enableScroll } from '../../utils/scroll'
 
@@ -6,6 +7,16 @@ const transitionScreenID = 'transition-screen'
 const transitionScreenActiveClass = '--active'
 // FRONT: Время задержки экрана перехода между страницами (когда оч быстрый переход и анимация не отыгрывает) (в мс)
 const transitionScreenDelay = 1000
+
+// FRONT: Если очень быстрая прогрузка страницы и анимация не успевает проигрывать делаем задержку
+const afterTransition = () => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      document.querySelector(transitionScreenID)?.classList.remove(transitionScreenActiveClass)
+      resolve()
+    }, transitionScreenDelay)
+  })
+}
 
 export const barbaUi = () => {
   if (barba.initialized) return // Проверка, чтобы избежать повторной инициализации
@@ -26,16 +37,6 @@ export const barbaUi = () => {
     commonFunction() // Вызов функции при переходе между страницами
     disableScroll() // Остановка скролла на странице
   })
-
-  // FRONT: Если очень быстрая прогрузка страницы и анимация не успевает проигрывать делаем задержку
-  const afterTransition = () => {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        document.querySelector(transitionScreenID)?.classList.remove(transitionScreenActiveClass)
-        resolve()
-      }, transitionScreenDelay)
-    })
-  }
 
   // BACK: если нам нужно программно перенаправить на страницу без анимаций (по дефолту) (все равно что изменить location.href)
   // barba.force(href: string)

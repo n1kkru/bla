@@ -3,7 +3,8 @@
     "standard",
     "eslint:recommended",
     "plugin:import/recommended",
-    "plugin:unicorn/recommended"
+    "plugin:unicorn/recommended",
+    "plugin:prettier/recommended"
   ],
   "plugins": ["unicorn"],
   "parserOptions": {
@@ -40,6 +41,6 @@
     "unicorn/prefer-dom-node-dataset": "off",
     "unicorn/no-null": "off",
     "unicorn/no-array-for-each": "off",
-    "prettier/prettier": 2
+    "prettier/prettier": ["error"]
   }
 }
