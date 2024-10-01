@@ -55,7 +55,7 @@ mixin ui-h4(title, mods)
       allMods = allMods.trim()
     }
 
-  h4.ui-h4(class=allMods) !{title}
+  h4.ui-h4(class=allMods)&attributes(attributes) !{title}
     block
 
 mixin ui-h5(title, mods)
@@ -70,7 +70,7 @@ mixin ui-h5(title, mods)
       allMods = allMods.trim()
     }
 
-  h5.ui-h5(class=allMods) !{title}
+  h5.ui-h5(class=allMods)&attributes(attributes) !{title}
     block
 
 mixin ui-h6(title, mods)

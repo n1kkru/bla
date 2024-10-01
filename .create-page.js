@@ -30,7 +30,7 @@ block variables
     const pageTitle = '${pageName}'
 
 block content
-  main
+  main(data-barba='container' data-barba-namespace=pageName)
     .inner
       +ui-h1(pageTitle)`
     )
