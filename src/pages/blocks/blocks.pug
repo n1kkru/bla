@@ -261,10 +261,10 @@ block content
       +section
         +ui-accordion({p1: 'UI Range'})
           +ui-h6('UI Range single')
-          +ui-range()(data-start=5000 data-step=100 data-min=100 data-max=10000)
+          +ui-range(data-start=5000 data-step=100 data-min=100 data-max=10000)
           br
           +ui-h6('UI Date double')
-          +ui-range()(data-start=[2500, 7500] data-step=100 data-min=100 data-max=10000)
+          +ui-range(data-start=[2500, 7500] data-step=100 data-min=100 data-max=10000)
 
       +section
         +ui-accordion({p1: 'UI Select'})
@@ -291,7 +291,9 @@ block content
               br
               br
               br
-              +ui-tab-head([{p3: 'Tab #1'}, {p3: 'Tab #2'}, {p3: 'Tab #3'}])(data-tab-group='ui-tab2')
+              +ui-tab-head([{p3: 'Tab #1'}, {p3: 'Tab #2'}, {p3: 'Tab #3'}])(
+                data-tab-group='ui-tab2'
+              )
               +ui-tab-body(data-tab-group='ui-tab2')
                 +ui-tab-item('_active')
                   span Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quaerat aut quas ex error id temporibus molestiae ipsa necessitatibus quos hic in praesentium atque natus inventore eius, aliquam dolore libero.
@@ -302,7 +304,7 @@ block content
 
       +section
         +ui-accordion({p1: 'UI Textarea'})
-          +ui-textarea()(maxlength='256')
+          +ui-textarea(maxlength='256')
 
       +section
         +ui-accordion({p1: 'UI Tooltip'})
@@ -331,7 +333,10 @@ block content
             br
             +ui-input({id: 'phone'})(required type='phone')
             br
-            +ui-select('', '1', '2', '3', '4')#select(required placeholder='Цель кредита')
+            +ui-select('', '1', '2', '3', '4')#select(
+              required
+              placeholder='Цель кредита'
+            )
             br
             +ui-checkbox({id: 'agreement', p3: 'I love '}, '')(required)
               +ui-p3
@@ -364,7 +369,9 @@ block content
           +popup#popup
             div Content
           +popup#popup2
-            +ui-tab-head([{p3: 'Tab #1'}, {p3: 'Tab #2'}, {p3: 'Tab #3'}])(data-tab-group='ui-tab')
+            +ui-tab-head([{p3: 'Tab #1'}, {p3: 'Tab #2'}, {p3: 'Tab #3'}])(
+              data-tab-group='ui-tab'
+            )
             +ui-tab-body(data-tab-group='ui-tab')
               +ui-tab-item('_active')
                 span Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quaerat aut quas ex error id temporibus molestiae ipsa necessitatibus quos hic in praesentium atque natus inventore eius, aliquam dolore libero.

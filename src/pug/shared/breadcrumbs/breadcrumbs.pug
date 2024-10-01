@@ -24,7 +24,7 @@ mixin breadcrumbs-item(text, href, mods)
     }
 
   li.breadcrumbs__item(class=allMods)&attributes(attributes)
-    if(typeof(href) !== 'undefined' && href)
-      a.breadcrumbs__link(href=href)!=text
+    if (typeof(href) !== 'undefined' && href)
+      a.breadcrumbs__link(href=href)!= text
     else
-      span.breadcrumbs__text!=text
+      span.breadcrumbs__text!= text

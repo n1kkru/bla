@@ -5,9 +5,9 @@
     "plugin:import/recommended",
     "plugin:unicorn/recommended"
   ],
-  "plugins": ["import", "unicorn", "prettier"],
+  "plugins": ["unicorn"],
   "parserOptions": {
-    "ecmaVersion": 2020,
+    "ecmaVersion": "latest",
     "sourceType": "module"
   },
   "env": {

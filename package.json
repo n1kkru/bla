@@ -13,7 +13,8 @@
     "stylelint": "stylelint '**/*{.css,.scss}'",
     "stylelint:fix": "stylelint '**/*{.css,.scss}' --fix",
     "prettier-fix": "npx prettier . --write",
-    "prettier": "npx prettier . --check"
+    "prettier": "npx prettier . --check",
+    "puglint": "pug-lint ."
   },
   "browserslist": [
     "> 5%",
@@ -24,6 +25,7 @@
     "url": "https://git.dterra.ru/apnoea/vite-bem-template.git"
   },
   "devDependencies": {
+    "@prettier/plugin-pug": "^3.1.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
