@@ -54,7 +54,7 @@ export default defineConfig({
     viteEslint({
       failOnError: false
     }),
-    // viteStylelint(),
+    // viteStylelint({ lintInWorker: true }),
     viteSassGlob(),
     viteImagemin({
       gifsicle: {
