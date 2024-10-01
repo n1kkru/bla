@@ -1,12 +1,12 @@
 import path, { resolve } from 'node:path'
 import url from 'node:url'
 import { defineConfig } from 'vite'
+import viteEslint from 'vite-plugin-eslint'
+import viteImagemin from 'vite-plugin-imagemin'
 import viteMultipage from 'vite-plugin-multipage'
 import vitePug from 'vite-plugin-pug-transformer'
-import viteEslint from 'vite-plugin-eslint'
-import viteStylelint from 'vite-plugin-stylelint'
 import viteSassGlob from 'vite-plugin-sass-glob-import'
-import viteImagemin from 'vite-plugin-imagemin'
+import viteStylelint from 'vite-plugin-stylelint'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 const root = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'src')
