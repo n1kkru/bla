@@ -14,7 +14,7 @@ mixin universal-table(data, mods)
     .universal-table(class=allMods)&attributes(attributes)
       table
         if data.thead
-          thead.universal-table__head(data-qwe='qweqwe')
+          thead.universal-table__head
             each itemTr in data.thead
               tr
                 each itemTh in itemTr.th

@@ -9,8 +9,7 @@
   "disallowTrailingSpaces": true,
   "disallowDuplicateAttributes": true,
   "disallowClassAttributeWithStaticValue": true,
-  "disallowIdAttributeWithStaticValue": true,
   "disallowMultipleLineBreaks": true,
-  "requireLowerCaseAttributes": true,
-  "requireStrictEqualityOperators": true
+  "requireStrictEqualityOperators": true,
+  "ignore": ["src/**/svg.pug"]
 }

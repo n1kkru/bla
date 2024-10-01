@@ -9,7 +9,7 @@ mixin response-modal
           +reset.modal__cross-svg
 
 mixin test-modal
-  #test-modal.modal
+  .modal(id='test-modal')
     .modal__overlay(data-modal-close='')
     .modal__layout(data-modal-layout='')
       .modal__wrapper
@@ -19,6 +19,6 @@ mixin test-modal
           +reset.modal__svg
 
 mixin empty-modal
-  #default-modal.modal
+  .modal(id='default-modal')
     .modal__overlay(data-modal-close='')
     .modal__layout(data-modal-layout='')
