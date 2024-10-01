@@ -37,7 +37,6 @@
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-sonarjs": "^0.25.1",
     "eslint-plugin-unicorn": "^52.0.0",
     "gulp": "^4.0.2",
     "prettier": "^3.3.3",

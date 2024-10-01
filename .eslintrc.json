@@ -23,6 +23,9 @@
       }
     }
   },
+  "globals": {
+    "ymaps": "readonly"
+  },
   "rules": {
     "no-console": "error",
     "semi": ["error", "never"],

@@ -1,12 +1,6 @@
 import IMask from 'imask'
 import JustValidate from 'just-validate'
 
-export default function uiInput() {
-  inputMask()
-  checkInputFill()
-  validation()
-}
-
 function inputMask() {
   const inputMaskItems = document.querySelectorAll('input[type="phone"]')
   if (inputMaskItems) {
@@ -80,4 +74,10 @@ function validation() {
       }
     }
   }
+}
+
+export default function uiInput() {
+  inputMask()
+  checkInputFill()
+  validation()
 }

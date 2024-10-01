@@ -1,16 +1,16 @@
 export const initBuyMapTabs = () => {
   const tabs = document.querySelectorAll('[data-map-tab]')
-  if (!tabs.length) return // Проверка на наличие табов
+  if (tabs.length === 0) return // Проверка на наличие табов
   const mapContents = document.querySelectorAll('[data-map-content]')
 
-  tabs.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = btn.dataset.mapTab
+  tabs.forEach(button => {
+    button.addEventListener('click', () => {
+      const id = button.dataset.mapTab
       const currentWrappers = document.querySelectorAll(`[data-map-content=${id}]`)
 
       // Убираем класс 'active' у всех табов
       tabs.forEach(item => item.classList.remove('active'))
-      btn.classList.add('active')
+      button.classList.add('active')
 
       // Скрываем все содержимое карты
       mapContents.forEach(item => {
