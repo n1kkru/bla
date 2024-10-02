@@ -12,8 +12,16 @@
   "arrowParens": "avoid",
   "htmlWhitespaceSensitivity": "css",
   "singleAttributePerLine": true,
-  "pugIdNotation": "as-is",
+
+  "pugIdNotation": "literal",
   "pugAttributeSeparator": "none",
+  "pugWrapAttributesThreshold": 4,
+  "pugEmptyAttributes": "all",
+  "pugEmptyAttributesForceQuotes": [],
+  "pugClassNotation": "literal",
+  "pugClassLocation": "before-attributes",
+  "pugExplicitDiv": false,
+
   "importOrder": ["^[a-z]", "^@?\\w", "^(../|./)"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true

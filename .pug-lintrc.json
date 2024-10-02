@@ -2,14 +2,31 @@
   "validateDivTags": true,
   "validateAttributeSeparator": { "separator": " ", "multiLineSeparator": "\n  " },
   "validateAttributeQuoteMarks": "'",
-  "requireSpecificAttributes": [{ "img": ["src", "alt"] }],
+  "requireSpecificAttributes": [{ "img": ["src", "alt"] }, { "canvas": ["width", "height"] }],
   "requireLowerCaseTags": true,
-  "requireClassLiteralsBeforeIdLiterals": true,
   "requireClassLiteralsBeforeAttributes": true,
   "disallowTrailingSpaces": true,
   "disallowDuplicateAttributes": true,
   "disallowClassAttributeWithStaticValue": true,
   "disallowMultipleLineBreaks": true,
   "requireStrictEqualityOperators": true,
-  "ignore": ["src/**/svg.pug"]
+  "ignore": ["src/**/svg.pug"],
+  "disallowBlockExpansion": true,
+  "disallowClassLiteralsBeforeIdLiterals": true,
+  "disallowHtmlText": true,
+  "disallowIdAttributeWithStaticValue": true,
+  "disallowLegacyMixinCall": true,
+  "disallowSpacesInsideAttributeBrackets": true,
+  "requireIdLiteralsBeforeAttributes": true,
+  "requireLineFeedAtFileEnd": true,
+  "requireLowerCaseAttributes": true,
+  "requireSpaceAfterCodeOperator": true,
+  "validateExtensions": true,
+  "validateIndentation": 2,
+  "validateTemplateString": true,
+
+
+
+
+  "maximumNumberOfLines": 80
 }

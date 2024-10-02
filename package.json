@@ -10,13 +10,15 @@
     "block": "node .create-block.js",
     "shared": "node .create-shared.js",
     "page": "node .create-page.js",
+    
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "stylelint": "stylelint '**/*{.css,.scss}'",
-    "stylelint:fix": "stylelint '**/*{.css,.scss}' --fix",
+    "stylelint": "npx stylelint '**/*{.css,.scss}'",
+    "stylelint:fix": "npx stylelint '**/*{.css,.scss}' --fix",
     "prettier": "npx prettier . --check",
     "prettier:fix": "npx prettier . --write",
-    "puglint": "pug-lint ."
+    "puglint": "npx pug-lint .",
+    "prepare": "husky"
   },
   "browserslist": [
     "> 5%",
@@ -39,6 +41,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-unicorn": "^52.0.0",
     "gulp": "^4.0.2",
+    "husky": "^9.1.6",
     "prettier": "^3.3.3",
     "pug-lint": "^2.7.0",
     "sass": "^1.78.0",
