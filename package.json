@@ -10,7 +10,6 @@
     "block": "node .create-block.js",
     "shared": "node .create-shared.js",
     "page": "node .create-page.js",
-    
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "stylelint": "npx stylelint '**/*{.css,.scss}'",

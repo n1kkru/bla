@@ -1,5 +1,5 @@
 mixin rem-button(text, href, disabled)
   if href
-    a.button(class=allMods data-btn href=href disabled=disabled)&attributes(attributes)= text
+    a.button(class=allMods data-btn='' href=href disabled=disabled)&attributes(attributes)= text
   else
-    button.button(class=allMods data-btn disabled=disabled)&attributes(attributes)= text
+    button.button(class=allMods data-btn='' disabled=disabled)&attributes(attributes)= text

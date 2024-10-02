@@ -25,8 +25,5 @@
   "validateIndentation": 2,
   "validateTemplateString": true,
 
-
-
-
   "maximumNumberOfLines": 80
 }

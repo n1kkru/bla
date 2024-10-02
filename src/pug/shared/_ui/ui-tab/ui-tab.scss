@@ -1,52 +1,72 @@
 .ui-tab-head {
   position: relative;
+
   display: flex;
+
   padding: 6px 15px;
-  border-radius: 6px;
+
   background-color: #ccc;
+  border-radius: 6px;
+
   @include media-laptop {
+    overflow-x: auto;
     margin: 0 -15px;
     border-radius: 0;
-    overflow-x: auto;
   }
+
   &::before {
     content: '';
+
     position: absolute;
     top: 0;
     right: -15px;
+
     width: 100px;
     height: 100%;
-    background: linear-gradient(270deg, #fff 0%, rgba(255 255 255 / 0) 100%);
+
     opacity: 0;
+    background: linear-gradient(270deg, #fff 0%, rgba(255 255 255 / 0%) 100%);
+
     @include media-tablet {
       opacity: 0.5;
     }
   }
+
   &::-webkit-scrollbar {
     display: none;
   }
+
   &__item {
-    padding: 9px 22px;
-    text-align: center;
-    border-radius: 6px;
-    transition: 0.3s;
     cursor: pointer;
+
+    padding: 9px 22px;
+
+    text-align: center;
     white-space: nowrap;
+
+    border-radius: 6px;
+
+    transition: 0.3s;
+
     @include media-hover {
       color: $primary1;
     }
+
     &_active {
       color: $primary1;
       background: #fff;
     }
   }
 }
+
 .ui-tab-body {
   margin-top: 45px;
 }
+
 .ui-tab-item {
   display: none;
   transition: 0.3s;
+
   &_active {
     display: block;
   }
