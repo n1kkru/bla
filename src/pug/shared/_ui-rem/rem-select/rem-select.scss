@@ -127,9 +127,7 @@
 }
 
 @media #{media('<',d)} {
-
   .select {
-
     &__button {
       height: rem(44px);
       padding: 0 rem(16px);

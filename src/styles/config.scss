@@ -5,7 +5,6 @@
 @use 'sass:string';
 
 @function rem($size) {
-
   @return math.div($size, $fs) * 1rem;
 }
 

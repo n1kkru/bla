@@ -1,10 +1,8 @@
 .ui-radio {
-
   input {
     display: none;
 
     &:checked ~ label {
-
       &::before {
         border-color: $primary1;
         border-width: 5px;

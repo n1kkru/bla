@@ -32,7 +32,6 @@
     }
 
     &:nth-child(-n + 9) {
-
       &::before {
         content: '0' counter(itemOl);
       }

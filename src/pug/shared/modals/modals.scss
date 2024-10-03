@@ -154,7 +154,6 @@
 // появление/исчезание оверлея
 
 @keyframes fadeIn {
-
   from {
     opacity: 0;
   }
@@ -165,7 +164,6 @@
 }
 
 @keyframes fadeOut {
-
   from {
     opacity: 1;
   }
@@ -178,7 +176,6 @@
 // появление/исчезание модалки через opacity
 
 @keyframes slideIn {
-
   from {
     transform: translateY(15%);
     opacity: 0;
@@ -191,7 +188,6 @@
 }
 
 @keyframes slideOut {
-
   from {
     transform: translateY(0);
     opacity: 1;
@@ -206,7 +202,6 @@
 // появление/исчезание модалки справа
 
 @keyframes slideInRight {
-
   from {
     transform: translateX(110%);
   }
@@ -217,7 +212,6 @@
 }
 
 @keyframes slideOutRight {
-
   from {
     transform: translateX(0);
   }

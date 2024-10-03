@@ -31,11 +31,8 @@
     margin-right: 40px;
 
     @include media-hover {
-
       > .header__link {
-
         &_arrow {
-
           &::after {
             top: 40%;
             transform: rotate(225deg);

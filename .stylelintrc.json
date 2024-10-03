@@ -24,9 +24,7 @@
     "function-name-case": "lower",
     "selector-type-case": "lower",
     "value-keyword-case": "lower",
-    "at-rule-empty-line-before": "always",
-    "rule-empty-line-before": "always",
-    
+
     "font-family-no-missing-generic-family-keyword": false
   }
 }
