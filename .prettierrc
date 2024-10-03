@@ -16,11 +16,6 @@
   "pugIdNotation": "literal",
   "pugAttributeSeparator": "none",
   "pugWrapAttributesThreshold": 4,
-  "pugEmptyAttributes": "all",
-  "pugEmptyAttributesForceQuotes": [],
-  "pugClassNotation": "literal",
-  "pugClassLocation": "before-attributes",
-  "pugExplicitDiv": false,
 
   "importOrder": ["^[a-z]", "^@?\\w", "^(../|./)"],
   "importOrderSeparation": true,
