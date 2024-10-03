@@ -25,6 +25,7 @@
     "value-keyword-case": "lower",
     "no-descending-specificity": null,
     "custom-property-pattern": null,
+    "property-no-unknown": null,
 
     "font-family-no-missing-generic-family-keyword": false,
     "scss/double-slash-comment-whitespace-inside": null,
