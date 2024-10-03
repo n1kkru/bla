@@ -10,13 +10,11 @@ const iconImageSize = [32, 32]
 const iconImageOffset = [-16, -16]
 const icon = placemarkIco
 
-export function initMap() {
+const initMap = () => {
   const markArray = []
   const placemarks = [] // создаем пустой массив точек карты
   const pointsArray = []
-  let mapDOM
-
-  mapDOM = document.querySelector('#map')
+  const mapDOM = document.querySelector('#map')
 
   if (!mapDOM) return
   mapDOM.innerHTML = ''
@@ -29,11 +27,11 @@ export function initMap() {
     }
 
     if (mapDOM.hasAttribute('map-center')) {
-      var center = mapDOM.getAttribute('map-center').split(' ')
+      const center = mapDOM.getAttribute('map-center').split(' ')
     }
 
     if (mapDOM.hasAttribute('map-zoom')) {
-      var zoom = Number(mapDOM.getAttribute('map-zoom'))
+      const zoom = Number(mapDOM.getAttribute('map-zoom'))
     }
 
     const myMap = new ymaps.Map('map', {
@@ -101,7 +99,7 @@ export function initMap() {
       item.addEventListener('click', () => {
         if (withBalloon) {
           markArray.forEach((mark, index_) => {
-            if (index == index_) {
+            if (index === index_) {
               // получаем координаты из списка слева
               const x = item.getAttribute('data-coord-x')
               const y = item.getAttribute('data-coord-y')
@@ -135,3 +133,5 @@ export function initMap() {
 }
 
 initMap()
+
+export { initMap }
