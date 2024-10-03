@@ -26,6 +26,7 @@
     "no-descending-specificity": null,
     "custom-property-pattern": null,
     "property-no-unknown": null,
+    "font-family-no-missing-generic-family-keyword": null,
 
     "scss/double-slash-comment-whitespace-inside": null,
     "scss/at-function-pattern": null,
