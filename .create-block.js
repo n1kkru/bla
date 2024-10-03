@@ -3,7 +3,7 @@ import fs from 'node:fs'
 import path, { resolve } from 'node:path'
 import url from 'node:url'
 
-const blocksDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'src/pug/blocks')
+          const blocksDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'src/pug/blocks')
 let blockPath = process.argv[process.argv.length - 1]
 blockPath.slice(-1) === '/' ? (blockPath = blockPath.slice(0, -1)) : ''
 const blockName = blockPath.split('/').pop()
