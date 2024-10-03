@@ -16,6 +16,8 @@ const initMap = () => {
   const pointsArray = []
   const mapDOM = document.querySelector('#map')
 
+  let center, zoom
+
   if (!mapDOM) return
   mapDOM.innerHTML = ''
 
@@ -27,11 +29,11 @@ const initMap = () => {
     }
 
     if (mapDOM.hasAttribute('map-center')) {
-      const center = mapDOM.getAttribute('map-center').split(' ')
+      center = mapDOM.getAttribute('map-center').split(' ')
     }
 
     if (mapDOM.hasAttribute('map-zoom')) {
-      const zoom = Number(mapDOM.getAttribute('map-zoom'))
+      zoom = Number(mapDOM.getAttribute('map-zoom'))
     }
 
     const myMap = new ymaps.Map('map', {
