@@ -26,6 +26,6 @@
     "value-keyword-case": "lower",
 
     "font-family-no-missing-generic-family-keyword": false,
-    "double-slash-comment-whitespace-inside": "never"
+    "scss/double-slash-comment-whitespace-inside": null
   }
 }
