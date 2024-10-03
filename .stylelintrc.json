@@ -27,7 +27,6 @@
     "custom-property-pattern": null,
     "property-no-unknown": null,
 
-    "font-family-no-missing-generic-family-keyword": false,
     "scss/double-slash-comment-whitespace-inside": null,
     "scss/at-function-pattern": null,
     "scss/dollar-variable-pattern": null

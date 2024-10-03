@@ -8,7 +8,7 @@
 
   border: 1px solid blue;
   border-radius: rem(20px);
-  box-shadow: 0 rem(-20px) rem(34px) 0 rgba(0, 0, 0, 0.039) inset;
+  box-shadow: 0 rem(-20px) rem(34px) 0 rgb(0 0 0 / 3.9%) inset;
 
   @include media-laptop {
     max-height: rem(560px);
