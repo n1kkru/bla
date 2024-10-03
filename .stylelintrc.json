@@ -20,12 +20,15 @@
     "declaration-block-no-shorthand-property-overrides": true,
     "no-unknown-animations": true,
     "color-hex-alpha": "never",
-    "color-named": "never",
     "function-name-case": "lower",
     "selector-type-case": "lower",
     "value-keyword-case": "lower",
+    "no-descending-specificity": null,
+    "custom-property-pattern": null,
 
     "font-family-no-missing-generic-family-keyword": false,
-    "scss/double-slash-comment-whitespace-inside": null
+    "scss/double-slash-comment-whitespace-inside": null,
+    "scss/at-function-pattern": null,
+    "scss/dollar-variable-pattern": null
   }
 }

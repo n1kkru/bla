@@ -1,3 +1,7 @@
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 html {
   .lenis {
     height: auto;
@@ -18,10 +22,6 @@ html {
 
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
 }
 
 main {
