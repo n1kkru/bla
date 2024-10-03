@@ -1,8 +1,11 @@
 @use 'sass:map';
+
 @use 'sass:math';
+
 @use 'sass:string';
 
 @function rem($size) {
+
   @return math.div($size, $fs) * 1rem;
 }
 
@@ -20,6 +23,7 @@ $font-extra: 'Montserrat';
 $custom-placeholder-top: rem(12px);
 $custom-placeholder-left: rem(24px);
 $custom-placeholder-scale: 0.6;
+
 //Custom placeholder
 
 $breakpoints: (
@@ -37,12 +41,14 @@ $breakpoints: (
 $col-count-m: 4;
 $col-count-t: 4;
 $col-count-d: 16;
+
 //Количество колонок
 
 //Боковые отступы по краям
 $col-pad-m: rem(12px);
 $col-pad-t: rem(12px);
 $col-pad-d: rem(24px);
+
 //Боковые отступы по краям
 
 //Промежутки между колонками

@@ -54,7 +54,10 @@ export default defineConfig({
     viteEslint({
       failOnError: false
     }),
-    // viteStylelint({ lintInWorker: true }),
+    viteStylelint({
+      // fix: true,
+      lintInWorker: true
+    }),
     viteSassGlob(),
     viteImagemin({
       gifsicle: {
@@ -88,3 +91,9 @@ export default defineConfig({
     })
   ]
 })
+
+// Команды для Husky
+// npm run prettier:fix
+// npm run stylelint:fix
+// npm run lint:fix
+

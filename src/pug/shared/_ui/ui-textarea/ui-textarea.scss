@@ -1,19 +1,25 @@
 .ui-textarea {
   position: relative;
+
   textarea {
+    resize: none;
+
     width: 100%;
     padding: 15px 20px;
+
     background: #fff;
     border: 1px solid $primary1;
     border-radius: 6px;
     outline: 0;
-    resize: none;
   }
+
   &__counter {
+    pointer-events: none;
+
     position: absolute;
     right: 10px;
     bottom: 10px;
+
     font: 12px/1 $font;
-    pointer-events: none;
   }
 }
