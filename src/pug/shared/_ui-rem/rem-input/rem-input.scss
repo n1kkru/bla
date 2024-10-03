@@ -40,11 +40,15 @@
     font-size: rem(10px);
     font-weight: 420;
     line-height: 110%;
-    color: #e62929;
+    color: #e62929f0;
     text-transform: uppercase;
 
     @media #{media('<',d)} {
       font-size: rem(8px);
     }
+  }
+
+  .parsley-errors-list {
+    margin-top: rem(6px);
   }
 }

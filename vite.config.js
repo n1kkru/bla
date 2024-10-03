@@ -93,6 +93,11 @@ export default defineConfig({
 })
 
 // Команды для Husky
+
+// pre-commit
 // npm run prettier:fix
+// git add .
+
+// pre-push
 // npm run stylelint:fix
 // npm run lint:fix
