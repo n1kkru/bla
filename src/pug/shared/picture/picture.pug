@@ -21,49 +21,32 @@ mixin picture(fileName, isMobileFileName)
     var fileExtension = file.getExtension(fileName);
 
   picture.picture&attributes(attributes)
-
     if isMobileFileName
-      source(
-        type="image/webp"
+      source.lazyload(
+        type='image/webp'
         srcset=`${file.getPath(fileTitle + '-mob', "webp")} `
-        class="lazyload" 
-        media="(max-width: 768px)"  
+        media='(max-width: 768px)'
       )
       if fileExtension === 'png'
-        source(
-          type="image/png"
+        source.lazyload(
+          type='image/png'
           srcset=`${file.getPath(fileTitle + '-mob', "png")} `
-          class="lazyload" 
-          media="(max-width: 768px)" 
+          media='(max-width: 768px)'
         )
       else
-        source(
-          type="image/jpeg"
+        source.lazyload(
+          type='image/jpeg'
           srcset=`${file.getPath(fileTitle + '-mob', "jpg")} `
-          class="lazyload" 
-          media="(max-width: 768px)" 
+          media='(max-width: 768px)'
         )
-    
-    source(
-      type="image/webp"
-      srcset=`${file.getPath(fileTitle, "webp")} `
-      class="lazyload" 
-    )
-    if fileExtension === 'png'
-      source(
-        type="image/png"
-        srcset=`${file.getPath(fileTitle, "png")} `
-        class="lazyload" 
-      )
-    else
-      source(
-        type="image/jpeg"
-        srcset=`${file.getPath(fileTitle, "jpg")} `
-        class="lazyload" 
-      )
 
-    img.picture__img(
-      class="lazyload" 
+    source.lazyload(type='image/webp' srcset=`${file.getPath(fileTitle, "webp")} `)
+    if fileExtension === 'png'
+      source.lazyload(type='image/png' srcset=`${file.getPath(fileTitle, "png")} `)
+    else
+      source.lazyload(type='image/jpeg' srcset=`${file.getPath(fileTitle, "jpg")} `)
+
+    img.picture__img.lazyload(
       src=`${file.getPath(fileTitle, fileExtension)}`
       data-src=`${file.getPath(fileTitle, fileExtension)}`
       alt=fileName

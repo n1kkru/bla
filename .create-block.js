@@ -1,7 +1,7 @@
+import { exec } from 'node:child_process'
+import fs from 'node:fs'
 import path, { resolve } from 'node:path'
 import url from 'node:url'
-import fs from 'node:fs'
-import { exec } from 'node:child_process'
 
 const blocksDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'src/pug/blocks')
 let blockPath = process.argv[process.argv.length - 1]

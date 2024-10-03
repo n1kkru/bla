@@ -1,4 +1,5 @@
 import Lenis from 'lenis'
+
 import { isSafariFunction } from '../../utils/isSafari'
 
 const isSafari = isSafariFunction()

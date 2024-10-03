@@ -2,18 +2,18 @@ import placemarkIco from '../../images/placemark-flag.svg'
 import { createBalloon } from './map-balloon'
 import { mapCluster } from './map-cluster'
 
-//включить использование баллунов
+// включить использование баллунов
 const withBalloon = true
 
-//настройки метки
-let iconImageSize = [32, 32]
-let iconImageOffset = [-16, -16]
+// настройки метки
+const iconImageSize = [32, 32]
+const iconImageOffset = [-16, -16]
 const icon = placemarkIco
 
 export function initMap() {
-  let markArr = []
-  let placemarks = [] //создаем пустой массив точек карты
-  let pointsArr = []
+  const markArray = []
+  const placemarks = [] // создаем пустой массив точек карты
+  const pointsArray = []
   let mapDOM
 
   mapDOM = document.querySelector('#map')
@@ -29,34 +29,34 @@ export function initMap() {
     }
 
     if (mapDOM.hasAttribute('map-center')) {
-      var center = map.getAttribute('map-center').split(' ')
+      var center = mapDOM.getAttribute('map-center').split(' ')
     }
 
     if (mapDOM.hasAttribute('map-zoom')) {
       var zoom = Number(mapDOM.getAttribute('map-zoom'))
     }
 
-    var myMap = new ymaps.Map('map', {
-      center: center ? center : [54.193122, 37.617348],
-      zoom: zoom ? zoom : 4,
+    const myMap = new ymaps.Map('map', {
+      center: center || [54.193_122, 37.617_348],
+      zoom: zoom || 4,
       controls: ['smallMapDefaultSet']
     })
 
     // проходимся по всем элементам, которые будут отображены на карте
-    var coordsList = document.querySelectorAll('.buy-card__item')
+    const coordsList = document.querySelectorAll('.buy-card__item')
 
     if (coordsList.length === 0) return
 
     coordsList.forEach((item, index) => {
-      let coordX = item.getAttribute('data-coord-x')
-      let coordY = item.getAttribute('data-coord-y')
-      let coords = [parseFloat(coordX), parseFloat(coordY)]
+      const coordX = item.getAttribute('data-coord-x')
+      const coordY = item.getAttribute('data-coord-y')
+      const coords = [Number.parseFloat(coordX), Number.parseFloat(coordY)]
       let balloon
       let title
       let address
       let link
 
-      pointsArr.push(coords)
+      pointsArray.push(coords)
 
       if (withBalloon) {
         title = item.querySelector('.buy-card__title').textContent
@@ -67,7 +67,7 @@ export function initMap() {
       }
 
       placemarks.push({
-        coords: coords,
+        coords,
         hint: title,
         balloon: withBalloon ? balloon.innerHTML : undefined
       })
@@ -75,7 +75,7 @@ export function initMap() {
 
     // создание плейсмарок (точек на карте)
     placemarks.forEach(placemark => {
-      var myPlacemark = new ymaps.Placemark(
+      const myPlacemark = new ymaps.Placemark(
         placemark.coords,
         {
           hintContent: placemark.hint,
@@ -84,36 +84,36 @@ export function initMap() {
         {
           iconLayout: 'default#image',
           iconImageHref: icon,
-          iconImageSize: iconImageSize,
-          iconImageOffset: iconImageOffset
+          iconImageSize,
+          iconImageOffset
         }
       )
 
-      markArr.push(myPlacemark)
+      markArray.push(myPlacemark)
 
       myMap.geoObjects.add(myPlacemark)
     })
 
-    let cad = document.querySelectorAll('[data-mark]')
+    const cad = document.querySelectorAll('[data-mark]')
 
     // событие на открытие баллуна при клике на список адресов слева
     cad.forEach((item, index) => {
       item.addEventListener('click', () => {
         if (withBalloon) {
-          markArr.forEach((mark, i) => {
-            if (index == i) {
+          markArray.forEach((mark, index_) => {
+            if (index == index_) {
               // получаем координаты из списка слева
-              let x = item.getAttribute('data-coord-x')
-              let y = item.getAttribute('data-coord-y')
+              const x = item.getAttribute('data-coord-x')
+              const y = item.getAttribute('data-coord-y')
 
               // центрируем карту
               myMap.setCenter([x, y])
 
-              //увеличиваем карту
+              // увеличиваем карту
               myMap.setZoom(12)
-              markArr[index].balloon.open()
+              markArray[index].balloon.open()
             } else {
-              markArr[i].balloon.close()
+              markArray[index_].balloon.close()
             }
           })
         } else {
@@ -129,8 +129,8 @@ export function initMap() {
       }
     })
 
-    //Создание кластеров и добавление на карту
-    mapCluster({ markArr, map: myMap })
+    // Создание кластеров и добавление на карту
+    mapCluster({ markArr: markArray, map: myMap })
   }
 }
 

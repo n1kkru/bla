@@ -1,4 +1,4 @@
-//функция создания балуна
+// функция создания балуна
 export function createBalloon(title, address, link) {
   const balloon = document.createElement('div')
   balloon.classList.add('balloon')

@@ -12,7 +12,7 @@ mixin ui-tab-head(data, mods)
 
   .ui-tab-head(class=allMods)&attributes(attributes)
     each item, index in data
-      .ui-tab-head__item(class=item.mods class=(index === 0 ? 'ui-tab-head__item_active' : ''))
+      .ui-tab-head__item(class=item.mods class=index === 0 ? 'ui-tab-head__item_active' : '')
         if item.p2
           +ui-p2(item.p2, item.p2mods)
         if item.p3

@@ -1,17 +1,18 @@
 import placemarkIco from '../../images/black-square.svg'
-//settings
 
-//настройка иконки и ее расположения
+// settings
+
+// настройка иконки и ее расположения
 const icon = placemarkIco
 const size = [32, 32]
 const offset = [-16, -16]
 
-//шаблон для контента внутри кластера
+// шаблон для контента внутри кластера
 const templateContents =
   '<div style="color: #FFF; font-size: 16px; line-height: 150%; text-align: center; padding-block: 4px;">{{ properties.geoObjects.length }}</div>'
 
 export function mapCluster({ markArr, map }) {
-  let clusterer = new ymaps.Clusterer({
+  const clusterer = new ymaps.Clusterer({
     groupByCoordinates: false,
     clusterDisableClickZoom: true,
     clusterHideIconOnBalloonOpen: false,
@@ -20,8 +21,8 @@ export function mapCluster({ markArr, map }) {
     clusterIcons: [
       {
         href: icon,
-        size: size,
-        offset: offset
+        size,
+        offset
       }
     ],
 

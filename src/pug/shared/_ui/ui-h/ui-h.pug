@@ -10,7 +10,8 @@ mixin ui-h1(title, mods)
       allMods = allMods.trim()
     }
 
-  h1.ui-h1(class=allMods)&attributes(attributes) !{title}
+  h1.ui-h1(class=allMods)&attributes(attributes)
+    | !{ title }
     block
 
 mixin ui-h2(title, mods)
@@ -25,7 +26,8 @@ mixin ui-h2(title, mods)
       allMods = allMods.trim()
     }
 
-  h2.ui-h2(class=allMods)&attributes(attributes) !{title}
+  h2.ui-h2(class=allMods)&attributes(attributes)
+    | !{ title }
     block
 
 mixin ui-h3(title, mods)
@@ -40,7 +42,8 @@ mixin ui-h3(title, mods)
       allMods = allMods.trim()
     }
 
-  h3.ui-h3(class=allMods)&attributes(attributes) !{title}
+  h3.ui-h3(class=allMods)&attributes(attributes)
+    | !{ title }
     block
 
 mixin ui-h4(title, mods)
@@ -55,7 +58,8 @@ mixin ui-h4(title, mods)
       allMods = allMods.trim()
     }
 
-  h4.ui-h4(class=allMods)&attributes(attributes) !{title}
+  h4.ui-h4(class=allMods)&attributes(attributes)
+    | !{ title }
     block
 
 mixin ui-h5(title, mods)
@@ -70,7 +74,8 @@ mixin ui-h5(title, mods)
       allMods = allMods.trim()
     }
 
-  h5.ui-h5(class=allMods)&attributes(attributes) !{title}
+  h5.ui-h5(class=allMods)&attributes(attributes)
+    | !{ title }
     block
 
 mixin ui-h6(title, mods)
@@ -85,5 +90,6 @@ mixin ui-h6(title, mods)
       allMods = allMods.trim()
     }
 
-  h6.ui-h6(class=allMods)&attributes(attributes) !{title}
+  h6.ui-h6(class=allMods)&attributes(attributes)
+    | !{ title }
     block

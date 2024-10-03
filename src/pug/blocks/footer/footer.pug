@@ -33,7 +33,7 @@ footer.footer
     .footer__menu
       each footerMenuItem in footerMenu
         .footer__item
-          .footer__link=footerMenuItem.title
+          .footer__link= footerMenuItem.title
           ul.footer__list
             each footerMenuItemName, index in footerMenuItem.list
               li.footer__item
