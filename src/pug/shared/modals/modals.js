@@ -1,34 +1,85 @@
-import MicroModal from 'micromodal'
+import { disableScroll, enableScroll } from '../../../js/utils/scroll'
 
-export const modalConfig = {
-  openTrigger: 'data-modal-open',
-  closeTrigger: 'data-modal-close',
-  openClass: 'is-open',
-  disableScroll: true,
-  disableFocus: false,
-  awaitOpenAnimation: true,
-  awaitCloseAnimation: true
+export const modalsInit = () => {
+  const modalBtns = document.querySelectorAll('[data-modal-btn]')
+  const modalWrappers = document.querySelectorAll('[data-modal-wrapper]')
+  const closeBtns = document.querySelectorAll('[data-modal-close]')
+
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const modalWrapper = btn.closest('[data-modal-wrapper]')
+      modalWrapper.classList.remove('active')
+      document.querySelector('body').classList.remove('overflow-scroll')
+      enableScroll()
+      closeFrameVideo()
+      checkIframePointer(false)
+    })
+  })
+
+  modalBtns.forEach(btn => {
+    const id = btn.dataset.modalBtn
+
+    btn.addEventListener('click', () => {
+      const currentModal = document.querySelector(`[data-modal-wrapper="${id}"]`)
+
+      modalWrappers.forEach(item => item.classList.remove('active'))
+      currentModal.classList.add('active')
+      document.querySelector('body').classList.add('overflow-scroll')
+      disableScroll()
+      if (btn.hasAttribute('data-frame-btn')) {
+        const videoWrapper = currentModal.querySelector('[data-modal-video]')
+        const url = btn.dataset.frameSrc //читаем путь из атрибута
+        const isFrame = videoWrapper.querySelector('iframe')
+
+        //Если внутри модалки уже есть фрейм, ему переприсваивается урл, чтобы подгрузить нужное видео
+        if (isFrame) {
+          isFrame.setAttribute('src', url)
+        } else {
+          //Если внутри модалки нету фрейма, то он создаётся с ссылкой из атрибута
+          const frame = document.createElement('iframe')
+          frame.setAttribute('src', url)
+          frame.setAttribute('allowfullscreen', true)
+          frame.setAttribute('allow', '')
+          frame.classList.add('youtube-player')
+          videoWrapper.append(frame)
+        }
+
+        checkIframePointer(true)
+      }
+    })
+  })
+
+  modalWrappers.forEach(modal => {
+    const overlay = modal.querySelector('[data-modal-overlay]')
+    overlay.addEventListener('click', () => {
+      overlay.closest('[data-modal-wrapper]').classList.remove('active')
+      document.querySelector('body').classList.remove('overflow-scroll')
+      enableScroll()
+      closeFrameVideo() //Остановка видео при закрытии модалки
+      checkIframePointer(false) //Сбросс класса у фреймов, чтобы Ленис работал
+    })
+  })
 }
 
-export const modals = () => {
-  MicroModal.init(modalConfig)
+export const closeFrameVideo = () => {
+  const videoWrapper = document.querySelector('[data-modal-video]') //Находим на странице модалку с видео
+  if (!videoWrapper) return
 
-  // BACKEND TEST
-  // const container = [
-  //   '<div class="modal__wrapper">',
-  //   'test content',
-  //   '</div>',
-  // ].join('');
+  const frame = videoWrapper.querySelector('iframe') //Находим внутри модалки фрейм
 
-  // setTimeout(() => {
-
-  //   openModal(container)
-  // }, 1000);
+  if (!frame) return
+  frame.setAttribute('src', '') // Переприсваиваем ему пустой урл, чтобы остановить видео
 }
 
-export const openModal = html => {
-  const layout = document.querySelector('[data-modal-layout]')
+export const checkIframePointer = check => {
+  const videoWrapper = document.querySelector('[data-modal-video]')
+  if (!videoWrapper) return
+  const frame = videoWrapper.querySelector('iframe') //Находим внутри модалки фрейм
+  if (!frame) return
 
-  layout.innerHTML = html
-  MicroModal.show('default-modal', modalConfig)
+  if (!check) {
+    frame.classList.remove('active')
+  } else {
+    frame.classList.add('active')
+  }
 }
