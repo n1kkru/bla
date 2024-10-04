@@ -2,7 +2,6 @@
   position: relative;
 
   .ts-wrapper {
-
     &::after {
       pointer-events: none;
       content: '';
@@ -24,7 +23,6 @@
     }
 
     &.focus:not(.dropdown-top) {
-
       &::after {
         transform: translateY(-50%) rotate(180deg);
       }
@@ -36,7 +34,6 @@
     }
 
     &.dropdown-top {
-
       .ts-dropdown {
         top: auto;
         bottom: 100%;
@@ -47,7 +44,6 @@
       }
 
       &.focus {
-
         .ts-control {
           border-top-left-radius: 0;
           border-top-right-radius: 0;

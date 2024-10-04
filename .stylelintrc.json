@@ -20,13 +20,16 @@
     "declaration-block-no-shorthand-property-overrides": true,
     "no-unknown-animations": true,
     "color-hex-alpha": "never",
-    "color-named": "never",
     "function-name-case": "lower",
     "selector-type-case": "lower",
     "value-keyword-case": "lower",
-    "at-rule-empty-line-before": "always",
-    "rule-empty-line-before": "always",
-    
-    "font-family-no-missing-generic-family-keyword": false
+    "no-descending-specificity": null,
+    "custom-property-pattern": null,
+    "property-no-unknown": null,
+    "font-family-no-missing-generic-family-keyword": null,
+
+    "scss/double-slash-comment-whitespace-inside": null,
+    "scss/at-function-pattern": null,
+    "scss/dollar-variable-pattern": null
   }
 }

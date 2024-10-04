@@ -4,8 +4,8 @@ mixin accordion(text)
   .accordion-container
     .accordion
       h2.accordion__header
-        button.accordion__button(type="button")=text
-        button.accordion__close 
+        button.accordion__button(type='button')= text
+        button.accordion__close
           +close
       .accordion__panel
         block

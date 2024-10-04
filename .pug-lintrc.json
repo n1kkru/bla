@@ -13,7 +13,6 @@
   "ignore": ["src/**/svg.pug"],
   "disallowBlockExpansion": true,
   "disallowClassLiteralsBeforeIdLiterals": true,
-  "disallowHtmlText": true,
   "disallowIdAttributeWithStaticValue": true,
   "disallowLegacyMixinCall": true,
   "disallowSpacesInsideAttributeBrackets": true,
@@ -21,9 +20,6 @@
   "requireLineFeedAtFileEnd": true,
   "requireLowerCaseAttributes": true,
   "requireSpaceAfterCodeOperator": true,
-  "validateExtensions": true,
   "validateIndentation": 2,
-  "validateTemplateString": true,
-
-  "maximumNumberOfLines": 80
+  "validateTemplateString": true
 }

@@ -1,4 +1,4 @@
-export const remSelect = () => {
+const remSelect = () => {
   const selects = document.querySelectorAll('.select')
   if (selects.length === 0) return
 
@@ -35,3 +35,5 @@ export const remSelect = () => {
 }
 
 remSelect()
+
+export { remSelect }

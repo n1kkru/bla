@@ -42,7 +42,6 @@
   }
 
   &-one-child {
-
     div > div:first-child:last-child,
     div :has(> div:first-child:last-child) {
       padding: 1px;
@@ -51,14 +50,12 @@
   }
 
   &-border-all {
-
     *:not(.css-debug) > div {
       border: 1px solid red;
     }
   }
 
   &-inline {
-
     *[style] {
       background-color: red;
     }
