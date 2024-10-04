@@ -46,6 +46,7 @@
     "unicorn/no-null": "off",
     "unicorn/no-array-for-each": "off",
     "unicorn/prevent-abbreviations": "off",
-    "prettier/prettier": ["error"]
+    "prettier/prettier": ["error"],
+    "no-new": "warn"
   }
 }

@@ -28,14 +28,14 @@ export const modalsInit = () => {
       disableScroll()
       if (btn.hasAttribute('data-frame-btn')) {
         const videoWrapper = currentModal.querySelector('[data-modal-video]')
-        const url = btn.dataset.frameSrc //читаем путь из атрибута
+        const url = btn.dataset.frameSrc // читаем путь из атрибута
         const isFrame = videoWrapper.querySelector('iframe')
 
-        //Если внутри модалки уже есть фрейм, ему переприсваивается урл, чтобы подгрузить нужное видео
+        // Если внутри модалки уже есть фрейм, ему переприсваивается урл, чтобы подгрузить нужное видео
         if (isFrame) {
           isFrame.setAttribute('src', url)
         } else {
-          //Если внутри модалки нету фрейма, то он создаётся с ссылкой из атрибута
+          // Если внутри модалки нету фрейма, то он создаётся с ссылкой из атрибута
           const frame = document.createElement('iframe')
           frame.setAttribute('src', url)
           frame.setAttribute('allowfullscreen', true)
@@ -55,17 +55,17 @@ export const modalsInit = () => {
       overlay.closest('[data-modal-wrapper]').classList.remove('active')
       document.querySelector('body').classList.remove('overflow-scroll')
       enableScroll()
-      closeFrameVideo() //Остановка видео при закрытии модалки
-      checkIframePointer(false) //Сбросс класса у фреймов, чтобы Ленис работал
+      closeFrameVideo() // Остановка видео при закрытии модалки
+      checkIframePointer(false) // Сбросс класса у фреймов, чтобы Ленис работал
     })
   })
 }
 
 export const closeFrameVideo = () => {
-  const videoWrapper = document.querySelector('[data-modal-video]') //Находим на странице модалку с видео
+  const videoWrapper = document.querySelector('[data-modal-video]') // Находим на странице модалку с видео
   if (!videoWrapper) return
 
-  const frame = videoWrapper.querySelector('iframe') //Находим внутри модалки фрейм
+  const frame = videoWrapper.querySelector('iframe') // Находим внутри модалки фрейм
 
   if (!frame) return
   frame.setAttribute('src', '') // Переприсваиваем ему пустой урл, чтобы остановить видео
@@ -74,12 +74,12 @@ export const closeFrameVideo = () => {
 export const checkIframePointer = check => {
   const videoWrapper = document.querySelector('[data-modal-video]')
   if (!videoWrapper) return
-  const frame = videoWrapper.querySelector('iframe') //Находим внутри модалки фрейм
+  const frame = videoWrapper.querySelector('iframe') // Находим внутри модалки фрейм
   if (!frame) return
 
-  if (!check) {
-    frame.classList.remove('active')
-  } else {
+  if (check) {
     frame.classList.add('active')
+  } else {
+    frame.classList.remove('active')
   }
 }

@@ -15,6 +15,6 @@ const options = {
 }
 
 export const accordion = () => {
-  const accordions = Array.from(document.querySelectorAll('.accordion-container'))
+  const accordions = [...document.querySelectorAll('.accordion-container')]
   new Accordion(accordions, options)
 }
