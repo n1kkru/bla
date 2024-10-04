@@ -28,6 +28,12 @@
     "property-no-unknown": null,
     "font-family-no-missing-generic-family-keyword": null,
 
+    "at-rule-no-vendor-prefix": null,
+    "media-feature-name-no-vendor-prefix": null,
+    "property-no-vendor-prefix": null,
+    "selector-no-vendor-prefix": null,
+    "value-no-vendor-prefix": null,
+
     "scss/double-slash-comment-whitespace-inside": null,
     "scss/at-function-pattern": null,
     "scss/dollar-variable-pattern": null
