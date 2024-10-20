@@ -28,6 +28,7 @@
     "url": "https://git.dterra.ru/apnoea/vite-bem-template.git"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
     "@prettier/plugin-pug": "^3.1.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "autoprefixer": "^10.4.20",
