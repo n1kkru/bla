@@ -1,25 +1,24 @@
 {
-  "validateDivTags": true,
-  "validateAttributeSeparator": { "separator": " ", "multiLineSeparator": "\n  " },
-  "validateAttributeQuoteMarks": "'",
-  "requireSpecificAttributes": [{ "img": ["src", "alt"] }, { "canvas": ["width", "height"] }],
-  "requireLowerCaseTags": true,
-  "requireClassLiteralsBeforeAttributes": true,
-  "disallowTrailingSpaces": true,
-  "disallowDuplicateAttributes": true,
   "disallowClassAttributeWithStaticValue": true,
-  "disallowMultipleLineBreaks": true,
-  "requireStrictEqualityOperators": true,
-  "ignore": ["src/**/svg.pug"],
-  "disallowBlockExpansion": true,
-  "disallowClassLiteralsBeforeIdLiterals": true,
   "disallowIdAttributeWithStaticValue": true,
-  "disallowLegacyMixinCall": true,
-  "disallowSpacesInsideAttributeBrackets": true,
+  "disallowClassLiteralsBeforeIdLiterals": true,
+  "disallowMultipleLineBreaks": true,
+  "requireClassLiteralsBeforeAttributes": true,
   "requireIdLiteralsBeforeAttributes": true,
-  "requireLineFeedAtFileEnd": true,
-  "requireLowerCaseAttributes": true,
-  "requireSpaceAfterCodeOperator": true,
+  "requireStrictEqualityOperators": true,
+  "requireSpecificAttributes": [{ "img": ["alt"] }, { "input": ["type"] }],
+  "validateAttributeSeparator": {
+    "separator": ", ",
+    "multiLineSeparator": ",\n  "
+  },
+  "validateAttributeQuoteMarks": "'",
   "validateIndentation": 2,
-  "validateTemplateString": true
+  "validateAttributeOrder": ["id", "class", "src", "href", "title", "alt", "aria-", "data-"],
+  "validateMultiLineAttributes": {
+    "maximum": 3
+  },
+  "disallowInlineJavaScript": true,
+  "disallowInlineStyles": true,
+  "maximumLineLength": 100,
+  "requireComments": true
 }

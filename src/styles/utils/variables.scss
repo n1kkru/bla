@@ -19,9 +19,8 @@ $background1: var(--background1);
 $black: var(--black);
 $primary1: var(--primary1);
 $pink: var(--pink);
-
 $colors: (
-  black: #000000
+  black: #000
 );
 
 @function color($variant: black) {

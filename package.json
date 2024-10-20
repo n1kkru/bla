@@ -4,19 +4,19 @@
   "type": "module",
   "description": "",
   "scripts": {
-    "dev": "gulp pugMixins && vite",
+    "dev": "gulp pugMixins && vite --host",
     "build": "gulp pugMixins && vite build && node .change-path.js",
     "preview": "vite preview",
     "block": "node .create-block.js",
     "shared": "node .create-shared.js",
     "page": "node .create-page.js",
+    "puglint": "npx pug-lint .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "stylelint": "npx stylelint '**/*{.css,.scss}'",
     "stylelint:fix": "npx stylelint '**/*{.css,.scss}' --fix",
     "prettier": "npx prettier . --check",
     "prettier:fix": "npx prettier . --write",
-    "puglint": "npx pug-lint .",
     "prepare": "husky"
   },
   "browserslist": [
