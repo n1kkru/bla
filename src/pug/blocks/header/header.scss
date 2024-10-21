@@ -60,18 +60,14 @@
 
       &::after {
         content: '';
-
         position: absolute;
         top: 30%;
         right: 0;
         transform: rotate(45deg);
-
         width: 6px;
         height: 6px;
-
         border-right: 1px solid $black;
         border-bottom: 1px solid $black;
-
         transition: 0.3s;
       }
     }
@@ -79,12 +75,9 @@
 
   &__list {
     position: absolute;
-
     padding-top: 25px;
-
     visibility: hidden;
     opacity: 0;
-
     transition: 0.3s;
 
     .header__item {

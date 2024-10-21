@@ -1,11 +1,8 @@
 .ui-tab-head {
   position: relative;
-
   display: flex;
-
   padding: 6px 15px;
-
-  background-color: #ccc;
+  background-color: #cccccc;
   border-radius: 6px;
 
   @include media-laptop {
@@ -16,16 +13,13 @@
 
   &::before {
     content: '';
-
     position: absolute;
     top: 0;
     right: -15px;
-
     width: 100px;
     height: 100%;
-
     opacity: 0;
-    background: linear-gradient(270deg, #fff 0%, rgba(255 255 255 / 0%) 100%);
+    background: linear-gradient(270deg, #ffffff 0%, rgba(255 255 255 / 0%) 100%);
 
     @include media-tablet {
       opacity: 0.5;
@@ -38,14 +32,10 @@
 
   &__item {
     cursor: pointer;
-
     padding: 9px 22px;
-
     text-align: center;
     white-space: nowrap;
-
     border-radius: 6px;
-
     transition: 0.3s;
 
     @include media-hover {
@@ -54,7 +44,7 @@
 
     &_active {
       color: $primary1;
-      background: #fff;
+      background: #ffffff;
     }
   }
 }

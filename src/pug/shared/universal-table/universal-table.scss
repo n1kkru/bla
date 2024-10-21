@@ -1,11 +1,8 @@
 .universal-box {
   position: relative;
-
   overflow: auto;
-
   width: 100%;
   max-height: rem(720px);
-
   border: 1px solid blue;
   border-radius: rem(20px);
   box-shadow: 0 rem(-20px) rem(34px) 0 rgb(0 0 0 / 3.9%) inset;
@@ -21,13 +18,10 @@
 
 .universal-table {
   position: relative;
-
   overflow-x: hidden auto;
-
   width: max-content;
   min-width: 100%;
   max-height: 100%;
-
   border: none;
 
   @include media-laptop {
@@ -57,7 +51,6 @@
   td {
     height: rem(84px);
     padding: rem(20px) rem(24px);
-
     font-size: rem(16px);
     line-height: 1.4;
     color: #0b1226;
@@ -74,7 +67,6 @@
   th {
     height: auto;
     padding: rem(24px);
-
     font-size: rem(16px);
     font-weight: 600;
     line-height: 1.4;
@@ -94,7 +86,6 @@
     width: auto;
     min-width: rem(143px);
     max-width: rem(589px);
-
     text-overflow: ellipsis;
     word-wrap: break-word;
 

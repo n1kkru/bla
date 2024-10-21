@@ -1,5 +1,6 @@
 .select {
   $c: &;
+
   position: relative;
 
   &-wrapper {
@@ -24,23 +25,17 @@
 
   &__button {
     cursor: pointer;
-
     position: relative;
-
     display: flex;
     flex-shrink: 0;
     align-items: center;
     justify-content: space-between;
-
     height: rem(60px);
     padding: 0 rem(24px);
-
     text-transform: uppercase;
-
     background: #f8f4f8;
     border: 1px solid transparent;
     border-radius: rem(8px);
-
     transition: $transition;
 
     &:hover {
@@ -56,15 +51,12 @@
 
     input {
       cursor: pointer;
-
       width: 100%;
       height: 100%;
-
       font-size: rem(16px);
       font-weight: 420;
       line-height: 110%;
       color: var(--1, #62215b);
-
       background-color: transparent;
       border: none;
 
@@ -80,42 +72,34 @@
 
   &__list {
     pointer-events: none;
-
     position: absolute;
     z-index: 3;
     top: rem(64px);
     left: 0;
     transform: translateY(rem(30px));
-
     overflow: hidden;
-
     width: 100%;
     padding: rem(20px);
-
     opacity: 0;
-    background: #fff;
+    background: #ffffff;
     border: 1px solid var(--unnamed, #f0e7ef);
     border-radius: rem(8px);
     box-shadow: 0 rem(8px) rem(20px) 0 rgb(0 0 0 / 8%);
-
     transition: $transition;
 
     ul {
       position: relative !important;
       bottom: 0;
-
       display: flex;
       flex-direction: column;
       gap: rem(12px);
 
       li {
         cursor: pointer;
-
         font-size: rem(18px);
         font-weight: 420;
         line-height: 110%; /* 19.8px */
         color: var(--1, #62215b);
-
         transition: $transition;
 
         &:hover {

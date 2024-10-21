@@ -1,0 +1,49 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb-base"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": "warn",
+    "no-var": "error",
+    "prefer-const": "warn",
+    "complexity": ["warn", { "max": 15 }],
+    "import/no-unresolved": "warn",
+    "import/named": "warn",
+    "import/no-duplicates": "error",
+    "import/order": [
+      "warn",
+      {
+        "groups": [["builtin", "external"], "internal"],
+        "newlines-between": "always"
+      }
+    ],
+    "no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "none"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.{js,mjs,cjs}"]
+    }
+  ],
+  "ignorePatterns": [
+    "node_modules",
+    "dist",
+    "gulpfile.js",
+    "**/*.config.{js,mjs,cjs}",
+    "*.config.{js,mjs,cjs}"
+  ]
+}

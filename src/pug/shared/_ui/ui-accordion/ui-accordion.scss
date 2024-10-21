@@ -1,11 +1,9 @@
 .ui-accordion {
   &__head {
     cursor: pointer;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     transition: $transition;
 
     &_active {
@@ -24,19 +22,15 @@
 
     &::after {
       content: '';
-
       position: absolute;
       top: 50%;
       right: 0;
       transform: translateY(-50%);
-
       width: 18px;
       height: 18px;
-
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='10' fill='none'%3E%3Cpath stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m15 1.5-7 7-7-7'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-size: contain;
-
       transition: 0.3s;
     }
   }
@@ -47,6 +41,6 @@
   }
 
   &_white {
-    color: #fff;
+    color: #ffffff;
   }
 }

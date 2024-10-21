@@ -2,16 +2,13 @@ $textarea-background: #f8f4f8;
 
 .textarea-ui {
   @include custom-placeholder;
+
   position: relative;
-
   overflow: hidden;
-
   padding-top: rem(26px);
-
   background-color: $textarea-background;
   border: 1px solid var(--unnamed, #f0e7ef);
   border-radius: rem(8px);
-
   transition: $transition;
 
   &:focus-within {
@@ -21,34 +18,27 @@ $textarea-background: #f8f4f8;
 
   &__service {
     pointer-events: none;
-
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
   }
 
   textarea {
     resize: none;
-
     align-items: center;
     justify-content: center;
-
     width: 100%;
     height: 100%;
     padding-right: rem(50px);
     padding-left: rem(24px);
-
     font-size: rem(16px);
     font-weight: 420;
     line-height: 110%; /* 17.6px */
     color: var(--1, #62215b);
-
     background-color: $textarea-background;
     border: 1px transparent;
     caret-color: #62215b;
-
     transition: $transition;
 
     &::placeholder {
