@@ -11,7 +11,7 @@ mixin ui-button(data, mods)
     }
 
   if (attributes.href)
-    a.ui-button(href='#' class=allMods)&attributes(attributes)
+    a.ui-button(href='#', class=allMods)&attributes(attributes)
       +ui-button-inner(data)
       block
 

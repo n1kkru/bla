@@ -10,5 +10,5 @@ mixin ui-svg(data, mods)
       allMods = allMods.trim()
     }
 
-  svg.ui-svg(class=allMods class='svg_' + data)&attributes(attributes)
+  svg.ui-svg(class=allMods, class='svg_' + data)&attributes(attributes)
     use(xlink:href='#' + data)

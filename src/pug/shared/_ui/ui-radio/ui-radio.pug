@@ -14,7 +14,7 @@ mixin ui-radio(data, mods)
       }
 
   .ui-radio(class=allMods)
-    input(id=data.id name=data.id type='radio')&attributes(attributes)
+    input(id=data.id, name=data.id, type='radio')&attributes(attributes)
     label(for=data.id)
       if data.p3
         +ui-p3(data.p3, data.p3mods)

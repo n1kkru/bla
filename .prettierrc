@@ -13,11 +13,16 @@
   "htmlWhitespaceSensitivity": "css",
   "singleAttributePerLine": true,
 
+  "pugAttributeSeparator": "always",
+  "pugWrapAttributesThreshold": 3,
   "pugIdNotation": "literal",
-  "pugAttributeSeparator": "none",
-  "pugWrapAttributesThreshold": 4,
+  "pugEmptyAttributes": "all",
+  "pugEmptyAttributesForceQuotes": [],
+  "pugClassNotation": "literal",
+  "pugClassLocation": "before-attributes",
+  "pugExplicitDiv": false,
 
-  "importOrder": ["^[a-z]", "^@?\\w", "^(../|./)"],
+  "importOrder": ["^builtin", "^external", "^internal", "^[./]"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }

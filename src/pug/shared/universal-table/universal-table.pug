@@ -18,10 +18,10 @@ mixin universal-table(data, mods)
             each itemTr in data.thead
               tr
                 each itemTh in itemTr.th
-                  th(colspan=itemTh.colspan rowspan=itemTh.rowspan class=itemTh.mods) !{ itemTh.text }
+                  th(colspan=itemTh.colspan, rowspan=itemTh.rowspan, class=itemTh.mods) !{ itemTh.text }
         tbody.universal-table__body
           each itemTr in data.tbody
             tr(class=itemTr.class)
               each itemTd in itemTr.td
-                td(colspan=itemTd.colspan rowspan=itemTd.rowspan class=itemTd.mods style=itemTd.style) !{ itemTd.text }
+                td(colspan=itemTd.colspan, rowspan=itemTd.rowspan, class=itemTd.mods, style=itemTd.style) !{ itemTd.text }
     block
