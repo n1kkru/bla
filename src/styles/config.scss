@@ -9,19 +9,19 @@
 }
 
 // transitions
-$transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);transitions$transition-timing-functiontransitions$transition-timing-functiontransitions$transition-timing-function
-$transition-duration: 0.5s;$transition-duration$transition-duration
-$transition: $transition-duration $transition-timing-function;$transition
+$transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+$transition-duration: 0.5s;
+$transition: $transition-duration $transition-timing-function;
 
 // fonts
-$fs: 16px;fonts$fsfonts$fsfonts$fs
-$font: 'Roboto';$font$font
-$font-extra: 'Montserrat';$font-extra
+$fs: 16px;
+$font: 'Roboto';
+$font-extra: 'Montserrat';
 
 //Custom placeholder
-$custom-placeholder-top: rem(12px);placeholder$custom-placeholder-topplaceholder$custom-placeholder-topplaceholder$custom-placeholder-top
-$custom-placeholder-left: rem(24px);$custom-placeholder-left$custom-placeholder-left
-$custom-placeholder-scale: 0.6;$custom-placeholder-scale
+$custom-placeholder-top: rem(12px);
+$custom-placeholder-left: rem(24px);
+$custom-placeholder-scale: 0.6;
 
 //Custom placeholder
 
@@ -34,22 +34,22 @@ $breakpoints: (
   m: 768px,
   s: 576px,
   xs: 375px
-);placeholder$breakpointsplaceholder$breakpointsplaceholder$breakpoints
+);
 //Количество колонок
-$col-count-m: 4;$col-count-m$col-count-m$col-count-m
-$col-count-t: 4;$col-count-t$col-count-t
-$col-count-d: 16;$col-count-d
+$col-count-m: 4;
+$col-count-t: 4;
+$col-count-d: 16;
 
 //Количество колонок
 
 //Боковые отступы по краям
-$col-pad-m: rem(12px);$col-pad-m$col-pad-m$col-pad-m
-$col-pad-t: rem(12px);$col-pad-t$col-pad-t
-$col-pad-d: rem(24px);$col-pad-d
+$col-pad-m: rem(12px);
+$col-pad-t: rem(12px);
+$col-pad-d: rem(24px);
 
 //Боковые отступы по краям
 
 //Промежутки между колонками
-$col-gap-m: rem(12px);$col-gap-m$col-gap-m$col-gap-m
-$col-gap-t: rem(12px);$col-gap-t$col-gap-t
-$col-gap-d: rem(24px);$col-gap-d
+$col-gap-m: rem(12px);
+$col-gap-t: rem(12px);
+$col-gap-d: rem(24px);

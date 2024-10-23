@@ -2,10 +2,12 @@
   $comp: &;
 
   pointer-events: none;
+
   position: fixed;
   z-index: 20;
   top: 0;
   left: 0;
+
   width: 100vw;
   height: 100vh;
 
@@ -34,11 +36,14 @@
     z-index: 21;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     opacity: 0;
     background: rgb(0 0 0 / 20%);
     backdrop-filter: blur(3px);
+
     transition: $transition;
   }
 
@@ -52,8 +57,10 @@
       top: 0;
       right: 0;
       transform: translateX(100%);
+
       width: fit-content;
       height: 100%;
+
       background: white;
     }
   }
@@ -71,6 +78,7 @@
     z-index: 5;
     top: rem(20px);
     right: rem(20px);
+
     transition: $transition;
   }
 
@@ -87,7 +95,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   opacity: 0;
+
   transition: $transition;
 
   &__wrapper {
@@ -126,7 +136,9 @@
     z-index: 5;
     top: rem(20px);
     right: rem(20px);
+
     border-radius: rem(50px);
+
     transition: $transition;
 
     &_top {
@@ -138,12 +150,15 @@
 
     .button {
       will-change: transform;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       width: rem(80px);
       height: rem(80px);
       padding: 0;
+
       -webkit-backface-visibility: hidden;
       -moz-backface-visibility: hidden;
       -ms-backface-visibility: hidden;
@@ -151,6 +166,7 @@
       background-clip: padding-box;
       border: rem(1px) solid #e7e7e7;
       border-radius: 50%;
+
       transition: $transition;
 
       svg {

@@ -3,17 +3,22 @@
   z-index: 99999;
   right: 20px;
   bottom: 20px;
+
   display: flex;
   flex-direction: column;
   gap: 10px;
+
   padding: 10px;
+
   font:
     16px/1 Roboto,
     sans-serif;
+
   opacity: 0.2;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 0 0 1px #000000;
+
   transition: 0.3s;
 
   &:hover {
@@ -30,6 +35,7 @@
   label {
     cursor: pointer;
     user-select: none;
+
     display: flex;
     gap: 10px;
     align-items: center;

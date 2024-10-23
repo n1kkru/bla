@@ -10,14 +10,18 @@
     width: 100%;
     height: rem(60px);
     padding: rem(29px) rem(62px) rem(22px) rem(24px);
+
     font-size: rem(16px);
     font-weight: 420;
     line-height: 110%;
     color: var(--unnamed, #62215b);
+
     background: #f8f4f8;
     border: 1px solid var(--unnamed, #f0e7ef);
     caret-color: #62215b;
+
     transition: $transition;
+
     caret-width: 1px;
 
     &::placeholder {
@@ -32,6 +36,7 @@
 
   .parsley-errors-list {
     margin-top: rem(6px);
+
     font-size: rem(10px);
     font-weight: 420;
     line-height: 110%;

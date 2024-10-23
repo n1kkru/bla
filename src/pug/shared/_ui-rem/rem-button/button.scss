@@ -1,11 +1,15 @@
 .button {
   cursor: pointer;
+
   position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   height: rem(60px);
   padding: 0 rem(24px);
+
   font-family: 'TT Rounds Neue';
   font-size: rem(16px);
   font-weight: 620;
@@ -13,9 +17,11 @@
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
+
   background: var(--1, #62215b);
   border: 1px solid transparent;
   border-radius: rem(8px);
+
   transition: $transition;
 
   &:hover {

@@ -3,9 +3,11 @@
   z-index: 999;
   inset: 0;
   transform: translateY(120%);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   transition: all 0.6s cubic-bezier(0.5, 1, 0.89, 1);
 
   &.--active {

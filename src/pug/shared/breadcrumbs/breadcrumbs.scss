@@ -8,19 +8,24 @@
 
   &__item {
     position: relative;
+
     margin-right: 5px;
     padding-right: 10px;
+
     font-size: 14px;
     white-space: nowrap;
 
     &::after {
       content: '';
+
       position: absolute;
       top: 50%;
       right: 0;
       transform: translateY(-50%);
+
       width: 6px;
       height: 1px;
+
       background: #aaaaaa;
     }
 
