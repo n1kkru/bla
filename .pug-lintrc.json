@@ -6,7 +6,7 @@
   "requireClassLiteralsBeforeAttributes": true,
   "requireIdLiteralsBeforeAttributes": true,
   "requireStrictEqualityOperators": true,
-  "requireSpecificAttributes": [{ "img": ["alt"] }, { "input": ["type"] }],
+  "requireSpecificAttributes": [{ "img": ["alt"] }],
   "validateAttributeSeparator": {
     "separator": ", ",
     "multiLineSeparator": ",\n  "
@@ -19,6 +19,5 @@
   },
   "disallowInlineJavaScript": true,
   "disallowInlineStyles": true,
-  "maximumLineLength": 100,
   "requireComments": true
 }

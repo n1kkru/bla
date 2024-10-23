@@ -7,17 +7,32 @@
     "dev": "gulp pugMixins && vite --host",
     "build": "gulp pugMixins && vite build && node .change-path.js",
     "preview": "vite preview",
+    "                                     ": "null",
     "block": "node .create-block.js",
     "shared": "node .create-shared.js",
     "page": "node .create-page.js",
-    "puglint": "npx pug-lint .",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "stylelint": "npx stylelint '**/*{.css,.scss}'",
-    "stylelint:fix": "npx stylelint '**/*{.css,.scss}' --fix",
-    "prettier": "npx prettier . --check",
-    "prettier:fix": "npx prettier . --write",
-    "prepare": "husky"
+    "                                      ": "null",
+    "lint": "npm run puglint && npm run eslint && npm run stylelint",
+    "lint:fix": "npm run eslint:fix && npm run stylelint:fix && npm run prettier:fix",
+    "                                       ": "null",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint . --fix",
+    "stylelint": "stylelint '**/*.{css,scss}'",
+    "stylelint:fix": "stylelint '**/*.{css,scss}' --fix",
+    "puglint": "pug-lint .",
+    "prettier": "prettier . --check",
+    "prettier:fix": "prettier . --write",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.js": "eslint",
+    "*.scss": "stylelint",
+    "*.pug": "pug-lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "browserslist": [
     "> 5%",
@@ -35,6 +50,7 @@
     "eslint-plugin-import": "^2.31.0",
     "gulp": "^4.0.2",
     "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "postcss": "^8.4.47",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.3.3",

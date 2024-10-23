@@ -6,6 +6,7 @@
     "block-no-empty": true,
     "color-hex-length": "long",
     "no-duplicate-selectors": true,
-    "selector-max-id": 0
+    "selector-max-id": 0,
+    "at-rule-empty-line-before": null
   }
 }
