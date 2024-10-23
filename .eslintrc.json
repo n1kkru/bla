@@ -4,16 +4,18 @@
     "es2021": true,
     "node": true
   },
-  "extends": [
-    "airbnb-base"
+  "extends": "eslint:recommended",
+  "plugins": [
+    "import"
   ],
   "parserOptions": {
     "ecmaVersion": 2021,
     "sourceType": "module"
   },
   "rules": {
-    "no-console": "warn",
+    "no-console": "off",
     "no-var": "error",
+    "no-undef": "warn",
     "prefer-const": "warn",
     "complexity": ["warn", { "max": 15 }],
     "import/no-unresolved": "warn",
