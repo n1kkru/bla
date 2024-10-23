@@ -26,5 +26,5 @@ export const commonFunction = () => {
   // libs
   lenisInit()
 
-  console.log(1)
+  // console.log(1)
 }

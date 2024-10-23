@@ -1,5 +1,6 @@
 .select {
   $c: &;
+
   position: relative;
 
   &-wrapper {
@@ -93,7 +94,7 @@
     padding: rem(20px);
 
     opacity: 0;
-    background: #fff;
+    background: #ffffff;
     border: 1px solid var(--unnamed, #f0e7ef);
     border-radius: rem(8px);
     box-shadow: 0 rem(8px) rem(20px) 0 rgb(0 0 0 / 8%);
@@ -127,9 +128,7 @@
 }
 
 @media #{media('<',d)} {
-
   .select {
-
     &__button {
       height: rem(44px);
       padding: 0 rem(16px);

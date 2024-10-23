@@ -1,17 +1,15 @@
 .table {
   display: grid;
   gap: 1px;
-  background-color: #ccc;
+  background-color: #cccccc;
 
   &[data-columns='3'] {
-
     .table__row {
       grid-template-columns: repeat(3, 1fr);
     }
   }
 
   &[data-columns='4'] {
-
     .table__row {
       grid-template-columns: repeat(4, 1fr);
     }
@@ -25,6 +23,6 @@
   &__item {
     position: relative;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
   }
 }

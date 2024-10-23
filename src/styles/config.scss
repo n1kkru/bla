@@ -5,7 +5,6 @@
 @use 'sass:string';
 
 @function rem($size) {
-
   @return math.div($size, $fs) * 1rem;
 }
 
@@ -36,7 +35,6 @@ $breakpoints: (
   s: 576px,
   xs: 375px
 );
-
 //Количество колонок
 $col-count-m: 4;
 $col-count-t: 4;

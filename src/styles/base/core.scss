@@ -1,31 +1,27 @@
 @use 'sass:map';
-
 @use 'sass:math';
-
 @use 'sass:string';
 
 @function getVw($px, $width) {
-
   @return $px / $width * 1vw;
 }
 
 html {
   -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
 
-  @media (width >= 320px) {
+  @media (width >=320px) {
     font-size: getvw($fs, 340px / 100);
   }
 
-  @media (width >= 1201px) {
+  @media (width >=1201px) {
     font-size: getvw($fs, 1920px / 100);
   }
 
-  @media (width >= 1920px) {
+  @media (width >=1920px) {
     font-size: getvw($fs, 1920px / 100);
   }
 
   @each $breakpoint in (375px, 576px, 768px, 1024px) {
-
     @media (min-width: #{$breakpoint}) {
       font-size: getvw($fs, $breakpoint / 100);
     }
@@ -33,47 +29,27 @@ html {
 }
 
 @function breakpoint($variant: d) {
-
   @return map.get($breakpoints, $variant);
 }
 
 @function media($direction: '>', $variant: d) {
-
   @if $direction == '>' {
-
     @return '(min-width: #{breakpoint($variant)})';
-  }
-
- @else if $direction == '<' {
-
+  } @else if $direction == '<' {
     @return '(max-width: #{breakpoint($variant) - 1px})';
-  }
-
- @else if $direction == '<=' {
-
+  } @else if $direction == '<=' {
     @return '(max-width: #{breakpoint($variant)})';
-  }
-
- @else if $direction == 'mt' {
-
+  } @else if $direction == 'mt' {
     @return '(min-width: #{breakpoint(m)}) and (max-width: #{breakpoint(t) - 1px})';
-  }
-
- @else if $direction == 'td' {
-
+  } @else if $direction == 'td' {
     @return '(min-width: #{breakpoint(t)}) and (max-width: #{breakpoint(d) - 1px})';
-  }
-
- @else if $direction == 'md' {
-
+  } @else if $direction == 'md' {
     @return '(min-width: #{breakpoint(m)}) and (max-width: #{breakpoint(d) - 1px})';
   }
 }
 
 @mixin custom-placeholder {
-
   &:focus-within {
-
     span {
       top: $custom-placeholder-top;
       transform: scale($custom-placeholder-scale);
@@ -82,7 +58,6 @@ html {
 
   input:not(:placeholder-shown) ~ .custom-placeholder__service,
   textarea:not(:placeholder-shown) + .custom-placeholder__service {
-
     span {
       top: $custom-placeholder-top;
       left: $custom-placeholder-left;

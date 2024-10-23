@@ -37,9 +37,7 @@
   }
 
   &_active {
-
     .ui-switch__label {
-
       &:first-child {
         color: inherit;
       }
@@ -50,7 +48,6 @@
     }
 
     .ui-switch__body {
-
       &::before {
         transform: translate(100%);
       }

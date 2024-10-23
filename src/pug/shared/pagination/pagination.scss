@@ -12,7 +12,7 @@
     color: $black;
     text-align: center;
 
-    background: #fff;
+    background: #ffffff;
     border-radius: 4px;
 
     transition: 0.3s;
@@ -34,12 +34,11 @@
         width: 10px;
         height: 14px;
 
-        color: #fff;
+        color: #ffffff;
       }
     }
 
     &_next {
-
       svg {
         transform: rotate(180deg) translate(50%, 50%);
       }
@@ -78,7 +77,6 @@
     }
 
     &_active {
-
       .pagination__link {
         cursor: default;
         color: $primary1;

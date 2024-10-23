@@ -9,8 +9,8 @@
 
   text-align: center;
 
-  background: #fff;
-  border: 1px solid #ccc;
+  background: #ffffff;
+  border: 1px solid #cccccc;
   border-radius: 20px;
 
   transition: 0.3s;
@@ -31,12 +31,12 @@
   }
 
   &_bg-primary1 {
-    color: #fff;
+    color: #ffffff;
     background: $primary1;
 
     @include media-hover {
       color: $primary1;
-      background: #fff;
+      background: #ffffff;
     }
   }
 

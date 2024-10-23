@@ -1,5 +1,4 @@
 .ui-accordion {
-
   &__head {
     cursor: pointer;
 
@@ -10,9 +9,7 @@
     transition: $transition;
 
     &_active {
-
       .ui-accordion__toggle {
-
         &::after {
           transform: translateY(-50%) rotate(180deg);
         }
@@ -50,6 +47,6 @@
   }
 
   &_white {
-    color: #fff;
+    color: #ffffff;
   }
 }
