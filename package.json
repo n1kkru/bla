@@ -24,16 +24,6 @@
     "prettier:fix": "prettier . --write",
     "prepare": "husky install"
   },
-  "lint-staged": {
-    "*.js": "eslint",
-    "*.scss": "stylelint",
-    "*.pug": "pug-lint"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "browserslist": [
     "> 5%",
     "last 2 version"
