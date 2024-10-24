@@ -94,7 +94,7 @@ export function slideToggle(
   }
 }
 
-export function initSlide(): void {
+export function initSlideFunction(): void {
   window['slideToggle'] = slideToggle
   window['slideDown'] = slideDown
   window['slideUp'] = slideUp
