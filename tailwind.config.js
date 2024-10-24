@@ -4,6 +4,12 @@ export default {
   content: ['./src/**/*.{pug,js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      transitionTimingFunction: {
+        DEFAULT: 'cubic-bezier(0.33, 1, 0.68, 1)'
+      },
+      transitionDuration: {
+        DEFAULT: '0.5s'
+      },
       colors: {
         dark: '#0c0c0c',
         light: '#f2f2f2'
