@@ -1,7 +1,10 @@
-export function slideUp(target: HTMLElement, duration: number = 400, callback?: () => void): void {
+function isVisable(target): boolean {
   const computedStyle = window.getComputedStyle(target)
-  const isVisible = computedStyle.display !== 'none'
-  if (!isVisible) return
+  return computedStyle.display !== 'none'
+}
+
+export function slideUp(target: HTMLElement, duration: number = 400, callback?: () => void): void {
+  if (!isVisable(target)) return
 
   target.style.transitionProperty = 'height, margin, padding'
   target.style.transitionDuration = duration + 'ms'
@@ -39,9 +42,7 @@ export function slideDown(
   duration: number = 400,
   callback?: () => void
 ): void {
-  const computedStyle = window.getComputedStyle(target)
-  const isVisible = computedStyle.display !== 'none'
-  if (isVisible) return
+  if (isVisable(target)) return
 
   target.style.removeProperty('display')
   let display = window.getComputedStyle(target).display
@@ -86,10 +87,7 @@ export function slideToggle(
   duration: number = 400,
   callback?: () => void
 ): void {
-  const computedStyle = window.getComputedStyle(target)
-  const isVisible = computedStyle.display !== 'none'
-
-  if (isVisible) {
+  if (isVisable(target)) {
     slideUp(target, duration, callback)
   } else {
     slideDown(target, duration, callback)
