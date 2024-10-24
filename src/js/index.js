@@ -9,7 +9,7 @@ import cssDebug from './libs/css-debug/css-debug'
 // import { barbaUi } from './libs/barba/barba'
 import { lenisInit } from './libs/lenis/lenis'
 import { scrollBarWidth } from './utils/scrollbarWidth'
-import { initSlide } from './utils/slideFunction'
+import { initSlideFunction } from './utils/slideFunction'
 
 window.addEventListener('load', scrollBarWidth, false)
 window.addEventListener('resize', scrollBarWidth, false)
@@ -23,7 +23,7 @@ export const commonFunction = () => {
   // libs config
   config()
   cssDebug(true)
-  initSlide()
+  initSlideFunction()
 
   // libs
   lenisInit()
