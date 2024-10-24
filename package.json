@@ -44,6 +44,7 @@
     "postcss": "^8.4.47",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
     "pug-lint": "^2.7.0",
     "sass": "^1.78.0",
     "stylelint": "^16.10.0",
