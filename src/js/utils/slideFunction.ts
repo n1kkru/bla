@@ -1,7 +1,7 @@
 export function slideUp(target: HTMLElement, duration: number = 400, callback?: () => void): void {
-  if (target['slideUp']) return
-  target['slideDown'] = false
-  target['slideUp'] = true
+  const computedStyle = window.getComputedStyle(target)
+  const isVisible = computedStyle.display !== 'none'
+  if (!isVisible) return
 
   target.style.transitionProperty = 'height, margin, padding'
   target.style.transitionDuration = duration + 'ms'
@@ -39,9 +39,9 @@ export function slideDown(
   duration: number = 400,
   callback?: () => void
 ): void {
-  if (target['slideDown']) return
-  target['slideDown'] = true
-  target['slideUp'] = false
+  const computedStyle = window.getComputedStyle(target)
+  const isVisible = computedStyle.display !== 'none'
+  if (isVisible) return
 
   target.style.removeProperty('display')
   let display = window.getComputedStyle(target).display
@@ -57,7 +57,7 @@ export function slideDown(
   target.style.marginTop = '0'
   target.style.marginBottom = '0'
 
-  target.offsetHeight // trigger reflow
+  target.offsetHeight
 
   target.style.boxSizing = 'border-box'
   target.style.transitionProperty = 'height, margin, padding'
@@ -86,21 +86,18 @@ export function slideToggle(
   duration: number = 400,
   callback?: () => void
 ): void {
-  if (target['slideUp']) {
-    slideUp(target, duration, () => {
-      target['slideDown'] = false
-      callback && callback()
-    })
+  const computedStyle = window.getComputedStyle(target)
+  const isVisible = computedStyle.display !== 'none'
+
+  if (isVisible) {
+    slideUp(target, duration, callback)
   } else {
-    slideDown(target, duration, () => {
-      target['slideDown'] = true
-      callback && callback()
-    })
+    slideDown(target, duration, callback)
   }
 }
 
 export function initSlide(): void {
-  window.slideToggle = slideToggle
-  window.slideDown = slideDown
-  window.slideUp = slideUp
+  window['slideToggle'] = slideToggle
+  window['slideDown'] = slideDown
+  window['slideUp'] = slideUp
 }

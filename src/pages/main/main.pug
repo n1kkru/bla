@@ -9,4 +9,12 @@ block content
   main(data-barba='container', data-barba-namespace=pageName)
     .inner
       +ui-h1(pageTitle)
-      +rem-input
+      .qwe
+        +rem-input
+      button.ui-h1(onclick='window.slideDown(document.querySelector(".qwe"))') slideDown
+      br
+      br
+      button.ui-h1(onclick='window.slideUp(document.querySelector(".qwe"))') slideUp
+      br
+      br
+      button.ui-h1(onclick='window.slideToggle(document.querySelector(".qwe"))') slideToggle
