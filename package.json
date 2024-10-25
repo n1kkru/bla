@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "gulp pugMixins && vite --host",
     "build": "gulp pugMixins && vite build && node .change-path.js",
+    "build:backend": "gulp pugMixins && cross-env BACK_BUILD=true vite build && node .change-path.js",
     "preview": "vite preview",
     "                                                                          ": "null",
     "block": "node .create-block.js",
@@ -36,6 +37,7 @@
     "@prettier/plugin-pug": "^3.1.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "autoprefixer": "^10.4.20",
+    "cross-env": "^7.0.3",
     "eslint": "^8.57.1",
     "eslint-plugin-import": "^2.31.0",
     "gulp": "^4.0.2",

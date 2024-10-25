@@ -12,6 +12,8 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 const root = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'src')
 const outDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'dist')
 
+const isBackBuild = process.env.BACK_BUILD === 'true'
+
 export default defineConfig({
   root,
   base: './',
@@ -59,30 +61,34 @@ export default defineConfig({
       lintInWorker: true
     }),
     viteSassGlob(),
-    viteImagemin({
-      gifsicle: {
-        optimizationLevel: 7,
-        interlaced: false
-      },
-      mozjpeg: {
-        quality: 75
-      },
-      pngquant: {
-        quality: [0.7, 0.7],
-        speed: 4
-      },
-      svgo: {
-        plugins: [
-          {
-            name: 'removeViewBox'
-          },
-          {
-            name: 'removeEmptyAttrs',
-            active: false
-          }
+    ...(!isBackBuild
+      ? [
+          viteImagemin({
+            gifsicle: {
+              optimizationLevel: 7,
+              interlaced: false
+            },
+            mozjpeg: {
+              quality: 75
+            },
+            pngquant: {
+              quality: [0.7, 0.7],
+              speed: 4
+            },
+            svgo: {
+              plugins: [
+                {
+                  name: 'removeViewBox'
+                },
+                {
+                  name: 'removeEmptyAttrs',
+                  active: false
+                }
+              ]
+            }
+          })
         ]
-      }
-    }),
+      : []),
     createSvgIconsPlugin({
       iconDirs: [resolve(process.cwd(), 'src/images')],
       symbolId: '[name]',
