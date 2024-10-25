@@ -31,8 +31,7 @@ block variables
 
 block content
   main(data-barba='container' data-barba-namespace=pageName)
-    .inner
-      +ui-h1(pageTitle)`
+`
     )
   }
   if (error === false) {
