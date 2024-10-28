@@ -11,6 +11,7 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 const root = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'src')
 const outDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'dist')
+const timestamp = Date.now()
 
 export default defineConfig({
   root,
@@ -95,7 +96,7 @@ export default defineConfig({
       transformIndexHtml(html) {
         return html.replace(
           /<script type="module" crossorigin src="..\/..\/scripts\/index\.js"><\/script>/,
-          `<script type="module" crossorigin src="scripts/index.js?${Date.now()}"></script>`
+          `<script type="module" crossorigin src="scripts/index.js?${timestamp}"></script>`
         )
       }
     }
