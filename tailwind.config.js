@@ -13,11 +13,17 @@ export default {
       colors: {
         dark: '#0c0c0c',
         light: '#f2f2f2'
-      },
-      screens: {
-        desktop: { max: '1201px' },
-        mobile: { max: '768px' }
       }
+    },
+    screens: {
+      xxl: { max: '1920px' },
+      ll: { max: '1440px' },
+      d: { max: '1201px' },
+      t: { max: '1024px' },
+      lg: { max: '992px' },
+      m: { max: '768px' },
+      s: { max: '576px' },
+      xs: { max: '375px' }
     }
   },
   plugins: [
@@ -26,26 +32,26 @@ export default {
 
       const newUtilities = {
         '.desktop': {
-          [`@media (max-width: ${screens.desktop.max})`]: {
-            display: 'none'
+          [`@media (max-width: ${screens.d.max})`]: {
+            display: 'none !important'
           }
         },
         '.mobile': {
-          [`@media (min-width: ${screens.mobile.max})`]: {
-            display: 'none'
+          [`@media (min-width: ${screens.m.max})`]: {
+            display: 'none !important'
           }
         },
         '.tablet': {
-          [`@media (min-width: ${screens.desktop.max})`]: {
-            display: 'none'
+          [`@media (min-width: ${screens.d.max})`]: {
+            display: 'none !important'
           },
-          [`@media (max-width: ${screens.mobile.max})`]: {
-            display: 'none'
+          [`@media (max-width: ${screens.m.max})`]: {
+            display: 'none !important'
           }
         },
         '.devices': {
-          [`@media (min-width: ${screens.desktop.max})`]: {
-            display: 'none'
+          [`@media (min-width: ${screens.d.max})`]: {
+            display: 'none !important'
           }
         }
       }
