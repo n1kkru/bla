@@ -27,25 +27,25 @@ export default {
       const newUtilities = {
         '.desktop': {
           [`@media (max-width: ${screens.desktop.max})`]: {
-            display: 'none'
+            display: 'none !important'
           }
         },
         '.mobile': {
           [`@media (min-width: ${screens.mobile.max})`]: {
-            display: 'none'
+            display: 'none !important'
           }
         },
         '.tablet': {
           [`@media (min-width: ${screens.desktop.max})`]: {
-            display: 'none'
+            display: 'none !important'
           },
           [`@media (max-width: ${screens.mobile.max})`]: {
-            display: 'none'
+            display: 'none !important'
           }
         },
         '.devices': {
           [`@media (min-width: ${screens.desktop.max})`]: {
-            display: 'none'
+            display: 'none !important'
           }
         }
       }
