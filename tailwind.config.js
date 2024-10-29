@@ -13,17 +13,17 @@ export default {
       colors: {
         dark: '#0c0c0c',
         light: '#f2f2f2'
-      },
-      screens: {
-        xxl: { max: '1920px' },
-        ll: { max: '1440px' },
-        d: { max: '1201px' },
-        t: { max: '1024px' },
-        lg: { max: '992px' },
-        m: { max: '768px' },
-        s: { max: '576px' },
-        xs: { max: '375px' }
       }
+    },
+    screens: {
+      xxl: { max: '1920px' },
+      ll: { max: '1440px' },
+      d: { max: '1201px' },
+      t: { max: '1024px' },
+      lg: { max: '992px' },
+      m: { max: '768px' },
+      s: { max: '576px' },
+      xs: { max: '375px' }
     }
   },
   plugins: [
