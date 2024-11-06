@@ -42,13 +42,14 @@ export const lenisInit = () => {
   }
 }
 
-export function resumeLenis() {
-  if (window.screen.width > 1024 && !isSafari) {
-    lenis.start()
-  }
+export const destroyLenis = () => {
+  lenis?.destroy()
 }
+
 export function stopLenis() {
-  if (window.screen.width > 1024 && !isSafari) {
-    lenis.stop()
-  }
+  lenis?.stop()
+}
+
+export function resumeLenis() {
+  lenis?.start()
 }

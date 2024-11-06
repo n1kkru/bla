@@ -25,7 +25,9 @@ export const commonFunction = () => {
   initSlideFunction()
 
   // libs
-  lenisInit()
+  setTimeout(() => {
+    lenisInit()
+  }, 1200)
 
   // console.log(1)
 }

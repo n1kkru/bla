@@ -2,6 +2,7 @@ import barba from '@barba/core'
 
 import { commonFunction } from '../..'
 import { disableScroll, enableScroll } from '../../utils/scroll'
+import { destroyLenis } from '../lenis/lenis'
 
 const transitionScreenID = 'transition-screen'
 const transitionScreenActiveClass = '--active'
@@ -22,11 +23,9 @@ export const barbaUi = () => {
   if (barba.initialized) return // Проверка, чтобы избежать повторной инициализации
 
   // FRONT: Сброс скролла после завершения анимации перехода
-  barba.hooks.afterLeave(() => {
-    setTimeout(() => {
-      enableScroll() // Восстановление скролла на странице
-      window.scrollTo(0, 0)
-    }, transitionScreenDelay)
+  barba.hooks.afterLeave(() => {})
+  barba.hooks.beforeLeave(() => {
+    destroyLenis()
   })
 
   // FRONT:  //BACK: при загрузке новой страницы все функции перезапускаются
@@ -35,7 +34,10 @@ export const barbaUi = () => {
 
   barba.hooks.afterEnter(data => {
     commonFunction() // Вызов функции при переходе между страницами
-    disableScroll() // Остановка скролла на странице
+    setTimeout(() => {
+      enableScroll() // Восстановление скролла на странице
+      window.scrollTo(0, 0)
+    }, transitionScreenDelay)
   })
 
   // BACK: если нам нужно программно перенаправить на страницу без анимаций (по дефолту) (все равно что изменить location.href)
