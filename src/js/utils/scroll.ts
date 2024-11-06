@@ -11,7 +11,7 @@ export function disableScroll() {
   }
 }
 export function enableScroll() {
-  document.querySelector('body')!.classList.remove('overflow-hidden')
+  document.querySelector('body')!.classList.remove('overflow-scroll')
   if (window.screen.width > BREAKPOINT_DESKTOP && !isSafari) {
     resumeLenis()
   }
