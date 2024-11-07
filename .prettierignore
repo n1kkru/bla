@@ -9,3 +9,7 @@ dist
 
 # Игнорировать все файлы с расширением .md
 *.md
+
+
+src/pug/shared/svg/svg.pug
+src/styles/base/core.scss

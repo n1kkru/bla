@@ -3,7 +3,7 @@ import 'accordion-js/dist/accordion.min.css'
 
 const options = {
   duration: 400,
-  showMultiple: true,
+  showMultiple: false,
   elementClass: 'accordion',
   triggerClass: 'accordion__button',
   activeClass: 'active',
