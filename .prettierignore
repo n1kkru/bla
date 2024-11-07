@@ -12,3 +12,4 @@ dist
 
 
 src/pug/shared/svg/svg.pug
+src/styles/base/core.scss
