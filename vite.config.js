@@ -11,6 +11,7 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 const root = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'src')
 const outDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'dist')
+const timestamp = Date.now()
 
 const isBackBuild = process.env.BACK_BUILD === 'true'
 
@@ -35,7 +36,7 @@ export default defineConfig({
           }
           return `${extType}/[name][extname]`
         },
-        chunkFileNames: 'scripts/[name]-[hash].js'
+        chunkFileNames: `scripts/[name].js`
       }
     }
   },
@@ -94,7 +95,17 @@ export default defineConfig({
       symbolId: '[name]',
       inject: 'body-last',
       customDomId: '__svg__icons__dom__'
-    })
+    }),
+    {
+      name: 'replace-script-tag',
+      apply: 'build',
+      transformIndexHtml(html) {
+        return html.replace(
+          /<script type="module" crossorigin src="..\/..\/scripts\/index\.js"><\/script>/,
+          `<script type="module" crossorigin src="scripts/index.js?${timestamp}"></script>`
+        )
+      }
+    }
   ]
 })
 

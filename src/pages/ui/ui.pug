@@ -5,28 +5,15 @@ block variables
     const pageName = 'ui'
     const pageTitle = 'ui'
 
-    const ordersSelectProps3 = [
-            'Водоснабжение ',
-            'Отопление',
-            'Вентиляция и кондиционирование',
-            'Водоочистка и водоподготовка',
-            'Пожаротушение',
-            'Ирригация',
-            'Химическая промышленность',
-            'Нефтяная промышленнсоть',
-            'Энергетика',
-            'Горная промышленность',
-            'Водоотведение и дренаж'
-    ]
 
 block content
-  main
+  main(data-barba='container', data-barba-namespace=pageName)
     .inner
       br
       br
       br
-      +rem-select(ordersSelectProps3)(placeholder='Область применения')
+      //- +rem-select(ordersSelectProps3)(placeholder='Область применения')
       br
       br
       br
-      +rem-select(ordersSelectProps3)(placeholder='Область применения2')
+      //- +rem-select(ordersSelectProps3)(placeholder='Область применения2')

@@ -7,25 +7,25 @@
 }
 
 html {
-  -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
-
-  @media (width >=320px) {
-    font-size: getvw($fs, 340px / 100);
-  }
-
-  @media (width >=1201px) {
-    font-size: getvw($fs, 1920px / 100);
-  }
-
-  @media (width >=1920px) {
-    font-size: getvw($fs, 1920px / 100);
+  @media (min-width: 320px) {
+    font-size: getVw($fs, 340px / 100);
   }
 
   @each $breakpoint in (375px, 576px, 768px, 1024px) {
     @media (min-width: #{$breakpoint}) {
-      font-size: getvw($fs, $breakpoint / 100);
+      font-size: getVw($fs, $breakpoint / 100);
     }
   }
+
+  @media (min-width: 1201px) {
+    font-size: getVw($fs, 1920px / 100);
+  }
+
+  @media (min-width: 1920px) {
+    font-size: getVw($fs, 1920px / 100);
+  }
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 @function breakpoint($variant: d) {
@@ -33,17 +33,27 @@ html {
 }
 
 @function media($direction: '>', $variant: d) {
-  @if $direction == '>' {
+  @if $direction =='>' {
     @return '(min-width: #{breakpoint($variant)})';
-  } @else if $direction == '<' {
+  }
+
+  @else if $direction =='<' {
     @return '(max-width: #{breakpoint($variant) - 1px})';
-  } @else if $direction == '<=' {
+  }
+
+  @else if $direction =='<=' {
     @return '(max-width: #{breakpoint($variant)})';
-  } @else if $direction == 'mt' {
+  }
+
+  @else if $direction =='mt' {
     @return '(min-width: #{breakpoint(m)}) and (max-width: #{breakpoint(t) - 1px})';
-  } @else if $direction == 'td' {
+  }
+
+  @else if $direction =='td' {
     @return '(min-width: #{breakpoint(t)}) and (max-width: #{breakpoint(d) - 1px})';
-  } @else if $direction == 'md' {
+  }
+
+  @else if $direction =='md' {
     @return '(min-width: #{breakpoint(m)}) and (max-width: #{breakpoint(d) - 1px})';
   }
 }
