@@ -11,7 +11,6 @@
     "separator": ", ",
     "multiLineSeparator": ",\n  "
   },
-  "validateAttributeQuoteMarks": "'",
   "validateIndentation": 2,
   "validateAttributeOrder": ["id", "class", "src", "href", "title", "alt", "aria-", "data-"],
   "validateMultiLineAttributes": {
@@ -19,5 +18,6 @@
   },
   "disallowInlineJavaScript": true,
   "disallowInlineStyles": true,
-  "requireComments": true
+  "requireComments": true,
+  "ignoreFiles": ["src/pug/shared/svg/svg.pug"]
 }

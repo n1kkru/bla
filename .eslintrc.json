@@ -6,6 +6,7 @@
   },
   "extends": "eslint:recommended",
   "plugins": ["import"],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2021,
     "sourceType": "module"
@@ -16,6 +17,7 @@
     "no-undef": "warn",
     "prefer-const": "warn",
     "complexity": ["warn", { "max": 15 }],
+    "no-inner-declarations": "off",
     "import/no-unresolved": "warn",
     "import/named": "warn",
     "import/no-duplicates": "error",
@@ -36,14 +38,14 @@
   },
   "overrides": [
     {
-      "files": ["src/**/*.{js,mjs,cjs}"]
+      "files": ["src/**/*.{js,mjs,cjs,ts,tsx}"]
     }
   ],
   "ignorePatterns": [
     "node_modules",
     "dist",
     "gulpfile.js",
-    "**/*.config.{js,mjs,cjs}",
-    "*.config.{js,mjs,cjs}"
+    "**/*.config.{js,mjs,cjs,ts,tsx}",
+    "*.config.{js,mjs,cjs,ts,tsx}"
   ]
 }
