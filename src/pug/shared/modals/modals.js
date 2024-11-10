@@ -9,7 +9,7 @@ export const modalsInit = () => {
     btn.addEventListener('click', () => {
       const modalWrapper = btn.closest('[data-modal-wrapper]')
       modalWrapper.classList.remove('active')
-      document.querySelector('body').classList.remove('overflow-scroll')
+      document.querySelector('body').classList.remove('overflow')
       enableScroll()
       closeFrameVideo()
       checkIframePointer(false)
@@ -20,12 +20,15 @@ export const modalsInit = () => {
     const id = btn.dataset.modalBtn
 
     btn.addEventListener('click', () => {
+      // console.log('modalsInit modalBtns click')
+
       const currentModal = document.querySelector(`[data-modal-wrapper="${id}"]`)
 
       modalWrappers.forEach(item => item.classList.remove('active'))
       currentModal.classList.add('active')
-      document.querySelector('body').classList.add('overflow-scroll')
+      document.querySelector('body').classList.add('overflow')
       disableScroll()
+      document.addEventListener('keydown', closeOnEscFunc)
       if (btn.hasAttribute('data-frame-btn')) {
         const videoWrapper = currentModal.querySelector('[data-modal-video]')
         const url = btn.dataset.frameSrc // читаем путь из атрибута
@@ -49,11 +52,26 @@ export const modalsInit = () => {
     })
   })
 
+  const closeOnEscFunc = function (e) {
+    if (e.key == 'Escape' || e.keyCode === 27) {
+      // console.log('closeOnEscFunc')
+
+      modalWrappers.forEach(modal => {
+        modal.classList.remove('active')
+      })
+      document.querySelector('body').classList.remove('overflow')
+      enableScroll()
+      document.removeEventListener('keydown', closeOnEscFunc)
+    }
+  }
+
   modalWrappers.forEach(modal => {
     const overlay = modal.querySelector('[data-modal-overlay]')
     overlay.addEventListener('click', () => {
+      // console.log('overlay click')
+
       overlay.closest('[data-modal-wrapper]').classList.remove('active')
-      document.querySelector('body').classList.remove('overflow-scroll')
+      document.querySelector('body').classList.remove('overflow')
       enableScroll()
       closeFrameVideo() // Остановка видео при закрытии модалки
       checkIframePointer(false) // Сбросс класса у фреймов, чтобы Ленис работал
