@@ -141,6 +141,16 @@
 
     transition: $transition;
 
+    @media #{media('<',d)} {
+      top: rem(16px);
+      right: rem(24px);
+    }
+
+    @media #{media('<',m)} {
+      top: rem(8px);
+      right: rem(16px);
+    }
+
     &_top {
       @media #{media('<',d)} {
         top: rem(8px);
@@ -169,17 +179,6 @@
 
       transition: $transition;
 
-      svg {
-        will-change: fransform;
-        width: rem(24px);
-        height: rem(24px);
-
-        @media #{media('<',d)} {
-          width: rem(16px);
-          height: rem(16px);
-        }
-      }
-
       @media #{media('<',d)} {
         width: rem(48px);
         height: rem(48px);
@@ -198,16 +197,17 @@
           }
         }
       }
-    }
 
-    @media #{media('<',d)} {
-      top: rem(16px);
-      right: rem(24px);
-    }
+      svg {
+        will-change: fransform;
+        width: rem(24px);
+        height: rem(24px);
 
-    @media #{media('<',m)} {
-      top: rem(8px);
-      right: rem(16px);
+        @media #{media('<',d)} {
+          width: rem(16px);
+          height: rem(16px);
+        }
+      }
     }
   }
 }

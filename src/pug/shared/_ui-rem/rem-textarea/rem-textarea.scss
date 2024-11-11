@@ -1,8 +1,6 @@
 $textarea-background: #f8f4f8;
 
 .textarea-ui {
-  @include custom-placeholder;
-
   position: relative;
 
   overflow: hidden;
@@ -14,6 +12,7 @@ $textarea-background: #f8f4f8;
   border-radius: rem(8px);
 
   transition: $transition;
+  @include custom-placeholder;
 
   &:focus-within {
     border: 1px solid var(--1, #62215b);

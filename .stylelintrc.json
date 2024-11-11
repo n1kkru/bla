@@ -11,7 +11,7 @@
       "always",
       {
         "except": ["first-nested"],
-        "ignoreAtRules": ["else if", "else", "use", "import"]
+        "ignoreAtRules": ["else if", "else", "use", "import", "include"]
       }
     ],
     "rule-empty-line-before": [
@@ -19,6 +19,16 @@
       {
         "except": ["first-nested"]
       }
+    ],
+
+    "order/properties-alphabetical-order": "null",
+    "order/order": [
+      "custom-properties",
+      "dollar-variables",
+      "at-variables",
+      "declarations",
+      "at-rules",
+      "rules"
     ]
   }
 }
