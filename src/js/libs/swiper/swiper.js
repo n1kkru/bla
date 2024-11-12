@@ -1,5 +1,17 @@
 import Swiper from 'swiper/bundle'
 
+// что нового:
+// 1. переписано с jq на ванильку
+// 2. предусмотрено уничтожение имеющихся свайперов перед инициализацией новых - для барбы
+// 3. создаем свайпер по атрибуту
+// 4. кнопки некст, прев, пагинация, тамбсы - из любого места в документе по соответствующему атрибуту - при их наличии, автоматическая привязка их к текущему свайперу по атрибуту с одинаковым значением. нужно только добавить соответствующую верстку/элемент и прокинуть на нее соответствующий атрибут
+
+// атрибуты:
+// [data-slider-id = myId] - слайдер, атрибут вешается на .swiper
+// [data-slider-prev = myId], [data-slider-next= myId] - кнопки prev, next
+// [data-slider-pagination = myId] - блок, куда будет создана пагинация
+// [data-slider-thumbs = myId] - слайдер, который будет тамбсами. нужна соответствующая верстка, атрибут вешается на .swiper
+
 const BREAKPOINT = 1200
 
 let mySwipers = []
@@ -14,7 +26,7 @@ export function swiperInit() {
 
   const sliders = document.querySelectorAll('[data-slider-id]')
 
-  console.log('swiperInit', sliders)
+  console.log('swiperInit', sliders) // для кнтроля в барбе
 
   if (sliders.length) {
     sliders.forEach(slider => {
