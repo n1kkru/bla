@@ -22,22 +22,24 @@ mixin picture(fileName, mobileBreakpoint)
 
   picture.picture&attributes(attributes)
     if mobileBreakpoint
+      -
+        var breakpoint = (Number(mobileBreakpoint) > 1 )?`(max-width: ${Number(mobileBreakpoint)}px)`:  "(max-width: 768px)" 
       source.lazyload(
         type='image/webp',
         srcset=`${file.getPath(fileTitle + '-mob', "webp")} `,
-        media=Number(mobileBreakpoint) > 1 ? `(max-width: ${Number(mobileBreakpoint)}px)` : '(max-width: 768px)'
+        media=breakpoint
       )
       if fileExtension === 'png'
         source.lazyload(
           type='image/png',
           srcset=`${file.getPath(fileTitle + '-mob', "png")} `,
-          media=Number(mobileBreakpoint) > 1 ? `(max-width: ${Number(mobileBreakpoint)}px)` : '(max-width: 768px)'
+          media=breakpoint
         )
       else
         source.lazyload(
           type='image/jpeg',
           srcset=`${file.getPath(fileTitle + '-mob', "jpg")} `,
-          media=Number(mobileBreakpoint) > 1 ? `(max-width: ${Number(mobileBreakpoint)}px)` : '(max-width: 768px)'
+          media=breakpoint
         )
 
     source.lazyload(type='image/webp', srcset=`${file.getPath(fileTitle, "webp")} `)
