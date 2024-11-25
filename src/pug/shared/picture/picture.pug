@@ -1,8 +1,8 @@
-//- //Для добавления мобильной версии картинки добавляем вторым параметром true
-//- //Например +picture('image.jpg', 'true')
+//- //Для добавления мобильной версии картинки добавляем вторым параметром разрешение, на котором будет происходить смена картинки, либо true. По дефолту - 768px
+//- //Например, +picture('image.jpg', 375), +picture('image.jpg', '375'), +picture('image.jpg', 'true'), +picture('image.jpg', true)
 //- //Миксин будет искать картинку с названием image-mob.jpg (тоесть вторая картинка должна иметь такое же название как и основная, только с добавлением -mob.png/jpg и тд)
 
-mixin picture(fileName, isMobileFileName)
+mixin picture(fileName, mobileBreakpoint)
   -
     var file = {
       getTitle(filename) {
@@ -21,23 +21,25 @@ mixin picture(fileName, isMobileFileName)
     var fileExtension = file.getExtension(fileName);
 
   picture.picture&attributes(attributes)
-    if isMobileFileName
+    if mobileBreakpoint
+      -
+        var breakpoint = (Number(mobileBreakpoint) > 1 )?`(max-width: ${Number(mobileBreakpoint)}px)`:  "(max-width: 768px)" 
       source.lazyload(
         type='image/webp',
         srcset=`${file.getPath(fileTitle + '-mob', "webp")} `,
-        media='(max-width: 768px)'
+        media=breakpoint
       )
       if fileExtension === 'png'
         source.lazyload(
           type='image/png',
           srcset=`${file.getPath(fileTitle + '-mob', "png")} `,
-          media='(max-width: 768px)'
+          media=breakpoint
         )
       else
         source.lazyload(
           type='image/jpeg',
           srcset=`${file.getPath(fileTitle + '-mob', "jpg")} `,
-          media='(max-width: 768px)'
+          media=breakpoint
         )
 
     source.lazyload(type='image/webp', srcset=`${file.getPath(fileTitle, "webp")} `)
