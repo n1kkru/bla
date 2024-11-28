@@ -21,10 +21,9 @@
   "pugAttributeSeparator": "always",
   "pugWrapAttributesThreshold": 3,
   "pugIdNotation": "literal",
+  "pugClassNotation": "as-is",
   "pugEmptyAttributes": "all",
   "pugEmptyAttributesForceQuotes": [],
-  "pugClassNotation": "literal",
-  "pugClassLocation": "before-attributes",
   "pugExplicitDiv": false,
 
   "importOrder": ["^builtin", "^external", "^internal", "^[./]"],

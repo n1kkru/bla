@@ -16,6 +16,10 @@ export default {
       }
     },
     screens: {
+      desktop: { min: '1201px' },
+      devices: { max: '1200px' },
+      tablet: { max: '1200px', min: '769px' },
+      mobile: { max: '768px' },
       xxl: { max: '1920px' },
       ll: { max: '1440px' },
       d: { max: '1201px' },
@@ -32,25 +36,25 @@ export default {
 
       const newUtilities = {
         '.desktop': {
-          [`@media (max-width: ${screens.d.max})`]: {
+          [`@media (max-width: ${screens.tablet.max})`]: {
             display: 'none !important'
           }
         },
         '.mobile': {
-          [`@media (min-width: ${screens.m.max})`]: {
+          [`@media (min-width: ${screens.tablet.min})`]: {
             display: 'none !important'
           }
         },
         '.tablet': {
-          [`@media (min-width: ${screens.d.max})`]: {
+          [`@media (min-width: ${screens.desktop.min})`]: {
             display: 'none !important'
           },
-          [`@media (max-width: ${screens.m.max})`]: {
+          [`@media (max-width: ${screens.mobile.max})`]: {
             display: 'none !important'
           }
         },
         '.devices': {
-          [`@media (min-width: ${screens.d.max})`]: {
+          [`@media (min-width: ${screens.desktop.min})`]: {
             display: 'none !important'
           }
         }

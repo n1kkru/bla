@@ -1,23 +1,14 @@
 {
-  "disallowClassAttributeWithStaticValue": true,
   "disallowIdAttributeWithStaticValue": true,
   "disallowClassLiteralsBeforeIdLiterals": true,
   "disallowMultipleLineBreaks": true,
-  "requireClassLiteralsBeforeAttributes": true,
-  "requireIdLiteralsBeforeAttributes": true,
   "requireStrictEqualityOperators": true,
   "requireSpecificAttributes": [{ "img": ["alt"] }],
-  "validateAttributeSeparator": {
-    "separator": ", ",
-    "multiLineSeparator": ",\n  "
-  },
   "validateIndentation": 2,
-  "validateAttributeOrder": ["id", "class", "src", "href", "title", "alt", "aria-", "data-"],
   "validateMultiLineAttributes": {
     "maximum": 3
   },
   "disallowInlineJavaScript": true,
   "disallowInlineStyles": true,
-  "requireComments": true,
-  "ignoreFiles": ["src/pug/shared/svg/svg.pug"]
+  "ignoreFiles": ["node_modules/**", "src/pug/shared/svg/svg.pug"]
 }
