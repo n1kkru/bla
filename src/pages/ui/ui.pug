@@ -16,19 +16,46 @@ block content
       br
       br
 
-      form.contacts-form__form(novalidate data-form-id="main-form" action="#")
+      form.contacts-form__form(novalidate='', data-form-id='main-form', action='#')
         .contacts-form__row
           p Только русские буквы
           .contacts-form__item
-            +ui-input-rem(type="text" data-input="" placeholder="Имя *" name="fio" minlength="3" required data-validate="text" data-error-message="Заполните поле" id="contacts-form1")
+            +ui-input-rem#contacts-form1(
+              type='text',
+              data-input='',
+              placeholder='Имя *',
+              name='fio',
+              minlength='3',
+              required='',
+              data-validate='text',
+              data-error-message='Заполните поле'
+            )
 
         .contacts-form__row
           .contacts-form__item
-            +ui-input-rem(type="email" required placeholder="Email *" data-validate="email" name="email" minlength="3" data-error-message="Заполните поле" id="contacts-form2")
+            +ui-input-rem#contacts-form2(
+              type='email',
+              required='',
+              placeholder='Email *',
+              data-validate='email',
+              name='email',
+              minlength='3',
+              data-error-message='Заполните поле'
+            )
 
         .contacts-form__row
           .contacts-form__item
-            +ui-input-rem(type="tel" data-input="" data-mask-phone placeholder="Телефон *" name="phone" minlength="3" required data-validate="tel" data-error-message="Заполните поле" id="contacts-form3")
-        button(type="submit") Send
+            +ui-input-rem#contacts-form3(
+              type='tel',
+              data-input='',
+              data-mask-phone='',
+              placeholder='Телефон *',
+              name='phone',
+              minlength='3',
+              required='',
+              data-validate='tel',
+              data-error-message='Заполните поле'
+            )
+        button(type='submit') Send
 
       //- +rem-select(ordersSelectProps3)(placeholder='Область применения2')
