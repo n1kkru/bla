@@ -20,6 +20,7 @@
     "no-inner-declarations": "off",
     "import/no-unresolved": "warn",
     "import/named": "warn",
+    "no-useless-escape": 1, // Измените на 1 для предупреждения
     "import/no-duplicates": "error",
     "import/order": [
       "warn",

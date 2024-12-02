@@ -4,6 +4,7 @@ import 'virtual:svg-icons-register'
 
 import { remSelect } from '../pug/shared/_ui-rem/rem-select/rem-select'
 import '../styles/style.scss'
+import { validateFormInit } from './components/custom-validator'
 import config from './config'
 import { barbaUi } from './libs/barba/barba'
 import cssDebug from './libs/css-debug/css-debug'
@@ -30,4 +31,7 @@ export const commonFunction = () => {
   }, 1200)
 
   // console.log(1)
+
+  //Form
+  validateFormInit()
 }
