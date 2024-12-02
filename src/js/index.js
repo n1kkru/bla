@@ -10,6 +10,7 @@ import cssDebug from './libs/css-debug/css-debug'
 import { lenisInit } from './libs/lenis/lenis'
 import { scrollBarWidth } from './utils/scrollbarWidth'
 import { initSlideFunction } from './utils/slideFunction'
+import { validateFormInit } from './components/custom-validator'
 
 window.addEventListener('load', scrollBarWidth, false)
 window.addEventListener('resize', scrollBarWidth, false)
@@ -30,4 +31,7 @@ export const commonFunction = () => {
   }, 1200)
 
   // console.log(1)
+
+  //Form
+  validateFormInit();
 }
