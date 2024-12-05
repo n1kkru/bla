@@ -32,9 +32,15 @@ class InputValidator {
         this.validate()
       })
     }
+    const valid = this.checkValid()
+    this.#switchError(this.errorMessage)
 
+    return valid
+  }
+
+  checkValid() {
     if (this.value !== '') {
-      if (this.checkMinLength()) {
+      if (this.#checkMinLength()) {
         const myValueText = this.value.replace(/['\s_\-]/g, '')
         const myPhone = this.value.replace(/\D/g, '')
 
@@ -61,25 +67,25 @@ class InputValidator {
           default:
             break
         }
-        this.switchError(this.errorMessage)
+        this.errorMessage = this.el.getAttribute('data-error-message')
       }
     } else if (this.required) {
       this.isValid = false
-      this.switchError(this.errorMessage) // Тут можно добавить сообщение, по типу - это поле не может быть пустым
+      this.errorMessage = 'Это поле не может быть пустым' // Тут можно добавить сообщение, по типу - это поле не может быть пустым
     }
     return this.isValid
   }
 
-  checkMinLength() {
+  #checkMinLength() {
     if (this.minlength && this.value.length < parseInt(this.minlength)) {
       this.isValid = false
-      this.switchError('Минимальное число символов ' + this.minlength) // может быть поменять на другое сообщение
+      this.errorMessage = 'Минимальное число символов ' + this.minlength
       return false
     }
     return true
   }
 
-  switchError(message) {
+  #switchError(message) {
     if (!this.isValid) {
       this.errorContainer.classList.add('input-ui__error_visible') // Добавить стили для ошибки в соответствии с проектом
       this.errorContainer.innerHTML = message
@@ -91,14 +97,15 @@ class InputValidator {
 }
 
 export const validateFormInit = () => {
+  window.isValidFormByElement = isValidFormByElement
   const forms = document.querySelectorAll('form')
   if (!forms) return
 
   inputmaskInit()
 
   forms.forEach(form => {
+    form.setAttribute('novalidate', '')
     const inputs = form.querySelectorAll('[data-validate]')
-    const formId = form.dataset.formId
 
     form.addEventListener('submit', e => {
       e.preventDefault()
@@ -109,21 +116,16 @@ export const validateFormInit = () => {
 
         if (!inputValidator.validate()) isValidForm = false
       })
-
-      // заменить или убрать
-      if (isValidForm) {
-        switch (formId) {
-          case 'main-form':
-            //Вызов ответов под форму
-            console.log('Form send')
-            break
-
-          default:
-            break
-        }
-      } else {
-        console.log(new Error('Form no send'))
-      }
     })
   })
+}
+
+function isValidFormByElement(form) {
+  const inputs = form.querySelectorAll('[data-validate]')
+  let isValidForm = true
+  inputs.forEach(input => {
+    const inputValidator = new InputValidator(input)
+    if (!inputValidator.checkValid()) isValidForm = false
+  })
+  return isValidForm
 }
