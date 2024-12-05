@@ -105,7 +105,6 @@ export const validateFormInit = () => {
 
   forms.forEach(form => {
     const inputs = form.querySelectorAll('[data-validate]')
-    const formId = form.dataset.formId
 
     form.addEventListener('submit', e => {
       e.preventDefault()
@@ -117,19 +116,8 @@ export const validateFormInit = () => {
         if (!inputValidator.validate()) isValidForm = false
       })
 
-      // заменить или убрать
       if (isValidForm) {
-        switch (formId) {
-          case 'main-form':
-            //Вызов ответов под форму
-            console.log('Form send')
-            break
-
-          default:
-            break
-        }
-      } else {
-        console.log(new Error('Form no send'))
+        form.submit()
       }
     })
   })
