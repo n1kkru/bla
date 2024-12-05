@@ -104,6 +104,7 @@ export const validateFormInit = () => {
   inputmaskInit()
 
   forms.forEach(form => {
+    form.setAttribute('novalidate', '')
     const inputs = form.querySelectorAll('[data-validate]')
 
     form.addEventListener('submit', e => {
