@@ -17,7 +17,7 @@ mixin ui-input(mods)
 Пример формы 
 
 ```
-form( data-form-id="cooperation-form" novalidate).cooperation-form__form
+form( data-form-id="cooperation-form").cooperation-form__form
       .cooperation-form__row
         .cooperation-form__item
           +ui-input(data-input="" placeholder="Имя *" name="fio" minlength="3" required data-validate="text" data-error-message="Заполните поле" id="1")
@@ -31,7 +31,6 @@ form( data-form-id="cooperation-form" novalidate).cooperation-form__form
 ```
 
 - Валидатор собирает все формы по тегу form
-- Обязательный атрибут у формы - novalidate
 
 - Обязательный атрибут у инпута - data-validate='text' (вместо text пишите свой типа инпута)
 -- Варианты data-validate='text' data-validate='tel' data-validate='email'
