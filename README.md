@@ -17,8 +17,17 @@
 
 *Валидация на самих инпутах на ввод символов начнет работать только после первой попытки отправки формы, до первого сабмита ошибки не будут подсвечиваться, чтобы не мешать пользователю
 
+**Пример верстки для инпута под валидатор (на примере кастомный инпут с плавающим плейсхолдером)**
 
-Как Бэкенду слушать валидацию формы пример:
+```
+mixin rem-input(name)
+  .input-ui.custom-placeholder(data-input-parent='')
+    input(data-input='',data-validate='',required='',name=name ? name : '')&attributes(attributes)
+    .ui-input__error(data-error-container='')
+```
+
+
+**Как Бэкенду слушать валидацию формы пример:**
 ```
  const form = document. querySelector('-contacts-form__form')
   form. addEventListener ('submit', e => {
@@ -27,12 +36,7 @@
   }
 ```
 
-```
-mixin rem-input(name)
-  .input-ui.custom-placeholder(data-input-parent='')
-    input(data-input='',data-validate='',required='',name=name ? name : '')&attributes(attributes)
-    .ui-input__error(data-error-container='')
-```
+
 
 
 
