@@ -34,8 +34,7 @@ form( data-form-id="cooperation-form" novalidate).cooperation-form__form
 - Обязательный атрибут у формы - novalidate
 
 - Обязательный атрибут у инпута - data-validate='text' (вместо text пишите свой типа инпута)
---пример +rem-input(type='text', data-mask-phone='', placeholder='text',name='phone' ,required='',data-validate='tel' data-error-message='Заполните поле')
--- Варианты data-validate='text' data-validate='tel' data-validate='text' data-validate='email'
+-- Варианты data-validate='text' data-validate='tel' data-validate='email'
 - Обязательный атрибут у инпута - data-error-message (текст ошибки)
 - Обязательный атрибут для телефона (помимо data-validate='tel') - data-mask-phone
 - minlength='3'. указывает на минимальную длину поля
