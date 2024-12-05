@@ -7,8 +7,11 @@
 ```
 mixin rem-input(name)
   .input-ui.custom-placeholder(data-input-parent='')
-    input(data-input='',data-validate='',required='',name=name ? name : '')&attributes(attributes)
-    .ui-input__error(data-error-container='')
+    input(data-input='', required='', name=name ? name : '')&attributes(attributes)
+    .custom-placeholder__service
+      span
+        | #{ attributes.placeholder }
+      +reset.custom-placeholder__reset
 ```
 
 - Валидатор собирает все формы по тегу form
