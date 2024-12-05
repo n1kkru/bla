@@ -1,6 +1,14 @@
 ### Как пользоваться Валидатором:**
 
 *В контейнере с инпутом должен быть контейнер с атрибутом data-error-container (если его не будет, то передать инпуту этот атрибутом с айдишником)
+**Пример верстки для инпута под валидатор (на примере кастомный инпут с плавающим плейсхолдером)**
+
+```
+mixin rem-input(name)
+  .input-ui.custom-placeholder(data-input-parent='')
+    input(data-input='',data-validate='',required='',name=name ? name : '')&attributes(attributes)
+    .ui-input__error(data-error-container='')
+```
 
 - Валидатор собирает все формы по тегу form
 - Обязательный атрибут у формы - novalidate
@@ -17,22 +25,15 @@
 
 *Валидация на самих инпутах на ввод символов начнет работать только после первой попытки отправки формы, до первого сабмита ошибки не будут подсвечиваться, чтобы не мешать пользователю
 
-**Пример верстки для инпута под валидатор (на примере кастомный инпут с плавающим плейсхолдером)**
 
-```
-mixin rem-input(name)
-  .input-ui.custom-placeholder(data-input-parent='')
-    input(data-input='',data-validate='',required='',name=name ? name : '')&attributes(attributes)
-    .ui-input__error(data-error-container='')
-```
 
 
 **Как Бэкенду слушать валидацию формы пример:**
 ```
- const form = document. querySelector('-contacts-form__form')
-  form. addEventListener ('submit', e => {
-  const valid = window. isValidFormByElement (form)
-  console. log ('Form send e', valid)
+ const form = document.querySelector('-contacts-form__form')
+  form.addEventListener('submit', e => {
+  const valid = window.isValidFormByElement(form)
+  console.log('Form send e', valid)
   }
 ```
 
