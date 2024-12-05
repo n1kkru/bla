@@ -5,14 +5,29 @@
 **Пример верстки для инпута под валидатор (на примере кастомный инпут с плавающим плейсхолдером)**
 
 ```
-mixin rem-input(name)
-  .input-ui.custom-placeholder(data-input-parent='')
-    input(data-input='', required='', name=name ? name : '')&attributes(attributes)
+mixin ui-input(mods)
+  .ui-input.custom-placeholder(data-input-parent='')
+    input(data-input='' name=name?name:'')&attributes(attributes)
     .custom-placeholder__service
       span
-        | #{ attributes.placeholder }
-      +reset.custom-placeholder__reset
+        |#{attributes.placeholder}
+    .ui-input__error(data-error-container)
 ```
+
+Пример формы 
+
+```
+form( data-form-id="cooperation-form" novalidate).cooperation-form__form
+      .cooperation-form__row
+        .cooperation-form__item
+          +ui-input(data-input="" placeholder="Имя *" name="fio" minlength="3" required data-validate="text" data-error-message="Заполните поле" id="1")
+      .cooperation-form__row
+        .cooperation-form__item
+          +ui-input(data-input="" placeholder="Email *" name="email" minlength="3" required data-validate="email" data-error-message="Заполните поле" id="2")
+      .cooperation-form__row
+        .cooperation-form__item
+          +ui-input(data-input="" data-mask-phone placeholder="Телефон *" name="phone" required data-validate="tel" data-error-message="Заполните поле" id="3")
+          ```
 
 - Валидатор собирает все формы по тегу form
 - Обязательный атрибут у формы - novalidate
@@ -22,14 +37,10 @@ mixin rem-input(name)
 -- Варианты data-validate='text' data-validate='tel' data-validate='text' data-validate='email'
 - Обязательный атрибут у инпута - data-error-message (текст ошибки)
 - Обязательный атрибут для телефона (помимо data-validate='tel') - data-mask-phone
---пример добавления телефона
-```+rem-input(type='tel', data-mask-phone='',name='phone' ,required='', placeholder='Телефон *', data-validate='tel' data-error-message='Заполните поле')```
 - minlength='3'. указывает на минимальную длину поля
 - Если нужен контейнер под ошибку не в оболочке с инпутом, то указываем контейнеру data-error-container="айди контейнера под ошибку" (если не указать, будет искать контейнер внутри родителя инпута)
 
 *Валидация на самих инпутах на ввод символов начнет работать только после первой попытки отправки формы, до первого сабмита ошибки не будут подсвечиваться, чтобы не мешать пользователю
-
-
 
 
 **Как Бэкенду слушать валидацию формы пример:**
