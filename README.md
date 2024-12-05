@@ -27,7 +27,8 @@ form( data-form-id="cooperation-form" novalidate).cooperation-form__form
       .cooperation-form__row
         .cooperation-form__item
           +ui-input(data-input="" data-mask-phone placeholder="Телефон *" name="phone" required data-validate="tel" data-error-message="Заполните поле" id="3")
-          ```
+
+```
 
 - Валидатор собирает все формы по тегу form
 - Обязательный атрибут у формы - novalidate
