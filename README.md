@@ -13,6 +13,17 @@
 *Валидация на самих инпутах на ввод символов начнет работать только после первой попытки отправки формы, до первого сабмита ошибки не будут подсвечиваться, чтобы не мешать пользователю
 
 
+```+rem-input(type='tel',data-input='',data-mask-phone='',placeholder='+7 (___) ___-__-__',name='phone',minlength='3',required='',data-validate='tel',data-error-message='Заполните поле')```
+
+
+```
+mixin rem-input(name)
+  .input-ui.custom-placeholder(data-input-parent='')
+    input(data-input='',data-validate='',required='',name=name ? name : '')&attributes(attributes)
+    .ui-input__error(data-error-container='')
+```
+
+
 
 ### Настройка config для форматирования scss
 
