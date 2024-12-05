@@ -115,10 +115,6 @@ export const validateFormInit = () => {
 
         if (!inputValidator.validate()) isValidForm = false
       })
-
-      if (isValidForm) {
-        form.submit()
-      }
     })
   })
 }
