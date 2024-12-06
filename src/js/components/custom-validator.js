@@ -6,7 +6,7 @@ import { inputmaskInit } from '../libs/inputmask/inputmask'
 const errorMessages = {
   required: 'Это поле не может быть пустым',
   email: 'Введите корректный email',
-  phone: 'Введите корректный номер телефона',
+  tel: 'Введите корректный номер телефона',
   number: 'Введите корректное число',
   textOnly: 'Введите корректное имя',
   textCyrillic: 'Только кириллица',
@@ -78,7 +78,7 @@ class InputValidator {
             this.errorMessage = errorMessages.textEnglish
             break
           case 'tel':
-            this.errorMessage = errorMessages.phone
+            this.errorMessage = errorMessages.tel
             if (phoneValue.length < 11) {
               this.isValid = false
               break

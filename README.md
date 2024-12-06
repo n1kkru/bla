@@ -92,7 +92,7 @@ mixin ui-input(mods)
 | `text-only`     | Проверяет, что значение состоит только из букв.             | `validator.isAlpha(textValue)`                     | `errorMessages.textOnly`          |
 | `text-cyrillic`  | Проверяет, что значение состоит только из букв кириллицы.   | `validator.isAlpha(textValue, 'ru-RU')`           | `errorMessages.textCyrillic`        |
 | `text-english`  | Проверяет, что значение состоит только из букв латиницы.    | `validator.isAlpha(textValue, 'en-EN')`           | `errorMessages.textEnglish`        |
-| `tel`      | Проверяет, что значение является корректным номером телефона.| `validator.isMobilePhone(phoneValue)`              | `errorMessages.phone`         |
+| `tel`      | Проверяет, что значение является корректным номером телефона.| `validator.isMobilePhone(phoneValue)`              | `errorMessages.tel`         |
 
 Примечания:
 
