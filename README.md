@@ -45,28 +45,14 @@ form( data-form-id="cooperation-form").cooperation-form__form
 **Все базовые типы для data-validate**
 
 
-| Тип              | Описание                                                      | Метод валидации                | Сообщение об ошибке         |
-
-
-|------------------|--------------------------------------------------------------|---------------------------------|-----------------------------|
-
-
-| email          | Проверяет, является ли значение корректным email-адресом.   | validator.isEmail(this.value) | errorMessages.email       |
-
-
-| text           | Общий текст, всегда валиден.                                 | true                         | -                           |
-
-
-| name           | Проверяет, что значение состоит только из букв.             | validator.isAlpha(textValue)  | errorMessages.name        |
-
-
-| name-ru       | Проверяет, что значение состоит только из букв кириллицы.   | validator.isAlpha(textValue, 'ru-RU') | errorMessages.nameRu     |
-
-
-| name-en       | Проверяет, что значение состоит только из букв латиницы.    | validator.isAlpha(textValue, 'en-EN') | errorMessages.nameEn     |
-
-
-| tel            | Проверяет, что значение является корректным номером телефона. | validator.isMobilePhone(phoneValue) | errorMessages.phone       |
+| Тип        | Описание                                                      | Метод валидации                                     | Сообщение об ошибке           |
+|------------|--------------------------------------------------------------|----------------------------------------------------|-------------------------------|
+| `email`    | Проверяет, является ли значение корректным email-адресом.   | `validator.isEmail(this.value)`                   | `errorMessages.email`         |
+| `text`     | Общий текст, всегда валиден.                                 | `true`                                             | -                             |
+| `name`     | Проверяет, что значение состоит только из букв.             | `validator.isAlpha(textValue)`                     | `errorMessages.name`          |
+| `name-ru`  | Проверяет, что значение состоит только из букв кириллицы.   | `validator.isAlpha(textValue, 'ru-RU')`           | `errorMessages.nameRu`        |
+| `name-en`  | Проверяет, что значение состоит только из букв латиницы.    | `validator.isAlpha(textValue, 'en-EN')`           | `errorMessages.nameEn`        |
+| `tel`      | Проверяет, что значение является корректным номером телефона.| `validator.isMobilePhone(phoneValue)`              | `errorMessages.phone`         |
 
 Примечания:
 
