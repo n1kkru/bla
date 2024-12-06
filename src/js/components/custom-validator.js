@@ -8,9 +8,9 @@ const errorMessages = {
   email: 'Введите корректный email',
   phone: 'Введите корректный номер телефона',
   number: 'Введите корректное число',
-  name: 'Введите корректное имя',
-  nameRu: 'Только кириллица',
-  nameEn: 'Только инглишница'
+  textOnly: 'Введите корректное имя',
+  textCyrillic: 'Только кириллица',
+  textEnglish: 'Только инглиш'
 }
 
 class InputValidator {
@@ -65,17 +65,17 @@ class InputValidator {
           case 'text':
             this.isValid = true
             break
-          case 'name':
+          case 'text-only':
             this.isValid = validator.isAlpha(textValue)
-            this.errorMessage = errorMessages.name
+            this.errorMessage = errorMessages.textOnly
             break
-          case 'name-ru':
+          case 'text-cyrillic':
             this.isValid = validator.isAlpha(textValue, 'ru-RU')
-            this.errorMessage = errorMessages.nameRu
+            this.errorMessage = errorMessages.textCyrillic
             break
-          case 'name-en':
+          case 'text-english':
             this.isValid = validator.isAlpha(textValue, 'en-EN')
-            this.errorMessage = errorMessages.nameEn
+            this.errorMessage = errorMessages.textEnglish
             break
           case 'tel':
             this.errorMessage = errorMessages.phone
