@@ -17,16 +17,56 @@ mixin ui-input(mods)
 Пример формы 
 
 ```
-form( data-form-id="cooperation-form").cooperation-form__form
-      .cooperation-form__row
-        .cooperation-form__item
-          +ui-input(data-input="" placeholder="Имя *" name="fio" minlength="3" required data-validate="text" data-error-message="Заполните поле" id="1")
-      .cooperation-form__row
-        .cooperation-form__item
-          +ui-input(data-input="" placeholder="Email *" name="email" minlength="3" required data-validate="email" data-error-message="Заполните поле" id="2")
-      .cooperation-form__row
-        .cooperation-form__item
-          +ui-input(data-input="" data-mask-phone placeholder="Телефон *" name="phone" required data-validate="tel" data-error-message="Заполните поле" id="3")
+      form.contacts-form__form(data-form-id='main-form', action='#')
+        .contacts-form__row
+          .contacts-form__item
+            +ui-input-rem#contacts-form1(
+              type='text',
+              placeholder='Имя *',
+              name='fio',
+              required='',
+              data-validate='text-only',
+            )
+          p.font-bold Только русские буквы
+          .contacts-form__item
+            +ui-input-rem#contacts-form1(
+              type='text',
+              placeholder='Имя *',
+              name='fio',
+              required='',
+              data-validate='text-cyrillic',
+            )
+          .contacts-form__item
+            +ui-input-rem#contacts-form1(
+              type='text',
+              placeholder='Никнейм *',
+              name='nickname',
+              required='',
+              data-validate='text',
+            )
+
+        .contacts-form__row
+          .contacts-form__item
+            +ui-input-rem#contacts-form2(
+              type='email',
+              required='',
+              placeholder='Email *',
+              data-validate='email',
+              name='email',
+              minlength='3',
+            )
+
+        .contacts-form__row
+          .contacts-form__item
+            +ui-input-rem#contacts-form3(
+              type='tel',
+              data-mask-phone='',
+              placeholder='Телефон *',
+              name='phone',
+              required='',
+              data-validate='tel',
+            )
+        button(type='submit') Send
 
 ```
 
@@ -40,6 +80,27 @@ form( data-form-id="cooperation-form").cooperation-form__form
 - Если нужен контейнер под ошибку не в оболочке с инпутом, то указываем контейнеру data-error-container="айди контейнера под ошибку" (если не указать, будет искать контейнер внутри родителя инпута)
 
 *Валидация на самих инпутах на ввод символов начнет работать только после первой попытки отправки формы, до первого сабмита ошибки не будут подсвечиваться, чтобы не мешать пользователю
+
+
+**Все базовые типы для data-validate**
+
+
+| Тип        | Описание                                                      | Метод валидации                                     | Сообщение об ошибке           |
+|------------|--------------------------------------------------------------|----------------------------------------------------|-------------------------------|
+| `email`    | Проверяет, является ли значение корректным email-адресом.   | `validator.isEmail(this.value)`                   | `errorMessages.email`         |
+| `text`     | Общий текст, всегда валиден.                                 | `true`                                             | -                             |
+| `text-only`     | Проверяет, что значение состоит только из букв.             | `validator.isAlpha(textValue)`                     | `errorMessages.textOnly`          |
+| `text-cyrillic`  | Проверяет, что значение состоит только из букв кириллицы.   | `validator.isAlpha(textValue, 'ru-RU')`           | `errorMessages.textCyrillic`        |
+| `text-english`  | Проверяет, что значение состоит только из букв латиницы.    | `validator.isAlpha(textValue, 'en-EN')`           | `errorMessages.textEnglish`        |
+| `tel`      | Проверяет, что значение является корректным номером телефона.| `validator.isMobilePhone(phoneValue)`              | `errorMessages.tel`         |
+
+Примечания:
+
+В случае с типом tel, дополнительно проверяется длина номера телефона: если длина меньше 11 символов, то валидация считается неуспешной без выполнения метода валидации.
+
+Для типов text-only, text-cyrillic, text-english проверяется, что текст состоит только из букв, соответствующих указанному языку.
+
+Сообщения об ошибках (например, errorMessages.email, errorMessages.phone) должны быть определены в вашем коде, чтобы пользователи могли видеть, что именно было неправильно.
 
 
 **Как Бэкенду слушать валидацию формы пример:**
