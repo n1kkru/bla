@@ -2,6 +2,17 @@ import validator from 'validator'
 
 import { inputmaskInit } from '../libs/inputmask/inputmask'
 
+//Вывод сообщений об ошибке, тут можно добавить свой текст
+const errorMessages = {
+  required: 'Это поле не может быть пустым',
+  email: 'Введите корректный email',
+  phone: 'Введите корректный номер телефона',
+  number: 'Введите корректное число',
+  name: 'Введите корректное имя',
+  nameRu: 'Только кириллица',
+  nameEn: 'Только инглишница'
+}
+
 class InputValidator {
   constructor(input) {
     this.el = input
@@ -16,7 +27,6 @@ class InputValidator {
     this.required = input.required
     this.isValid = true
     this.afterSubmit = false
-    this.errorMessage = input.getAttribute('data-error-message')
     if (input.dataset.errorContainer) {
       this.errorContainer = document.querySelector(
         `[data-error-container=${input.dataset.errorContainer}]`
@@ -41,37 +51,48 @@ class InputValidator {
   checkValid() {
     if (this.value !== '') {
       if (this.#checkMinLength()) {
-        const myValueText = this.value.replace(/['\s_\-]/g, '')
-        const myPhone = this.value.replace(/\D/g, '')
+        const textValue = this.value.replace(/['\s_\-]/g, '')
+        const phoneValue = this.value.replace(/\D/g, '')
 
         switch (
           this.type // Тут добавляем нужную нам валидацию, если строк много то выносим в отдельную функцию
         ) {
           case 'email':
             this.isValid = validator.isEmail(this.value)
+            this.errorMessage = errorMessages.email
             break
 
           case 'text':
-            this.isValid = validator.isAlpha(myValueText, 'ru-RU')
-            // this.isValid = validator.isAlpha(this.value);
+            this.isValid = true
             break
-
+          case 'name':
+            this.isValid = validator.isAlpha(textValue)
+            this.errorMessage = errorMessages.name
+            break
+          case 'name-ru':
+            this.isValid = validator.isAlpha(textValue, 'ru-RU')
+            this.errorMessage = errorMessages.nameRu
+            break
+          case 'name-en':
+            this.isValid = validator.isAlpha(textValue, 'en-EN')
+            this.errorMessage = errorMessages.nameEn
+            break
           case 'tel':
-            if (myPhone.length < 11) {
+            this.errorMessage = errorMessages.phone
+            if (phoneValue.length < 11) {
               this.isValid = false
               break
             }
-            this.isValid = validator.isMobilePhone(myPhone)
+            this.isValid = validator.isMobilePhone(phoneValue)
             break
 
           default:
             break
         }
-        this.errorMessage = this.el.getAttribute('data-error-message')
       }
     } else if (this.required) {
       this.isValid = false
-      this.errorMessage = 'Это поле не может быть пустым' // Тут можно добавить сообщение, по типу - это поле не может быть пустым
+      this.errorMessage = errorMessages.required //Дефолтное обязательное сообщение
     }
     return this.isValid
   }

@@ -6,7 +6,7 @@ block variables
     const pageTitle = 'ui'
 
 block content
-  main(data-barba='container', data-barba-namespace=pageName)
+  main.ui-page(data-barba='container', data-barba-namespace=pageName)
     .inner
       br
       br
@@ -18,14 +18,30 @@ block content
 
       form.contacts-form__form(data-form-id='main-form', action='#')
         .contacts-form__row
-          p Только русские буквы
           .contacts-form__item
             +ui-input-rem#contacts-form1(
               type='text',
-              data-input='',
               placeholder='Имя *',
               name='fio',
-              minlength='3',
+              required='',
+              data-validate='name',
+              data-error-message='Заполните поле'
+            )
+          p.font-bold Только русские буквы
+          .contacts-form__item
+            +ui-input-rem#contacts-form1(
+              type='text',
+              placeholder='Имя *',
+              name='fio',
+              required='',
+              data-validate='name-ru',
+              data-error-message='Только русские буквы'
+            )
+          .contacts-form__item
+            +ui-input-rem#contacts-form1(
+              type='text',
+              placeholder='Никнейм *',
+              name='nickname',
               required='',
               data-validate='text',
               data-error-message='Заполните поле'
