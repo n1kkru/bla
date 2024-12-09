@@ -66,7 +66,8 @@ class InputValidator {
             this.isValid = true
             break
           case 'text-only':
-            this.isValid = validator.isAlpha(textValue)
+            this.isValid =
+              validator.isAlpha(myValue, 'ru-RU') || validator.isAlpha(myValue, 'en-US')
             this.errorMessage = errorMessages.textOnly
             break
           case 'text-cyrillic':
