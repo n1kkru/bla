@@ -1,3 +1,47 @@
+$bg-color: rgba(255, 255, 255, 0.7);
+$shadow-color: rgba(0, 0, 0, 0.04);
+
 .header {
-  flex: 0 1;
+  display: flex;
+  margin: rem(24px);
+  align-items: center;
+  padding: rem(8px);
+  min-width: rem(1872px);
+  border-radius: 20px;
+  border: 2px solid #f0f0f0;
+  background-color: $bg-color;
+  box-shadow: 0px 14px 24px 0px $shadow-color;
+  backdrop-filter: blur(12px);
+  justify-content: space-between;
+  &__logo {
+    height: rem(32px);
+  }
+  &__products {
+    padding: 25px 24px;
+    gap: 16px;
+  }
+  &__search {
+    padding: rem(25px);
+  }
+  &__links {
+    display: flex;
+    gap: rem(32px);
+  }
+  &__links-item {
+    font-size: rem(18px);
+  }
+  &__phone {
+    position: relative;
+    font-weight: 600;
+  }
+  &__partners {
+    padding: 25px 32px;
+  }
+
+  @media #{media('<',d)} {
+    // планшет
+  }
+  @media #{media('<',m)} {
+    // мобилка
+  }
 }

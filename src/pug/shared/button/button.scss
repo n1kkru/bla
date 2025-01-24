@@ -1,4 +1,4 @@
-.rem-button {
+.button {
   cursor: pointer;
 
   position: relative;
@@ -7,30 +7,36 @@
   align-items: center;
   justify-content: center;
 
-  height: rem(60px);
-
   font-family: 'TT Rounds Neue';
-  font-size: rem(16px);
+  font-size: rem(18px);
   font-weight: 620;
-  color: #ffffff;
+  color: #364a46;
   text-align: center;
-  text-transform: uppercase;
   white-space: nowrap;
 
-  background: var(--1, #62215b);
+  background: #f4f4f4;
   border: 1px solid transparent;
-  border-radius: rem(8px);
+  border-radius: rem(16px);
 
   transition: $transition;
 
   &:hover {
-    background: var(--2, #c7397f);
+    color: #fff;
+    background-color: #dd5799;
   }
 
   &:disabled {
     pointer-events: none;
-    color: var(--1, #62215b);
+    color: var(--1, gray);
     opacity: 0.3;
     background: #f0e7ef;
+  }
+}
+
+.button_accent {
+  background-color: #dd5799;
+  color: #fff;
+  &:hover {
+    background-color: #c7397f;
   }
 }

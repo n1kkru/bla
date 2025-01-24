@@ -1,3 +1,20 @@
 -
+
 header.header
-  .header__inner HEADER
+  +logo.header__logo
+
+  +button("Продукция", "_accent").header__products
+    +dotted-icon
+
+  search
+    +button.header__search
+      +seach-icon
+
+  ul.header__links
+    each link, value in {'О компании': '#', 'Новости': '#', 'Где купить': '#', 'Контакты': '#'}
+      li
+        +link.header__links-item(href='#{link}')= value
+
+  +link.header__phone(href='tel:+78124485465') 8 812 448-54-65
+
+  +button("Стать партнером").header__partners

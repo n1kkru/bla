@@ -15,6 +15,7 @@ export default {
         light: '#f2f2f2'
       }
     },
+    
     screens: {
       desktop: { min: '1201px' },
       devices: { max: '1200px' },
