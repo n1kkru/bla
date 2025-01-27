@@ -1,0 +1,41 @@
+.address {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  width: rem(450px);
+  height: rem(288px);
+  border-radius: rem(24px);
+  background-color: #0a8;
+  padding: rem(32px);
+
+  h4 {
+    padding-bottom: rem(20px);
+    font-family: 'TT Firs Neue';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: rem(32px);
+    letter-spacing: -0.64px;
+  }
+
+  address {
+    max-width: rem(320px);
+    font-family: 'Rubik';
+    font-size: rem(18px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: rem(28.8px);
+    flex: 1 1 auto;
+  }
+
+  time {
+    text-transform: uppercase;
+  }
+
+  &_green {
+    background-color: #0a8;
+  }
+  &_blue {
+    background-color: #0097d4;
+  }
+}

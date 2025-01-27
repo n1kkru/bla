@@ -1,0 +1,16 @@
+mixin address(title='', address='', date='', mods)
+  -
+    const baseName = 'address'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .address(class=allMods)&attributes(attributes)
+    h4= title
+    address= address
+    time= date

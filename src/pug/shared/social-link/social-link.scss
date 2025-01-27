@@ -1,0 +1,30 @@
+.social-link {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: rem(399px);
+  height: rem(399px);
+  flex-shrink: 0;
+  border-radius: rem(270px);
+  border: 2px solid #f0f0f0;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    border-radius: 270px;
+    border: 12px solid var(--color-for-link);
+    background: #fff;
+  }
+
+  //color mods
+  &_blue {
+    --color-for-link: #0077ff;
+  }
+  &_red {
+    --color-for-link: #ff0000;
+  }
+  &_orange {
+    --color-for-link: #f7931e;
+  }
+}

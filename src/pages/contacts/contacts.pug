@@ -10,8 +10,18 @@ block content
     // TODO: fonts
     // FIXME: breadcrumbs
     // TODO: decor in card
+    // FIXME: links underline
+    // TODO: points
     h1.title Контакты
     +cards
-    //- +social 
-    //- +map(name='') 
-    //- +form(action='') 
+    +socials
+      .socials__block-links
+        +social-link('_blue')
+          +vk-icon
+        +social-link('_red')
+          +ytb-icon
+        +social-link('_orange')
+          +ok-icon
+    +addresses
+
+    +contact-us 

@@ -1,0 +1,20 @@
+.socials {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h3 {
+    color: #364a46;
+    font-family: 'TT Firs Neue';
+    font-size: rem(32px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: rem(32px);
+    letter-spacing: -0.64px;
+    padding-left: rem(56px - 24px);
+  }
+  &__block-links {
+    display: flex;
+    gap: rem(21px);
+  }
+}

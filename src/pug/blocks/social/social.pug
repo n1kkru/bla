@@ -1,0 +1,15 @@
+mixin socials(mods)
+  -
+    const baseName = 'socials'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .socials(class=allMods)&attributes(attributes)
+    h3 Мы в социальных сетях
+    block
