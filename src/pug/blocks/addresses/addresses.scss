@@ -10,6 +10,7 @@
   }
 
   &__image {
+    cursor: pointer;
     position: relative;
     max-width: rem(1398px);
     max-height: rem(600px);
@@ -17,8 +18,5 @@
     border-radius: rem(24px);
     border: 2px solid #f0f0f0;
     background: #fff;
-  }
-  .lv {
-    position: absolute;
   }
 }

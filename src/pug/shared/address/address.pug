@@ -11,6 +11,6 @@ mixin address(title='', address='', date='', mods)
     }
 
   .address(class=allMods)&attributes(attributes)
-    h4= title
+    h4.address__title= title
     address= address
     time= date

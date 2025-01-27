@@ -1,14 +1,15 @@
 -
 
 header.header
-  +logo.header__logo
+  +link.header__logo
+    +logo
 
-  +button("Продукция", "_accent").header__products
-    +dotted-icon
-
-  search
-    +button.header__search
-      +seach-icon
+  .header__buttons
+    +button("Продукция", "_accent").header__buttons-products
+      +dotted-icon
+    search
+      +button.header__buttons-search
+        +seach-icon
 
   ul.header__links
     each link, value in {'О компании': '#', 'Новости': '#', 'Где купить': '#', 'Контакты': '#'}

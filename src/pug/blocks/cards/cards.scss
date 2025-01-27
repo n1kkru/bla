@@ -2,4 +2,9 @@
   position: relative;
   display: flex;
   gap: rem(24px);
+  &__decor {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
 }
