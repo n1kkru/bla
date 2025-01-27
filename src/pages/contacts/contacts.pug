@@ -1,0 +1,17 @@
+extends ../../layout/layout
+
+block variables
+  -
+    const pageName = 'contacts'
+    const pageTitle = 'contacts'
+
+block content
+  main(data-barba='container', data-barba-namespace=pageName)
+    // TODO: fonts
+    // FIXME: breadcrumbs
+    // TODO: decor in card
+    h1.title Контакты
+    +cards
+    //- +social 
+    //- +map(name='') 
+    //- +form(action='') 

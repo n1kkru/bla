@@ -1,0 +1,16 @@
+mixin cards(mods)
+  -
+    const baseName = 'cards'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .cards(class=allMods)&attributes(attributes)
+    +card("Секретарь", "Как стать умнее или избавиться от йододефицита", "8 812 448-54-65", "help_gendir@lekker.ru", "_green")
+    +card("Отдел продаж", "", "8 812 702-72-62", "prodazha@lekker.ru", "_red")
+    +card("Секретарь", "", "", "reklama@lekker.ru", "_yellow")

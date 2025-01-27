@@ -1,4 +1,4 @@
-mixin breadcrumbs(mods)
+mixin breadcrumbs(links, mods)
   -
     const baseName = 'breadcrumbs'
     let allMods = ''
@@ -10,21 +10,8 @@ mixin breadcrumbs(mods)
       allMods = allMods.trim()
     }
 
-  ul.breadcrumbs(class=allMods)&attributes(attributes)
-    block
-
-mixin breadcrumbs-item(text, href, mods)
-  -
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += ' breadcrumbs__item_' + element.trim()
-      }
-    }
-
-  li.breadcrumbs__item(class=allMods)&attributes(attributes)
-    if (typeof(href) !== 'undefined' && href)
-      a.breadcrumbs__link(href=href)!= text
-    else
-      span.breadcrumbs__text!= text
+  nav.breadcrumbs(class=allMods)&attributes(attributes)
+    ul
+      each hr, val in links
+        li
+          p= hr

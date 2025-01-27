@@ -1,0 +1,27 @@
+mixin card(title='', text='', phone='', mail='', mods)
+  -
+    const baseName = 'card'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  article.card(class=allMods)&attributes(attributes)
+    .card__block
+      h2.card__title= title
+      p= text
+    .card__block
+      if phone
+        .card__contact
+          .card__contact-icon
+            +phone-icon
+          +link('tel:' + phone)= phone
+      if mail
+        .card__contact
+          .card__contact-icon
+            +message-icon
+          +link('mailto:' + mail)= mail
