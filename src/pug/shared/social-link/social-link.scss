@@ -3,8 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: rem(399px);
-  height: rem(399px);
+  min-width: rem(399px);
+  min-height: rem(399px);
   flex-shrink: 0;
   border-radius: rem(270px);
   border: 2px solid #f0f0f0;
@@ -12,8 +12,8 @@
   transition: $transition;
 
   &:hover {
-    border-radius: 270px;
-    border: 12px solid var(--color-for-link);
+    border-radius: rem(270px);
+    border: rem(12px) solid var(--color-for-link);
     background: #fff;
   }
 
@@ -27,4 +27,15 @@
   &_orange {
     --color-for-link: #f7931e;
   }
+}
+
+@media #{media('<',d)} {
+  .social-link {
+    min-width: rem(240px);
+    min-height: rem(240px);
+  }
+}
+
+@media #{media('<',m)} {
+  // мобилка
 }

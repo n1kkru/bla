@@ -3,9 +3,9 @@ $shadow-color: rgba(0, 0, 0, 0.04);
 
 .header {
   display: flex;
-  margin: rem(24px);
+  margin-bottom: rem(25px);
   align-items: center;
-  padding: rem(8px);
+  padding: rem(6px);
   min-width: rem(1872px);
   border-radius: rem(20px);
   border: 2px solid #f0f0f0;
@@ -26,7 +26,8 @@ $shadow-color: rgba(0, 0, 0, 0.04);
     padding: rem(25px) rem(24px);
     gap: rem(16px);
   }
-  &__buttons-search {
+  &__buttons-search,
+  &__buttons-phone {
     padding: rem(25px);
   }
   &__links {
@@ -43,11 +44,19 @@ $shadow-color: rgba(0, 0, 0, 0.04);
   &__partners {
     padding: rem(25px) rem(32px);
   }
+  &__breadcrumbs {
+    margin-bottom: rem(25px);
+  }
+}
 
-  @media #{media('<',d)} {
-    // планшет
+@media #{media('<',d)} {
+  .header {
+    min-width: rem(768px);
+    &__logo {
+      max-height: rem(18px);
+    }
   }
-  @media #{media('<',m)} {
-    // мобилка
-  }
+}
+@media #{media('<',m)} {
+  // мобилка
 }

@@ -3,6 +3,7 @@ a {
 }
 
 body {
+  padding: rem(24px);
   &.overflow-scroll {
     overflow: hidden;
   }
@@ -11,7 +12,7 @@ body {
 h1 {
   color: #364a46;
   font-family: 'TT Firs Neue';
-  font-size: 120px;
+  font-size: rem(120px);
   font-style: normal;
   font-weight: 600;
   line-height: rem(108px);
@@ -23,5 +24,22 @@ main {
   display: flex;
   flex-direction: column;
   gap: rem(24px);
-  padding: rem(24px);
+}
+
+@media #{media('<',d)} {
+  body {
+    padding: rem(10px);
+  }
+  h1 {
+    font-size: rem(48px);
+    line-height: rem(43.2px);
+    letter-spacing: -0.96px;
+  }
+  main {
+    gap: rem(10px);
+  }
+}
+
+@media #{media('<',m)} {
+  // мобилка
 }

@@ -25,11 +25,15 @@
     letter-spacing: -0.64px;
   }
 
+  p {
+    max-width: rem(400px);
+  }
+
   &__block {
-    min-height: rem(77px + 12px);
+    min-height: rem(77px);
     display: flex;
     flex-direction: column;
-    gap: rem(12px);
+    gap: rem(13px);
     justify-content: start;
   }
 
@@ -67,4 +71,28 @@
     stroke: #fbbd20;
     background-image: url('/images/decor-card-yellow.svg');
   }
+}
+
+@media #{media('<',d)} {
+  .card {
+    min-width: rem(366px);
+    min-height: rem(139px);
+    font-size: rem(16px);
+    padding: rem(24px);
+    p {
+      max-width: rem(261px);
+    }
+    &__title {
+      font-size: rem(20px);
+      line-height: rem(20px);
+      letter-spacing: -0.4px;
+    }
+    &__block {
+      // min-height: rem(77px);
+      gap: rem(8px);
+    }
+  }
+}
+@media #{media('<',m)} {
+  // мобилка
 }

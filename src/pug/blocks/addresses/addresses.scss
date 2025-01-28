@@ -14,9 +14,25 @@
     position: relative;
     max-width: rem(1398px);
     max-height: rem(600px);
-    flex-shrink: 0;
     border-radius: rem(24px);
     border: 2px solid #f0f0f0;
     background: #fff;
   }
+}
+
+@media #{media('<',d)} {
+  .addresses {
+    gap: rem(13px);
+    &__blocks {
+      gap: rem(12px);
+    }
+    &__map {
+      max-width: rem(554px);
+      max-height: rem(332px);
+    }
+  }
+}
+
+@media #{media('<',m)} {
+  // мобилка
 }

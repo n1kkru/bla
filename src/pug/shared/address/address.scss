@@ -11,14 +11,15 @@
   &__title {
     padding-bottom: rem(20px);
     font-family: 'TT Firs Neue';
-    font-size: 32px;
+    font-size: rem(32px);
     font-style: normal;
     font-weight: 600;
     line-height: rem(32px);
     letter-spacing: -0.64px;
   }
 
-  address {
+  address,
+  time {
     max-width: rem(320px);
     font-family: 'Rubik';
     font-size: rem(18px);
@@ -38,4 +39,26 @@
   &_blue {
     background-color: #0097d4;
   }
+}
+
+@media #{media('<',d)} {
+  .address {
+    padding: rem(12px);
+    width: rem(177px);
+    height: rem(160px);
+    &__title {
+      font-size: rem(20px);
+      line-height: rem(20px);
+      letter-spacing: -0.04px;
+    }
+    address,
+    time {
+      font-size: rem(12px);
+      line-height: rem(15.6px);
+    }
+  }
+}
+
+@media #{media('<',m)} {
+  // мобилка
 }

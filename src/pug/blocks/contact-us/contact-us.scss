@@ -11,6 +11,7 @@
     color: #364a46;
     font-size: rem(80px);
     font-weight: 600;
+    font-style: normal;
     line-height: rem(80px);
     letter-spacing: -1.6px;
     padding-bottom: rem(48px);
@@ -20,7 +21,7 @@
     display: flex;
     flex-direction: column;
     gap: rem(8px);
-    width: rem(924px);
+    max-width: rem(924px);
   }
 
   &__form-input {
@@ -84,4 +85,34 @@
       height: rem(182.208px);
     }
   }
+}
+
+@media #{media('<',d)} {
+  .contact-us {
+    padding: rem(48px);
+    &__title {
+      letter-spacing: -0.52px;
+      font-size: rem(26px);
+      line-height: rem(26px);
+      padding-bottom: rem(24px);
+    }
+    &__form {
+      max-width: rem(366px);
+    }
+    &__form-submit {
+      flex-direction: column;
+      gap: rem(28px);
+    }
+    &__btn {
+      padding: rem(16px) rem(24px);
+      min-width: 100%;
+    }
+    &__text {
+      font-size: rem(12px);
+      line-height: rem(15.6px);
+    }
+  }
+}
+@media #{media('<',m)} {
+  // мобилка
 }

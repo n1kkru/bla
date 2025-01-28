@@ -10,8 +10,12 @@ mixin breadcrumbs(links, mods)
       allMods = allMods.trim()
     }
 
-  nav.breadcrumbs(class=allMods)&attributes(attributes)
-    ul
-      each hr, val in links
-        li
-          p= hr
+  ul.breadcrumbs(class=allMods)&attributes(attributes)
+    li
+      a.breadcrumbs__item(href='#') Главная
+        +breadcrumb
+    li
+      a.breadcrumbs__item.breadcrumbs__item_active Контакты
+        +breadcrumb-active
+
+//- {'#': 'Главная', '#': 'Контакты', '#': 'Ссылки'}

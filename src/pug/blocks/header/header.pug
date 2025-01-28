@@ -10,14 +10,17 @@ header.header
     search
       +button.header__buttons-search
         +seach-icon
+    +button.header__buttons-phone.tablet
+      +phone-icon-header
 
-  ul.header__links
+  ul.header__links.desktop
     each link, value in {'О компании': '#', 'Новости': '#', 'Где купить': '#', 'Контакты': '#'}
       li
         +link.header__links-item(href='#{link}')= value
 
-  +link.header__phone(href='tel:+78124485465') 8 812 448-54-65
+  +link.header__phone.desktop(href='tel:+78124485465') 8 812 448-54-65
 
-  +button("Стать партнером").header__partners
+  +button("Стать партнером").header__partners.desktop
 
-//- +breadcrumbs({'#': 'Главная', '#': 'Контакты', '#': 'Ссылки'}).header__breadcrumbs
+nav
+  +breadcrumbs.header__breadcrumbs

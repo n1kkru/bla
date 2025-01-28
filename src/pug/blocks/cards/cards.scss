@@ -1,6 +1,7 @@
 .cards {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   gap: rem(24px);
   &__decor {
     z-index: -5;
@@ -9,5 +10,11 @@
     height: rem(305px);
     right: rem(-46px);
     bottom: rem(-68px);
+  }
+}
+
+@media #{media('<',d)} {
+  .cards {
+    gap: rem(12px);
   }
 }

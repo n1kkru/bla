@@ -1,3 +1,45 @@
 .breadcrumbs {
   position: relative;
+  display: flex;
+  gap: rem(55px);
+  min-height: rem(16px);
+
+  &__item {
+    position: relative;
+    color: #364a46;
+    font-family: 'TT Firs Neue';
+    font-size: rem(16px);
+    font-weight: 600;
+    line-height: rem(14.4px);
+    text-transform: uppercase;
+    transition: $transition;
+    &:hover {
+      color: #0a8;
+    }
+    &_active {
+      cursor: auto;
+      color: #0a8;
+    }
+  }
+
+  &__item svg {
+    position: absolute;
+    top: rem(-2px);
+    right: rem(-24px);
+  }
+
+  &__tem:hover svg {
+    color: #0a8;
+  }
+}
+
+@media #{media('<',d)} {
+  .breadcrumbs {
+    &__item {
+      font-size: rem(10px);
+    }
+  }
+}
+@media #{media('<',m)} {
+  // мобилка
 }
