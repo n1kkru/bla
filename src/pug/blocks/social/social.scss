@@ -22,6 +22,8 @@
 @media #{media('<',d)} {
   .socials {
     flex-direction: column;
+    gap: rem(12px);
+    margin-bottom: rem(38px);
     h3 {
       padding: 0;
       align-self: start;

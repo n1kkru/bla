@@ -51,9 +51,24 @@ $shadow-color: rgba(0, 0, 0, 0.04);
 
 @media #{media('<',d)} {
   .header {
-    min-width: rem(768px);
-    &__logo {
-      max-height: rem(18px);
+    min-width: rem(744px);
+    margin-bottom: rem(12px);
+    &__breadcrumbs {
+      margin-bottom: rem(12px);
+    }
+    &__buttons {
+      gap: rem(2px);
+    }
+    &__buttons-products {
+      padding: rem(14px) rem(12px);
+      gap: rem(8px);
+    }
+    &__buttons-search,
+    &__buttons-phone {
+      padding: rem(14px);
+      svg {
+        width: rem(16px);
+      }
     }
   }
 }

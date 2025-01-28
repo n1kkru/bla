@@ -9,7 +9,7 @@
 
   font-family: 'TT Rounds Neue';
   font-size: rem(18px);
-  font-weight: 620;
+  font-weight: 600;
   color: #364a46;
   text-align: center;
   white-space: nowrap;
@@ -39,4 +39,14 @@
   &:hover {
     background-color: #c7397f;
   }
+}
+
+@media #{media('<',d)} {
+  .button {
+    font-size: rem(13px);
+  }
+}
+
+@media #{media('<',m)} {
+  // мобилка
 }
