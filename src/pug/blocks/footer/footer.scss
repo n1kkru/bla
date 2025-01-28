@@ -1,3 +1,113 @@
 .footer {
-  flex: 0 1;
+  padding: rem(80px) rem(140px);
+  border-radius: rem(48px);
+  background-color: #f3f3f3;
+  background-image: url('/images/decor-footer.svg');
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  color: #364a46;
+  font-family: 'TT Firs Neue';
+  display: grid;
+  gap: rem(50px) rem(32px);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto) rem(20px);
+  grid-template-areas:
+    'logo links contacts btn'
+    'picture links social .'
+    'copy politic politic made';
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  &__picture {
+    grid-area: picture;
+    max-width: rem(134px);
+    max-height: rem(218.826px);
+    align-self: center;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24px);
+    grid-area: links;
+    font-size: rem(40px);
+    font-weight: 600;
+    line-height: rem(36px);
+    letter-spacing: -0.8px;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12px);
+    grid-area: contacts;
+    font-size: rem(24px);
+    font-weight: 600;
+    line-height: rem(21.6px);
+    letter-spacing: -0.48px;
+  }
+
+  &__social {
+    grid-area: social;
+    display: flex;
+    gap: rem(8px);
+  }
+
+  &__social-link {
+    border-radius: rem(16px);
+    border: 2px solid #ececec;
+    max-width: rem(74px);
+    max-height: rem(74px);
+    color: #364a46;
+    svg {
+      transition: $transition;
+    }
+    &:hover svg {
+      fill: #364a46;
+      color: #fff;
+    }
+  }
+
+  &__button {
+    grid-area: btn;
+    max-width: rem(218px);
+  }
+
+  &__copyrigth {
+    grid-area: copy;
+    opacity: 0.7;
+    font-family: Rubik;
+    font-size: rem(14px);
+    font-weight: 400;
+    line-height: rem(16.8px);
+  }
+
+  &__politic {
+    grid-area: politic;
+    font-family: Rubik;
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: rem(19.2px);
+    max-width: max-content;
+  }
+
+  &__made {
+    max-width: max-content;
+    grid-area: made;
+  }
+
+  &__subfooter {
+    padding: rem(46px) rem(147px);
+    opacity: 0.24;
+    text-align: center;
+    font-family: Rubik;
+    font-size: rem(37px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: rem(44.4px);
+    letter-spacing: -1.48px;
+  }
 }

@@ -5,17 +5,17 @@
   &::after {
     content: '';
     position: absolute;
-    inset: rem(20px) 0;
+    inset: auto 0 rem(-4px);
     height: rem(2px);
-    width: 100%;
+    max-width: 100%;
     background-color: transparent;
     transition: $transition;
-    max-width: max-content;
+    // max-width: max-content;
   }
 
   &:hover::after,
   &:active::after,
   &:focus::after {
-    background-color: black;
+    background-color: currentColor;
   }
 }

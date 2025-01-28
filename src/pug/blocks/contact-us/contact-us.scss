@@ -37,13 +37,16 @@
     }
     &:hover {
       background-color: #eaeaea;
-      // cursor: pointer;
       transition: $transition;
     }
     &:active,
     &:focus-visible {
       background-color: #fff;
       border: 2px solid #0a8;
+    }
+
+    &_big {
+      min-height: rem(180px);
     }
   }
 
@@ -64,5 +67,21 @@
   &__btn {
     padding: rem(25px) rem(32px);
     min-width: rem(332px);
+  }
+
+  &__decor {
+    position: absolute;
+    &_first {
+      width: rem(236px);
+      height: rem(261px);
+      left: rem(-180px);
+      top: rem(181px);
+    }
+
+    &_second {
+      right: rem(-180px);
+      width: rem(223.903px);
+      height: rem(182.208px);
+    }
   }
 }

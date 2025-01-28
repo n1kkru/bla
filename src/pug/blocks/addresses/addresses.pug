@@ -14,7 +14,5 @@ mixin addresses(mods)
     .addresses__blocks
       +address('Офис', '194044, Санкт-петербург, Беловодский переулок, 6', 'пн-пт: 9–17:30', '_green')
       +address('Производство', '194044, Санкт-Петербург, пер. Зеленков, 6, лит. А, корп. 1, пом. 11', 'пн-пт: 9–17:30', '_blue')
-    div
-      img.addresses__image(src='images/map.png', alt='карта')
-      //- +point
-      //- +point
+    .addresses__map
+      +picture('map.webp')

@@ -1,4 +1,5 @@
 .card {
+  overflow: hidden;
   min-height: rem(360px);
   position: relative;
   border-radius: 24px;
@@ -47,16 +48,23 @@
   }
 
   // mods
+  &_decor {
+    background-position: right bottom;
+    background-repeat: no-repeat;
+  }
   &_green {
     background-color: #d2f6ec;
     stroke: #00aa88;
+    background-image: url('/images/decor-card-green.svg');
   }
   &_red {
     background-color: #fde0ed;
     stroke: #dd5799;
+    background-image: url('/images/decor-card-red.svg');
   }
   &_yellow {
     background-color: #ffeed2;
     stroke: #fbbd20;
+    background-image: url('/images/decor-card-yellow.svg');
   }
 }

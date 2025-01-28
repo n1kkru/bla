@@ -1,3 +1,41 @@
 -
-footer.footer
-  .footer__inner FOOTER
+footer
+  .footer
+    .footer__logo
+      +logo
+    .footer__picture
+      +picture('boy-pic.webp')
+    ul.footer__links
+      li
+        +link("#") О компании
+      li
+        +link("#") Новости
+      li
+        +link("#") Контакты
+      li
+        +link("#") Где купить
+    ul.footer__contacts
+      li
+        +link('tel:+78124485465') 8 812 448-54-65
+      li
+        +link('mailto:info@lekker.ru') info@lekker.ru
+    ul.footer__social
+      li
+        a.footer__social-link
+          +vk-icon-footer
+      li
+        a.footer__social-link
+          +ok-icon-footer
+      li
+        a.footer__social-link
+          +ytb-icon-footer
+      li
+        a.footer__social-link
+          +rutube-icon-footer
+    +button("Стать партнером", "_accent").footer__button
+
+    span.footer__copyrigth © 2002-2023 ООО «Леккер»
+    +link("#").footer__politic Политика в отношении обработки персональных данных
+    +link("#").footer__made Сделано в CloudMill
+  p.footer__subfooter
+    | ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМО ПРОКОНСУЛЬТИРОВАТЬСЯ СО СПЕЦИАЛИСТОМ

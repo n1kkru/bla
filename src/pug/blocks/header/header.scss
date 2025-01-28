@@ -14,6 +14,7 @@ $shadow-color: rgba(0, 0, 0, 0.04);
   backdrop-filter: blur(12px);
   justify-content: space-between;
   &__logo {
+    cursor: pointer;
     height: rem(32px);
     padding-left: rem(32px);
   }

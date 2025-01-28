@@ -11,8 +11,9 @@ mixin cards(mods)
     }
 
   .cards(class=allMods)&attributes(attributes)
-    +card("Секретарь", "Как стать умнее или избавиться от йододефицита", "8 812 448-54-65", "help_gendir@lekker.ru", "_green")
-      .cards__decor
-        +decor-first
-    +card("Отдел продаж", "", "8 812 702-72-62", "prodazha@lekker.ru", "_red")
-    +card("Секретарь", "", "", "reklama@lekker.ru", "_yellow")
+    +card("Секретарь", "Как стать умнее или избавиться от йододефицита", "8 812 448-54-65", "help_gendir@lekker.ru", "_green, _decor")
+      //- +picture('decor-first.webp').cards__decor
+    +card("Отдел продаж", "", "8 812 702-72-62", "prodazha@lekker.ru", "_red, _decor")
+      //- +picture('decor-second.webp').cards__decor
+    +card("Секретарь", "", "", "reklama@lekker.ru", "_yellow, _decor")
+      //- +picture('decor-hearts.webp').cards__decor
