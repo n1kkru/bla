@@ -3,8 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: rem(399px);
-  min-height: rem(399px);
+  width: rem(399px);
+  height: rem(399px);
   flex-shrink: 0;
   border-radius: rem(270px);
   border: 2px solid #f0f0f0;
@@ -31,11 +31,22 @@
 
 @media #{media('<',d)} {
   .social-link {
-    min-width: rem(240px);
-    min-height: rem(240px);
+    width: rem(240px);
+    height: rem(240px);
+    svg {
+      width: rem(45px);
+      height: rem(45px);
+    }
   }
 }
 
 @media #{media('<',m)} {
-  // мобилка
+  .social-link {
+    width: rem(104px);
+    height: rem(104px);
+    svg {
+      width: rem(31px);
+      height: rem(31px);
+    }
+  }
 }

@@ -46,13 +46,16 @@
     padding: rem(12px);
     width: rem(177px);
     height: rem(160px);
+    border-radius: rem(12px);
     &__title {
+      padding-bottom: rem(12px);
       font-size: rem(20px);
       line-height: rem(20px);
       letter-spacing: -0.04px;
     }
     address,
     time {
+      max-width: rem(145px);
       font-size: rem(12px);
       line-height: rem(15.6px);
     }
@@ -60,5 +63,10 @@
 }
 
 @media #{media('<',m)} {
-  // мобилка
+  .address {
+    address,
+    time {
+      max-width: rem(136px);
+    }
+  }
 }

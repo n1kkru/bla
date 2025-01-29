@@ -18,3 +18,9 @@
     gap: rem(12px);
   }
 }
+
+@media #{media('<',m)} {
+  .cards {
+    margin-bottom: rem(36px);
+  }
+}

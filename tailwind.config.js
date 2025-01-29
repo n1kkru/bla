@@ -58,6 +58,11 @@ export default {
           [`@media (min-width: ${screens.desktop.min})`]: {
             display: 'none !important'
           }
+        },
+        '.not-mobile': {
+          [`@media (max-width: ${screens.mobile.max})`]: {
+            display: 'none !important'
+          }
         }
       }
 

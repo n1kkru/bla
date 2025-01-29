@@ -10,7 +10,7 @@
   display: grid;
   gap: rem(50px) rem(32px);
   justify-content: space-between;
-  grid-template-columns: rem(330px) repeat(3, 1fr);
+  grid-template-columns: rem(330px) rem(441px) 1fr rem(218px);
   // grid-template-columns: rem(190px) rem(444px) rem(320px) rem(220px);
   grid-template-rows: repeat(2, auto) rem(20px);
   grid-template-areas:
@@ -58,6 +58,7 @@
   }
 
   &__social-link {
+    cursor: pointer;
     border-radius: rem(16px);
     border: 2px solid #ececec;
     max-width: rem(74px);
@@ -75,6 +76,7 @@
   &__button {
     grid-area: btn;
     max-width: rem(218px);
+    border-radius: rem(16px);
   }
 
   &__copyrigth {
@@ -116,16 +118,25 @@
 
 @media #{media('<',d)} {
   .footer {
+    background-image: url('/images/decor-footer-tablet.svg');
+    background-position: left bottom;
+    justify-content: normal;
     padding: rem(32px) rem(12px) rem(36px);
     border-radius: rem(24px);
-    grid-template-columns: repeat(3, 1fr);
+    gap: rem(10px) rem(0px);
+    grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(5, auto);
     grid-template-areas:
-      'links contacts picture'
-      'social . btn'
-      'politic . .'
-      'copy . .'
-      'made . .';
+      'links . contacts picture'
+      'social social . btn'
+      'politic politic . .'
+      'copy . . .'
+      'made . . .';
+    &__picture {
+      width: (79.607px);
+      height: rem(130px);
+      justify-self: center;
+    }
     &__links {
       gap: rem(12px);
       font-size: rem(24px);
@@ -139,10 +150,25 @@
     }
     &__social {
       gap: rem(4px);
+      margin-block: rem(20px);
     }
     &__social-link svg {
-      max-width: rem(48px);
-      max-height: rem(48px);
+      // border-radius: rem(8px);
+      max-width: rem(44px);
+      max-height: rem(44px);
+    }
+    &__button {
+      justify-self: end;
+      align-self: center;
+      min-width: rem(160px);
+      max-height: rem(47px);
+      padding: rem(16px) rem(24px);
+    }
+    &__copyrigth,
+    &__politic,
+    &__made {
+      font-size: rem(12px);
+      line-height: rem(14.4px);
     }
     &__subfooter {
       margin: 0 auto;
@@ -156,5 +182,16 @@
 }
 
 @media #{media('<',m)} {
-  // мобилка
+  .footer {
+    gap: rem(12px);
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: rem(145px) repeat(2, auto) repeat(3, rem(14px));
+    grid-template-areas:
+      'links picture'
+      'contacts btn'
+      'social social'
+      'politic politic '
+      'copy .'
+      'made .';
+  }
 }

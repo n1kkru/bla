@@ -1,6 +1,7 @@
 .card {
   overflow: hidden;
-  min-height: rem(360px);
+  // min-height: rem(360px);
+  gap: rem(100px);
   position: relative;
   border-radius: 24px;
   min-width: rem(608px);
@@ -76,7 +77,8 @@
 @media #{media('<',d)} {
   .card {
     min-width: rem(366px);
-    min-height: rem(139px);
+    gap: rem(24px);
+    min-height: auto;
     font-size: rem(16px);
     padding: rem(24px);
     p {
@@ -88,11 +90,22 @@
       letter-spacing: -0.4px;
     }
     &__block {
-      // min-height: rem(77px);
+      min-height: rem(0px);
       gap: rem(8px);
+    }
+    &_decor {
+      background-size: 50%;
+    }
+    &_yellow &__block:last-child {
+      margin-bottom: 7px;
     }
   }
 }
 @media #{media('<',m)} {
-  // мобилка
+  .card {
+    min-width: 100%;
+    &_decor {
+      background-size: 50%;
+    }
+  }
 }

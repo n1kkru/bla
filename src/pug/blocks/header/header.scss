@@ -4,6 +4,7 @@ $shadow-color: rgba(0, 0, 0, 0.04);
 .header {
   display: flex;
   margin-bottom: rem(25px);
+  margin: rem(24px);
   align-items: center;
   padding: rem(6px);
   min-width: rem(1872px);
@@ -13,21 +14,24 @@ $shadow-color: rgba(0, 0, 0, 0.04);
   box-shadow: 0px 14px 24px 0px $shadow-color;
   backdrop-filter: blur(12px);
   justify-content: space-between;
-  &__logo {
+  &__logo svg {
     cursor: pointer;
     height: rem(32px);
-    padding-left: rem(32px);
+    margin-left: rem(32px);
   }
   &__buttons {
     display: flex;
     gap: rem(8px);
   }
   &__buttons-products {
+    border-radius: rem(16px);
     padding: rem(25px) rem(24px);
     gap: rem(16px);
   }
   &__buttons-search,
   &__buttons-phone {
+    max-height: 100%;
+    border-radius: rem(16px);
     padding: rem(25px);
   }
   &__links {
@@ -43,6 +47,7 @@ $shadow-color: rgba(0, 0, 0, 0.04);
   }
   &__partners {
     padding: rem(25px) rem(32px);
+    border-radius: rem(16px);
   }
   &__breadcrumbs {
     margin-bottom: rem(25px);
@@ -51,27 +56,59 @@ $shadow-color: rgba(0, 0, 0, 0.04);
 
 @media #{media('<',d)} {
   .header {
+    border-radius: rem(8px);
+    border-width: 1px;
     min-width: rem(744px);
-    margin-bottom: rem(12px);
+    max-height: rem(60px);
+    padding: rem(8px);
+    margin: rem(12px);
+    &__logo svg {
+      height: rem(18px);
+      width: rem(96px);
+      margin-left: rem(8px);
+    }
     &__breadcrumbs {
       margin-bottom: rem(12px);
     }
     &__buttons {
+      max-height: rem(44px);
       gap: rem(2px);
     }
     &__buttons-products {
+      border-radius: rem(8px);
       padding: rem(14px) rem(12px);
       gap: rem(8px);
+      svg {
+        width: rem(16px);
+        height: rem(16px);
+      }
     }
     &__buttons-search,
     &__buttons-phone {
+      max-width: rem(44px);
       padding: rem(14px);
+      border-radius: rem(8px);
       svg {
-        width: rem(16px);
+        max-width: rem(16px);
       }
     }
   }
 }
 @media #{media('<',m)} {
-  // мобилка
+  .header {
+    border-radius: rem(12px);
+    min-width: rem(351px);
+    max-height: rem(60px);
+    justify-content: space-between;
+    align-items: center;
+    &__button-menu {
+      border-radius: rem(8px);
+      width: rem(44px);
+      height: rem(44px);
+      padding: rem(10px);
+    }
+    &__logo svg {
+      margin: 0;
+    }
+  }
 }

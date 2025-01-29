@@ -1,11 +1,14 @@
 -
 
 header.header
+  +button("", "_accent").header__button-menu.mobile
+    +menu-icon
+
   a.header__logo
     +logo
 
   .header__buttons
-    +button("Продукция", "_accent").header__buttons-products
+    +button("Продукция", "_accent").header__buttons-products.not-mobile
       +dotted-icon
     search
       +button.header__buttons-search

@@ -1,9 +1,10 @@
 .breadcrumbs {
   position: relative;
   display: flex;
+  align-items: center;
   gap: rem(55px);
   min-height: rem(16px);
-
+  margin-left: rem(24px);
   &__item {
     position: relative;
     color: #364a46;
@@ -28,15 +29,18 @@
     right: rem(-24px);
   }
 
-  &__tem:hover svg {
+  &__item:hover svg {
     color: #0a8;
   }
 }
 
 @media #{media('<',d)} {
   .breadcrumbs {
+    margin-left: rem(12px);
+    gap: rem(40px);
     &__item {
       font-size: rem(10px);
+      line-height: rem(9px);
     }
   }
 }
