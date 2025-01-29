@@ -6,12 +6,13 @@ block variables
     const pageTitle = 'contacts'
 
 block content
-  main(data-barba='container', data-barba-namespace=pageName)
+  main.contacts(data-barba='container', data-barba-namespace=pageName)
     // TODO: input animation
     // TODO: svg footer social
     // TODO: paint cloudmill footer
 
-    h1.title Контакты
+    h1.title-120 Контакты
+    //FIXME: добавить в названия блоков contacts-
     +cards
     +socials
       //- .socials__block-links

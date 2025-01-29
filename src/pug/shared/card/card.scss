@@ -53,24 +53,37 @@
   }
 
   // mods
+  //FIXME: перенести в общие стили и убрать модификатор при вызове миксина
   &_decor {
     background-position: right bottom;
     background-repeat: no-repeat;
   }
   &_green {
     background-color: #d2f6ec;
-    stroke: #00aa88;
+    // stroke: #00aa88;
     background-image: url('/images/decor-card-green.svg');
+
+    svg {
+      color: #00aa88;
+    }
   }
   &_red {
     background-color: #fde0ed;
     stroke: #dd5799;
     background-image: url('/images/decor-card-red.svg');
+
+    svg {
+      color: #dd5799;
+    }
   }
   &_yellow {
     background-color: #ffeed2;
     stroke: #fbbd20;
     background-image: url('/images/decor-card-yellow.svg');
+
+    svg {
+      color: #fbbd20;
+    }
   }
 }
 

@@ -1,6 +1,8 @@
 .link {
   position: relative;
   color: inherit;
+  font-family: inherit;
+  font-size: inherit;
 
   &::after {
     content: '';

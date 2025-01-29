@@ -13,6 +13,8 @@ mixin contact-us(mods)
   .contact-us(class=allMods)&attributes(attributes)
     h4.contact-us__title Связаться с нами
     form.contact-us__form(action='') 
+      //FIXME: добавить атрибуты для валидации
+      //FIXME: добавить анимированные placeholder 
       input.contact-us__form-input(type='text', placeholder='Ваше имя')
       input.contact-us__form-input(type='email', placeholder='E-mail')
       input.contact-us__form-input(type='tel', placeholder='Телефон')

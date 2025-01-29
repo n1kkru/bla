@@ -16,6 +16,7 @@ mixin card(title='', text='', phone='', mail='', mods)
       p= text
     .card__block
       if phone
+        //FIXME: иконку тоже поместить в ссылку
         .card__contact
           .card__contact-icon
             +phone-icon

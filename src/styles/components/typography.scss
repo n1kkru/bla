@@ -4,6 +4,27 @@
   letter-spacing: -0.06em;
 }
 
+.title-120 {
+  color: #364a46;
+  font-family: 'TT Firs Neue';
+  font-size: rem(120px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: rem(108px);
+  letter-spacing: -2.4px;
+  //FIXME: убрать
+  margin-bottom: rem(24px);
+}
+
+@media #{media('<',d)} {
+  h1 {
+    font-size: rem(48px);
+    line-height: rem(43.2px);
+    letter-spacing: -0.96px;
+    margin-bottom: rem(14px);
+  }
+}
+
 .text {
   font-family: 'Suisse Intl';
   font-weight: 400;
