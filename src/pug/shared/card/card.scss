@@ -50,12 +50,12 @@
     gap: rem(16px);
     align-items: center;
 
-    &:hover .card__contact-text::after,
-    &:active .card__contact-text::after,
-    &:focus .card__contact-text::after {
-      right: auto;
-      left: 0;
-      width: 100%;
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover .card__contact-text::after {
+        right: auto;
+        left: 0;
+        width: 100%;
+      }
     }
   }
 

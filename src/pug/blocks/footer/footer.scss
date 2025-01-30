@@ -63,25 +63,30 @@
   }
 
   &__social-link {
+    display: flex;
+    width: rem(74px);
+    height: rem(74px);
+    padding: rem(22px);
+    justify-content: center;
+    align-items: center;
+
     cursor: pointer;
 
     max-width: rem(74px);
     max-height: rem(74px);
 
     color: #364a46;
+    background-color: #fff;
 
     border: 2px solid #ececec;
     border-radius: rem(16px);
+    transition: $transition;
 
-    svg {
-      width: 100%;
-      height: 100%;
-      transition: $transition;
-    }
-
-    &:hover svg {
-      color: #ffffff;
-      fill: #364a46;
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: #ffffff;
+        background-color: #364a46;
+      }
     }
   }
 
@@ -118,6 +123,9 @@
     grid-area: made;
     max-width: max-content;
     font-family: Rubik;
+    span {
+      color: #dd5799;
+    }
   }
 
   &__subfooter {
@@ -179,8 +187,8 @@
       margin-block: rem(20px);
     }
 
-    &__social-link svg {
-      // border-radius: rem(8px);
+    &__social-link {
+      border-radius: rem(8px);
       max-width: rem(44px);
       max-height: rem(44px);
     }
@@ -225,6 +233,12 @@
     grid-template-columns: repeat(2, auto);
     grid-template-rows: rem(145px) repeat(2, auto) repeat(3, rem(14px));
     gap: rem(12px);
+
+    &__social-link {
+      max-width: rem(48px);
+      max-height: rem(48px);
+      padding: rem(14.27px);
+    }
 
     &__copyrigth,
     &__politic,

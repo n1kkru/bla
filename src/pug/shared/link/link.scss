@@ -16,11 +16,13 @@
     transition: $transition;
   }
 
-  &:hover::after,
-  &:active::after,
-  &:focus::after {
-    right: auto;
-    left: 0;
-    width: 100%;
+  @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+    &:hover::after,
+    &:active::after,
+    &:focus::after {
+      right: auto;
+      left: 0;
+      width: 100%;
+    }
   }
 }

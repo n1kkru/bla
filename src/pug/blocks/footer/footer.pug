@@ -22,7 +22,6 @@ footer
     ul.footer__social
       li
         a.footer__social-link(href='#')
-          //FIXME: в миксин помещать только иконку
           +vk-icon-footer
       li
         a.footer__social-link(href='#')
@@ -37,6 +36,7 @@ footer
 
     span.footer__copyrigth © 2002-2023 ООО «Леккер»
     +link("#").footer__politic Политика в отношении обработки персональных данных
-    +link("#").footer__made Сделано в CloudMill
+    +link("#").footer__made Сделано в&nbsp;
+      span CloudMill
   p.footer__subfooter
     | ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМО ПРОКОНСУЛЬТИРОВАТЬСЯ СО СПЕЦИАЛИСТОМ

@@ -48,9 +48,11 @@
         font-size: rem(20px);
       }
 
-      &:hover {
-        background-color: #eaeaea;
-        transition: $transition;
+      @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: #eaeaea;
+          transition: $transition;
+        }
       }
 
       // если активный инпут

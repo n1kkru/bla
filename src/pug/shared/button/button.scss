@@ -19,9 +19,11 @@
 
   transition: $transition;
 
-  &:hover {
-    color: #ffffff;
-    background-color: #dd5799;
+  @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: #ffffff;
+      background-color: #dd5799;
+    }
   }
 
   &:disabled {
@@ -36,8 +38,10 @@
   color: #ffffff;
   background-color: #dd5799;
 
-  &:hover {
-    background-color: #c7397f;
+  @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: #c7397f;
+    }
   }
 }
 

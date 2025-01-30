@@ -22,8 +22,10 @@
 
     transition: $transition;
 
-    &:hover {
-      color: #00aa88;
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: #00aa88;
+      }
     }
 
     &.active {
@@ -32,8 +34,10 @@
     }
   }
 
-  &__item:hover svg {
-    color: #00aa88;
+  @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+    &__item:hover svg {
+      color: #00aa88;
+    }
   }
 }
 

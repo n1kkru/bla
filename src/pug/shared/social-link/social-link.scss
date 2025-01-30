@@ -16,10 +16,12 @@
 
   transition: $transition;
 
-  &:hover {
-    background: #ffffff;
-    border: rem(12px) solid var(--color-for-link);
-    border-radius: rem(270px);
+  @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+    &:hover {
+      background: #ffffff;
+      border: rem(12px) solid var(--color-for-link);
+      border-radius: rem(270px);
+    }
   }
 
   //color mods
