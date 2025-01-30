@@ -1,4 +1,4 @@
-mixin social-link(mods)
+mixin social-link(link="#", mods)
   -
     const baseName = 'social-link'
     let allMods = ''
@@ -9,6 +9,5 @@ mixin social-link(mods)
       }
       allMods = allMods.trim()
     }
-  //FIXME: добавить href
-  a.social-link(class=allMods)&attributes(attributes)
+  a.social-link(href=link)(class=allMods)&attributes(attributes)
     block

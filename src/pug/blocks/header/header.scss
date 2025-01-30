@@ -3,114 +3,132 @@ $shadow-color: rgba(0, 0, 0, 0.04);
 
 .header {
   display: flex;
-  margin-bottom: rem(25px);
-  margin: rem(24px);
   align-items: center;
-  padding: rem(6px);
-  min-width: rem(1872px);
-  border-radius: rem(20px);
-  border: 2px solid #f0f0f0;
-  background-color: $bg-color;
-  box-shadow: 0px 14px 24px 0px $shadow-color;
-  backdrop-filter: blur(12px);
   justify-content: space-between;
+
+  min-width: rem(1872px);
+  margin: rem(24px);
+  margin-bottom: rem(25px);
+  padding: rem(6px);
+
   font-family: 'Rubik';
   font-size: rem(18px);
   font-weight: 400;
+  color: #364a46;
+
+  background-color: $bg-color;
+  backdrop-filter: blur(12px);
+  border: 2px solid #f0f0f0;
+  border-radius: rem(20px);
+  box-shadow: 0px 14px 24px 0px $shadow-color;
+
   &__logo svg {
     cursor: pointer;
     height: rem(32px);
     margin-left: rem(32px);
   }
+
   &__buttons {
     display: flex;
     gap: rem(8px);
   }
+
   &__buttons-products {
-    border-radius: rem(16px);
-    padding: rem(25px) rem(24px);
     gap: rem(16px);
+    padding: rem(25px) rem(24px);
+    border-radius: rem(16px);
   }
+
   &__buttons-search,
   &__buttons-phone {
     max-height: 100%;
-    border-radius: rem(16px);
     padding: rem(25px);
+    border-radius: rem(16px);
   }
+
   &__links {
     display: flex;
     gap: rem(32px);
   }
+
   &__links-item {
     font-size: rem(18px);
   }
+
   &__phone {
     position: relative;
     font-weight: 600;
   }
+
   &__partners {
+    min-width: rem(218px);
     padding: rem(25px) rem(32px);
     border-radius: rem(16px);
-    min-width: rem(218px);
-  }
-  &__breadcrumbs {
-    margin-bottom: rem(25px);
   }
 }
 
 @media #{media('<',d)} {
   .header {
-    border-radius: rem(8px);
-    border-width: 1px;
     min-width: rem(744px);
     max-height: rem(60px);
-    padding: rem(8px);
     margin: rem(12px);
+    padding: rem(8px);
+
+    border-width: 1px;
+    border-radius: rem(8px);
+
     &__logo svg {
-      height: rem(18px);
       width: rem(96px);
+      height: rem(18px);
       margin-left: rem(8px);
     }
-    &__breadcrumbs {
-      margin-bottom: rem(12px);
-    }
+
     &__buttons {
-      max-height: rem(44px);
       gap: rem(2px);
+      max-height: rem(44px);
     }
+
     &__buttons-products {
-      border-radius: rem(8px);
-      padding: rem(14px) rem(12px);
       gap: rem(8px);
+      padding: rem(14px) rem(12px);
+      border-radius: rem(8px);
+
       svg {
         width: rem(16px);
         height: rem(16px);
       }
     }
+
     &__buttons-search,
     &__buttons-phone {
       max-width: rem(44px);
       padding: rem(14px);
       border-radius: rem(8px);
+
       svg {
         max-width: rem(16px);
       }
     }
   }
 }
+
 @media #{media('<',m)} {
   .header {
-    border-radius: rem(12px);
+    align-items: center;
+    justify-content: space-between;
+
     min-width: rem(351px);
     max-height: rem(60px);
-    justify-content: space-between;
-    align-items: center;
+
+    border-radius: rem(12px);
+
     &__button-menu {
-      border-radius: rem(8px);
       width: rem(44px);
       height: rem(44px);
       padding: rem(10px);
+      border-radius: rem(8px);
     }
+
     &__logo svg {
       margin: 0;
     }

@@ -16,10 +16,11 @@
 
   background: #f4f4f4;
   border: 1px solid transparent;
+
   transition: $transition;
 
   &:hover {
-    color: #fff;
+    color: #ffffff;
     background-color: #dd5799;
   }
 
@@ -32,8 +33,9 @@
 }
 
 .button_accent {
+  color: #ffffff;
   background-color: #dd5799;
-  color: #fff;
+
   &:hover {
     background-color: #c7397f;
   }

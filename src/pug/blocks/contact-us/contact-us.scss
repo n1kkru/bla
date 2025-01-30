@@ -1,21 +1,23 @@
 .contact-us {
   position: relative;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: rem(124px);
-  margin: auto;
+
+  max-width: rem(924px);
+  margin-top: rem(148px);
+  margin-inline: auto;
 
   &__title {
-    color: #364a46;
+    padding-bottom: rem(48px);
+
     font-family: 'TT Firs Neue';
     font-size: rem(80px);
     font-weight: 600;
     font-style: normal;
     line-height: rem(80px);
+    color: #364a46;
     letter-spacing: -1.6px;
-    padding-bottom: rem(48px);
   }
 
   &__form {
@@ -23,124 +25,166 @@
     flex-direction: column;
     gap: rem(8px);
     max-width: rem(924px);
-  }
 
-  &__form-input {
-    //FIXME: добавить свойство border и менять при фокусе только его цвет
-    max-width: rem(924px);
-    max-height: rem(80px);
-    border-radius: rem(16px);
-    padding: rem(28px) rem(24px);
-    background-color: #f3f3f3;
-    font-family: 'Rubik';
-    &::placeholder {
-      color: #364a46;
-      font-size: rem(20px);
-      font-weight: 400;
-      opacity: 0.5;
+    &-label {
+      cursor: text;
+      position: relative;
+
+      max-width: rem(924px);
+      max-height: rem(80px);
+      padding: rem(28px) rem(24px);
+
+      font-family: 'Rubik';
+
+      background-color: #f3f3f3;
+      border: 2px solid transparent;
+      border-radius: rem(16px);
+
+      input {
+        background-color: transparent;
+      }
+      input:invalid + .contact-us__form-placeholder {
+        top: rem(28px);
+        font-size: rem(20px);
+      }
+
+      &:hover {
+        background-color: #eaeaea;
+        transition: $transition;
+      }
+
+      // если активный инпут
+      &:has(input:active),
+      &:has(input:focus) {
+        background-color: #ffffff;
+        border-color: #00aa88;
+        .contact-us__form-placeholder {
+          top: rem(18px);
+          bottom: 0;
+          left: rem(24px);
+          font-size: rem(14px);
+        }
+      }
+
+      &_big {
+        min-height: rem(161px);
+      }
     }
-    &:hover {
-      background-color: #eaeaea;
+
+    &-placeholder {
+      user-select: none;
+      position: absolute;
+      width: 100%;
+      font-family: 'Rubik';
+      font-size: rem(14px);
+      font-weight: 400;
+      font-style: normal;
+      color: #364a46;
+      opacity: 0.5;
       transition: $transition;
     }
-    &:active,
-    &:focus-visible {
-      background-color: #fff;
-      border: 2px solid #0a8;
-    }
 
-    &_big {
-      min-height: rem(161px);
+    &-submit {
+      display: flex;
+      gap: rem(120px);
+      align-items: center;
+      justify-content: space-between;
+
+      margin-top: rem(16px);
     }
   }
 
   &__text {
-    color: #364a46;
     font-family: Rubik;
     font-size: rem(14px);
     font-weight: 400;
+    color: #364a46;
+
     p {
       display: inline;
     }
+
     a {
       display: inline;
-      color: #0a8;
+      color: #00aa88;
     }
   }
 
-  &__form-submit {
-    //FIXME: добавить gap
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: rem(16px);
-  }
-
   &__btn {
-    border-radius: rem(16px);
-    padding: rem(25px) rem(32px);
     min-width: rem(332px);
+    padding: rem(25px) rem(32px);
+    border-radius: rem(16px);
   }
 
   &__decor {
     position: absolute;
+
     &_first {
+      top: rem(50px);
+      left: rem(-400px);
       width: rem(236px);
       height: rem(261px);
-      left: rem(-180px);
-      top: rem(181px);
     }
 
     &_second {
-      right: rem(-180px);
-      width: rem(223.903px);
-      height: rem(182.208px);
+      right: rem(-392px);
+      bottom: rem(11px);
+      width: rem(286px);
+      height: rem(271px);
     }
   }
 }
 
 @media #{media('<',d)} {
   .contact-us {
-    padding: rem(38px);
+    max-width: rem(366px);
+    margin-top: rem(48px);
+
     &__title {
-      letter-spacing: -0.52px;
+      padding-bottom: rem(24px);
       font-size: rem(26px);
       line-height: rem(26px);
-      padding-bottom: rem(24px);
+      letter-spacing: -0.52px;
     }
+
     &__form {
       max-width: rem(366px);
+
+      &-input {
+        padding: rem(16px);
+      }
+
+      &-submit {
+        flex-direction: column;
+        gap: rem(28px);
+        margin-top: rem(0px);
+      }
     }
-    &__form-input {
-      padding: rem(16px);
-    }
-    &__form-submit {
-      flex-direction: column;
-      margin-top: rem(0px);
-      gap: rem(28px);
-    }
+
     &__btn {
-      border-radius: rem(12px);
-      padding: rem(16px) rem(24px);
       min-width: 100%;
+      padding: rem(16px) rem(24px);
+      border-radius: rem(12px);
     }
+
     &__text {
       font-size: rem(12px);
       line-height: rem(15.6px);
     }
+
     &__decor {
       &_first {
+        top: rem(37px);
+        left: rem(-120px);
         width: rem(104px);
         height: rem(115px);
-        left: rem(-120px);
-        top: rem(37px);
       }
 
       &_second {
         right: rem(-128px);
+        bottom: rem(150px);
         width: rem(131px);
         height: rem(124px);
-        bottom: rem(150px);
       }
     }
   }
@@ -148,29 +192,33 @@
 
 @media #{media('<',m)} {
   .contact-us {
-    padding: 0 0 rem(48px);
+    margin-top: rem(74px);
+
     &__title {
       font-size: rem(26px);
-      font-style: normal;
       font-weight: 600;
+      font-style: normal;
       line-height: rem(26px);
       letter-spacing: -0.52px;
     }
+
     &__form-submit {
       gap: rem(12px);
     }
+
     &__decor {
       &_first {
+        top: rem(0px);
+        right: rem(0px);
+        left: unset;
+
         width: rem(29px);
         height: rem(34px);
-        left: unset;
-        right: rem(77px);
-        top: rem(-26px);
       }
 
       &_second {
-        right: rem(18px);
-        top: rem(-15px);
+        top: rem(0px);
+        right: rem(0px);
         width: rem(59px);
         height: rem(56px);
       }

@@ -1,32 +1,38 @@
 .address {
   display: flex;
   flex-direction: column;
-  color: #fff;
+
   width: rem(450px);
   height: rem(288px);
-  border-radius: rem(24px);
-  background-color: #0a8;
   padding: rem(32px);
+
+  color: #ffffff;
+
+  background-color: #00aa88;
+  border-radius: rem(24px);
 
   &__title {
     padding-bottom: rem(20px);
+
     font-family: 'TT Firs Neue';
     font-size: rem(32px);
-    font-style: normal;
     font-weight: 600;
+    font-style: normal;
     line-height: rem(32px);
     letter-spacing: -0.64px;
   }
 
   address,
   time {
+    flex: 1 1 auto;
+
     max-width: rem(320px);
+
     font-family: 'Rubik';
     font-size: rem(18px);
-    font-style: normal;
     font-weight: 400;
+    font-style: normal;
     line-height: rem(28.8px);
-    flex: 1 1 auto;
   }
 
   time {
@@ -34,8 +40,9 @@
   }
 
   &_green {
-    background-color: #0a8;
+    background-color: #00aa88;
   }
+
   &_blue {
     background-color: #0097d4;
   }
@@ -43,16 +50,18 @@
 
 @media #{media('<',d)} {
   .address {
-    padding: rem(12px);
     width: rem(177px);
     height: rem(160px);
+    padding: rem(12px);
     border-radius: rem(12px);
+
     &__title {
       padding-bottom: rem(12px);
       font-size: rem(20px);
       line-height: rem(20px);
       letter-spacing: -0.04px;
     }
+
     address,
     time {
       max-width: rem(145px);

@@ -7,20 +7,16 @@ block variables
 
 block content
   main.contacts(data-barba='container', data-barba-namespace=pageName)
-    // TODO: input animation
-    // TODO: svg footer social
+    // TODO: svg footer social + поправить их border
     // TODO: paint cloudmill footer
-
+    // TODO: вместо :hover использовать @include media-hover
+    // TODO: исправить названия файлов и классов в миксинах
+    // TODO: исправить позиционирование svg в адаптиве
+    // TODO: добавить белый цвет лупе при наведении в хедере
+    nav
+      +breadcrumbs
     h1.title-120 Контакты
-    //FIXME: добавить в названия блоков contacts-
-    +cards
-    +socials
-      //- .socials__block-links
-      //-   +social-link('_blue')
-      //-     +vk-icon
-      //-   +social-link('_red')
-      //-     +ytb-icon
-      //-   +social-link('_orange')
-      //-     +ok-icon
-    +addresses
-    +contact-us 
+    +contacts-cards
+    +contacts-socials
+    +contacts-addresses
+    +contacts-contact-us 

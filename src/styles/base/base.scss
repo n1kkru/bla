@@ -8,17 +8,12 @@ body {
   }
 }
 
-//FIXME: убрать. Отсупы между элементами через margin-top
 main {
-  display: flex;
-  flex-direction: column;
-  gap: rem(24px);
   padding-inline: rem(24px);
 }
 
 @media #{media('<',d)} {
   main {
-    gap: rem(10px);
     padding-inline: rem(12px);
   }
 }

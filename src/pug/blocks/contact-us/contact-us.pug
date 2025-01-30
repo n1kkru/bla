@@ -1,4 +1,4 @@
-mixin contact-us(mods)
+mixin contacts-contact-us(mods)
   -
     const baseName = 'contact-us'
     let allMods = ''
@@ -14,15 +14,22 @@ mixin contact-us(mods)
     h4.contact-us__title Связаться с нами
     form.contact-us__form(action='') 
       //FIXME: добавить атрибуты для валидации
-      //FIXME: добавить анимированные placeholder 
-      input.contact-us__form-input(type='text', placeholder='Ваше имя')
-      input.contact-us__form-input(type='email', placeholder='E-mail')
-      input.contact-us__form-input(type='tel', placeholder='Телефон')
-      input.contact-us__form-input.contact-us__form-input_big(type='text', placeholder='Сообщение')
+      label.contact-us__form-label
+        input(type='text', required='')
+        .contact-us__form-placeholder Ваше имя
+      label.contact-us__form-label
+        input(type='email', required='')
+        .contact-us__form-placeholder E-mail
+      label.contact-us__form-label
+        input(type='tel', required='')
+        .contact-us__form-placeholder Телефон
+      label.contact-us__form-label.contact-us__form-label_big
+        input(type='text', required='')
+        .contact-us__form-placeholder Сообщение
       .contact-us__form-submit
         .contact-us__text
-          p Нажимая на кнопку «Отправить» я даю согласие на условия
-          +link &nbsp;политики в отношении обработки персональных данных
+          p Нажимая на кнопку «Отправить» я даю согласие на условия&nbsp;
+          +link политики в отношении обработки персональных данных
         +button("Отправить", "_accent").contact-us__btn
     +picture('decor-form-first.webp').contact-us__decor.contact-us__decor_first
     +picture('decor-form-second.webp').contact-us__decor.contact-us__decor_second

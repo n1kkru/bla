@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   gap: rem(24px);
+  margin-top: rem(24px);
 
   &__blocks {
     display: flex;
@@ -11,16 +12,21 @@
 
   &__map {
     cursor: pointer;
+
     position: relative;
+
     max-width: rem(1398px);
     max-height: rem(600px);
-    background: #fff;
+
+    background: #ffffff;
   }
 }
 
 @media #{media('<',d)} {
   .addresses {
     gap: rem(13px);
+    margin-top: rem(48px);
+
     &__blocks {
       gap: rem(12px);
     }
@@ -30,7 +36,7 @@
 @media #{media('<',m)} {
   .addresses {
     flex-direction: column;
-    margin-bottom: rem(64px);
+
     &__blocks {
       flex-direction: row;
     }

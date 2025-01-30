@@ -1,4 +1,4 @@
-mixin socials(mods)
+mixin contacts-socials(mods)
   -
     const baseName = 'socials'
     let allMods = ''
@@ -12,11 +12,10 @@ mixin socials(mods)
 
   .socials(class=allMods)&attributes(attributes)
     h3 Мы в социальных сетях
-    //FIXME: просто block
-    .socials__block-links
-      +social-link('_blue')
+    .socials__block
+      +social-link('#', '_blue')
         +vk-icon
-      +social-link('_red')
+      +social-link('#', '_red')
         +ytb-icon
-      +social-link('_orange')
+      +social-link('#', '_orange')
         +ok-icon

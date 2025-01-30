@@ -13,17 +13,16 @@ mixin card(title='', text='', phone='', mail='', mods)
   article.card(class=allMods)&attributes(attributes)
     .card__block
       h2.card__title= title
-      p= text
+      p.card__text= text
     .card__block
       if phone
-        //FIXME: иконку тоже поместить в ссылку
-        .card__contact
+        a.card__contact(href='tel:' + phone)
           .card__contact-icon
             +phone-icon
-          +link('tel:' + phone)= phone
+          span.card__contact-text= phone
       if mail
-        .card__contact
+        a.card__contact(href='mailto:' + mail)
           .card__contact-icon
             +message-icon
-          +link('mailto:' + mail)= mail
+          span.card__contact-text= mail
     block

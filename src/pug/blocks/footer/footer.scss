@@ -1,22 +1,25 @@
 .footer {
-  padding: rem(80px) rem(140px) rem(48px);
-  border-radius: rem(48px);
-  background-color: #f3f3f3;
-  background-image: url('/images/decor-footer.svg');
-  background-position: right bottom;
-  background-repeat: no-repeat;
-  color: #364a46;
-  font-family: 'TT Firs Neue';
   display: grid;
-  gap: rem(50px) rem(32px);
-  justify-content: space-between;
-  grid-template-columns: rem(330px) rem(441px) 1fr rem(218px);
-  // grid-template-columns: rem(190px) rem(444px) rem(320px) rem(220px);
-  grid-template-rows: repeat(2, auto) rem(20px);
   grid-template-areas:
     'logo links contacts btn'
     'picture links social .'
     'copy politic politic made';
+  grid-template-columns: rem(330px) rem(441px) 1fr rem(218px);
+  grid-template-rows: repeat(2, auto) rem(20px);
+  gap: rem(50px) rem(32px);
+  justify-content: space-between;
+
+  margin-top: rem(148px);
+  padding: rem(80px) rem(140px) rem(48px);
+
+  font-family: 'TT Firs Neue';
+  color: #364a46;
+
+  background-color: #f3f3f3;
+  background-image: url('/images/decor-footer.svg');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  border-radius: rem(48px);
 
   &__logo {
     grid-area: logo;
@@ -24,16 +27,17 @@
 
   &__picture {
     grid-area: picture;
+    align-self: center;
     max-width: rem(134px);
     max-height: rem(218.826px);
-    align-self: center;
   }
 
   &__links {
     display: flex;
+    grid-area: links;
     flex-direction: column;
     gap: rem(24px);
-    grid-area: links;
+
     font-size: rem(40px);
     font-weight: 600;
     line-height: rem(36px);
@@ -42,9 +46,10 @@
 
   &__contacts {
     display: flex;
+    grid-area: contacts;
     flex-direction: column;
     gap: rem(12px);
-    grid-area: contacts;
+
     font-size: rem(24px);
     font-weight: 600;
     line-height: rem(21.6px);
@@ -52,26 +57,31 @@
   }
 
   &__social {
-    grid-area: social;
     display: flex;
+    grid-area: social;
     gap: rem(8px);
   }
 
   &__social-link {
     cursor: pointer;
-    border-radius: rem(16px);
-    border: 2px solid #ececec;
+
     max-width: rem(74px);
     max-height: rem(74px);
+
     color: #364a46;
+
+    border: 2px solid #ececec;
+    border-radius: rem(16px);
+
     svg {
-      transition: $transition;
       width: 100%;
       height: 100%;
+      transition: $transition;
     }
+
     &:hover svg {
+      color: #ffffff;
       fill: #364a46;
-      color: #fff;
     }
   }
 
@@ -83,111 +93,128 @@
 
   &__copyrigth {
     grid-area: copy;
-    opacity: 0.7;
+
     font-family: Rubik;
     font-size: rem(14px);
     font-weight: 400;
     line-height: rem(16.8px);
+
+    opacity: 0.7;
   }
 
   &__politic {
     grid-area: politic;
+
+    max-width: max-content;
+
     font-family: Rubik;
     font-size: rem(16px);
-    font-style: normal;
     font-weight: 400;
+    font-style: normal;
     line-height: rem(19.2px);
-    max-width: max-content;
   }
 
   &__made {
-    max-width: max-content;
     grid-area: made;
+    max-width: max-content;
+    font-family: Rubik;
   }
 
   &__subfooter {
-    padding: rem(46px) rem(147px);
-    opacity: 0.24;
-    text-align: center;
+    padding: rem(46px) rem(24px);
+
     font-family: Rubik;
     font-size: rem(37px);
-    font-style: normal;
     font-weight: 400;
+    font-style: normal;
     line-height: rem(44.4px);
+    text-align: center;
     letter-spacing: -1.48px;
+
+    opacity: 0.24;
   }
 }
 
 @media #{media('<',d)} {
   .footer {
-    background-image: url('/images/decor-footer-tablet.svg');
-    background-position: left bottom;
-    justify-content: normal;
-    padding: rem(32px) rem(12px) rem(36px);
-    border-radius: rem(24px);
-    gap: rem(10px) rem(0px);
-    grid-template-columns: repeat(4, auto);
-    grid-template-rows: repeat(5, auto);
     grid-template-areas:
       'links . contacts picture'
       'social social . btn'
       'politic politic . .'
       'copy . . .'
       'made . . .';
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(5, auto);
+    gap: rem(10px) rem(0px);
+    justify-content: normal;
+
+    margin-top: rem(48px);
+    padding: rem(32px) rem(12px) rem(36px);
+
+    background-image: url('/images/decor-footer-tablet.svg');
+    background-position: left bottom;
+    border-radius: rem(24px);
+
     &__picture {
+      justify-self: center;
       width: (79.607px);
       height: rem(130px);
-      justify-self: center;
     }
+
     &__links {
       gap: rem(12px);
       font-size: rem(24px);
       line-height: rem(21.6px);
       letter-spacing: -0.48px;
     }
+
     &__contacts {
       font-size: rem(16px);
       line-height: rem(14.4px);
       letter-spacing: -0.32px;
     }
+
     &__social {
       gap: rem(4px);
       margin-block: rem(20px);
     }
+
     &__social-link svg {
       // border-radius: rem(8px);
       max-width: rem(44px);
       max-height: rem(44px);
     }
+
     &__button {
-      justify-self: end;
       align-self: center;
+      justify-self: end;
+
       min-width: rem(160px);
       max-height: rem(47px);
       padding: rem(16px) rem(24px);
     }
+
     &__copyrigth,
     &__politic,
     &__made {
       font-size: rem(12px);
       line-height: rem(14.4px);
     }
+
     &__subfooter {
+      max-width: rem(350px);
       margin: 0 auto;
       padding: rem(24px) 0;
+
       font-size: rem(15px);
       line-height: rem(18px);
       letter-spacing: -0.6px;
-      max-width: rem(350px);
     }
   }
 }
 
 @media #{media('<',m)} {
   .footer {
-    gap: rem(12px);
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: rem(145px) repeat(2, auto) repeat(3, rem(14px));
     grid-template-areas:
       'links picture'
       'contacts btn'
@@ -195,5 +222,15 @@
       'politic politic '
       'copy .'
       'made .';
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: rem(145px) repeat(2, auto) repeat(3, rem(14px));
+    gap: rem(12px);
+
+    &__copyrigth,
+    &__politic,
+    &__made {
+      font-size: rem(12px);
+      line-height: rem(14.4px);
+    }
   }
 }

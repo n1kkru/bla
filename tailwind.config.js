@@ -15,7 +15,7 @@ export default {
         light: '#f2f2f2'
       }
     },
-    
+
     screens: {
       desktop: { min: '1201px' },
       devices: { max: '1200px' },
@@ -59,7 +59,7 @@ export default {
             display: 'none !important'
           }
         },
-        '.not-mobile': {
+        '.desktop-tablet': {
           [`@media (max-width: ${screens.mobile.max})`]: {
             display: 'none !important'
           }

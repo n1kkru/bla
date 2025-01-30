@@ -1,29 +1,37 @@
 .social-link {
+  cursor: pointer;
+
   position: relative;
+
   display: flex;
-  justify-content: center;
+  flex-shrink: 0;
   align-items: center;
+  justify-content: center;
+
   width: rem(399px);
   height: rem(399px);
-  flex-shrink: 0;
-  border-radius: rem(270px);
+
   border: 2px solid #f0f0f0;
-  cursor: pointer;
+  border-radius: rem(270px);
+
   transition: $transition;
 
   &:hover {
-    border-radius: rem(270px);
+    background: #ffffff;
     border: rem(12px) solid var(--color-for-link);
-    background: #fff;
+    border-radius: rem(270px);
   }
 
   //color mods
+
   &_blue {
     --color-for-link: #0077ff;
   }
+
   &_red {
     --color-for-link: #ff0000;
   }
+
   &_orange {
     --color-for-link: #f7931e;
   }
@@ -33,6 +41,7 @@
   .social-link {
     width: rem(240px);
     height: rem(240px);
+
     svg {
       width: rem(45px);
       height: rem(45px);
@@ -44,6 +53,7 @@
   .social-link {
     width: rem(104px);
     height: rem(104px);
+
     svg {
       width: rem(31px);
       height: rem(31px);

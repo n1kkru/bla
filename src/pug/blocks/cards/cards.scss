@@ -1,26 +1,33 @@
 .cards {
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: rem(24px);
+
+  margin-top: rem(48px);
+
   &__decor {
-    z-index: -5;
     position: absolute;
-    width: rem(393px);
-    height: rem(305px);
+    z-index: -5;
     right: rem(-46px);
     bottom: rem(-68px);
+
+    width: rem(393px);
+    height: rem(305px);
   }
 }
 
 @media #{media('<',d)} {
   .cards {
+    grid-template-columns: 1fr 1fr;
     gap: rem(12px);
+    margin-top: rem(24px);
   }
 }
 
 @media #{media('<',m)} {
   .cards {
-    margin-bottom: rem(36px);
+    grid-template-columns: 1fr;
   }
 }

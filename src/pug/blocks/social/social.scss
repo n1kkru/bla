@@ -1,19 +1,25 @@
 .socials {
   position: relative;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+
+  margin-top: rem(24px);
+
   h3 {
-    color: #364a46;
+    padding-left: rem(56px - 24px);
+
     font-family: 'TT Firs Neue';
     font-size: rem(32px);
-    font-style: normal;
     font-weight: 600;
+    font-style: normal;
     line-height: rem(32px);
+    color: #364a46;
     letter-spacing: -0.64px;
-    padding-left: rem(56px - 24px);
   }
-  &__block-links {
+
+  &__block {
     display: flex;
     gap: rem(21px);
   }
@@ -23,15 +29,19 @@
   .socials {
     flex-direction: column;
     gap: rem(12px);
-    margin-bottom: rem(38px);
+    margin-top: rem(10px);
+
     h3 {
-      padding: 0;
       align-self: start;
+
+      padding: 0;
+
       font-size: rem(20px);
       line-height: rem(20px);
       letter-spacing: -0.4px;
     }
-    &__block-links {
+
+    &__block {
       gap: rem(12px);
     }
   }
@@ -39,8 +49,9 @@
 
 @media #{media('<',m)} {
   .socials {
-    margin-bottom: rem(40px);
-    &__block-links {
+    margin-top: rem(48px);
+
+    &__block {
       gap: rem(19px);
     }
   }

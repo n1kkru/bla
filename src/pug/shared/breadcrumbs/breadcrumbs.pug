@@ -12,10 +12,12 @@ mixin breadcrumbs(links, mods)
 
   ul.breadcrumbs(class=allMods)&attributes(attributes)
     li
-      a.breadcrumbs__item(href='#') Главная
+      a.breadcrumbs__item(href='#') 
+        span Главная
         +breadcrumb
     li
-      a.breadcrumbs__item.breadcrumbs__item_active Контакты
+      a.breadcrumbs__item.active
+        span Контакты
         +breadcrumb-active
 
 //- {'#': 'Главная', '#': 'Контакты', '#': 'Ссылки'}
