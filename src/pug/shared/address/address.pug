@@ -1,4 +1,4 @@
-mixin address(title='', address='', date='', mods)
+mixin address(title='', index, address='', date='', mods)
   -
     const baseName = 'address'
     let allMods = ''
@@ -12,5 +12,9 @@ mixin address(title='', address='', date='', mods)
 
   .address(class=allMods)&attributes(attributes)
     h4.address__title= title
-    address= address
+    address
+      span= index
+      br.tablet
+      br.mobile
+      span!= address
     time= date

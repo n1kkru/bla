@@ -2,7 +2,7 @@
 import 'lazysizes'
 import 'virtual:svg-icons-register'
 
-import { remSelect } from '../pug/shared/_ui-rem/rem-select/rem-select'
+// import { remSelect } from '../pug/shared/_ui-rem/rem-select/rem-select'
 import '../styles/style.scss'
 import { validateFormInit } from './components/custom-validator'
 import config from './config'

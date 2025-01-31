@@ -2,7 +2,7 @@
   position: relative;
 
   display: flex;
-  gap: rem(55px);
+  gap: rem(31px);
   align-items: center;
 
   min-height: rem(16px);
@@ -22,10 +22,15 @@
 
     transition: $transition;
 
-    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
-      &:hover {
+    @include media-hover {
+      color: #00aa88;
+      svg {
         color: #00aa88;
       }
+    }
+
+    svg {
+      transition: $transition;
     }
 
     &.active {
@@ -33,17 +38,11 @@
       color: #00aa88;
     }
   }
-
-  @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
-    &__item:hover svg {
-      color: #00aa88;
-    }
-  }
 }
 
 @media #{media('<',d)} {
   .breadcrumbs {
-    gap: rem(40px);
+    gap: rem(16px);
 
     &__item {
       font-size: rem(10px);

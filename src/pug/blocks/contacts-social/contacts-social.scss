@@ -1,4 +1,4 @@
-.socials {
+.contacts-socials {
   position: relative;
 
   display: flex;
@@ -26,7 +26,7 @@
 }
 
 @media #{media('<',d)} {
-  .socials {
+  .contacts-socials {
     flex-direction: column;
     gap: rem(12px);
     margin-top: rem(10px);
@@ -48,7 +48,7 @@
 }
 
 @media #{media('<',m)} {
-  .socials {
+  .contacts-socials {
     margin-top: rem(48px);
 
     &__block {

@@ -1,4 +1,4 @@
-.contact-us {
+.contacts-contact-us {
   position: relative;
 
   display: flex;
@@ -26,13 +26,17 @@
     gap: rem(8px);
     max-width: rem(924px);
 
+    &-input_big {
+      min-height: rem(181px);
+    }
+
     &-label {
       cursor: text;
       position: relative;
 
       max-width: rem(924px);
       max-height: rem(80px);
-      padding: rem(28px) rem(24px);
+      padding: rem(26px) rem(24px);
 
       font-family: 'Rubik';
 
@@ -43,16 +47,14 @@
       input {
         background-color: transparent;
       }
-      input:invalid + .contact-us__form-placeholder {
+      input:invalid + .contacts-contact-us__form-placeholder {
         top: rem(28px);
         font-size: rem(20px);
       }
 
-      @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
-        &:hover {
-          background-color: #eaeaea;
-          transition: $transition;
-        }
+      @include media-hover {
+        background-color: #eaeaea;
+        transition: $transition;
       }
 
       // если активный инпут
@@ -60,23 +62,19 @@
       &:has(input:focus) {
         background-color: #ffffff;
         border-color: #00aa88;
-        .contact-us__form-placeholder {
+        .contacts-contact-us__form-placeholder {
           top: rem(18px);
           bottom: 0;
           left: rem(24px);
           font-size: rem(14px);
         }
       }
-
-      &_big {
-        min-height: rem(161px);
-      }
     }
 
     &-placeholder {
       user-select: none;
       position: absolute;
-      width: 100%;
+      width: 80%;
       font-family: 'Rubik';
       font-size: rem(14px);
       font-weight: 400;
@@ -122,8 +120,8 @@
     position: absolute;
 
     &_first {
-      top: rem(50px);
-      left: rem(-400px);
+      top: rem(60px);
+      left: rem(-370px);
       width: rem(236px);
       height: rem(261px);
     }
@@ -138,7 +136,7 @@
 }
 
 @media #{media('<',d)} {
-  .contact-us {
+  .contacts-contact-us {
     max-width: rem(366px);
     margin-top: rem(48px);
 
@@ -152,14 +150,32 @@
     &__form {
       max-width: rem(366px);
 
-      &-input {
-        padding: rem(16px);
+      &-label {
+        padding: rem(14px);
+        input:invalid + .contacts-contact-us__form-placeholder {
+          top: rem(16px);
+          font-size: rem(14px);
+        }
+
+        &:has(input:active),
+        &:has(input:focus) {
+          .contacts-contact-us__form-placeholder {
+            top: rem(14px);
+            bottom: 0;
+            left: rem(16px);
+            font-size: rem(14px);
+          }
+        }
+
+        &_big {
+          min-height: rem(161px);
+        }
       }
 
       &-submit {
         flex-direction: column;
         gap: rem(28px);
-        margin-top: rem(0px);
+        margin-top: rem(2px);
       }
     }
 
@@ -176,15 +192,15 @@
 
     &__decor {
       &_first {
-        top: rem(37px);
-        left: rem(-120px);
+        top: rem(16px);
+        left: rem(-160px);
         width: rem(104px);
         height: rem(115px);
       }
 
       &_second {
-        right: rem(-128px);
-        bottom: rem(150px);
+        right: rem(-165px);
+        bottom: rem(85px);
         width: rem(131px);
         height: rem(124px);
       }
@@ -193,7 +209,7 @@
 }
 
 @media #{media('<',m)} {
-  .contact-us {
+  .contacts-contact-us {
     margin-top: rem(74px);
 
     &__title {
@@ -210,8 +226,8 @@
 
     &__decor {
       &_first {
-        top: rem(0px);
-        right: rem(0px);
+        top: rem(-20px);
+        right: rem(75px);
         left: unset;
 
         width: rem(29px);
@@ -219,8 +235,8 @@
       }
 
       &_second {
-        top: rem(0px);
-        right: rem(0px);
+        top: rem(-20px);
+        right: rem(20px);
         width: rem(59px);
         height: rem(56px);
       }

@@ -6,13 +6,11 @@
   background-color: #ffffff;
   border-block: rem(1px) solid #e8e7e7;
 
-  @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
-    &:hover {
-      border-block: rem(1px) solid $pink;
-      transition: $transition;
-      #{$comp}__button {
-        color: $pink;
-      }
+  @include media-hover {
+    border-block: rem(1px) solid $pink;
+    transition: $transition;
+    #{$comp}__button {
+      color: $pink;
     }
   }
 
@@ -42,14 +40,12 @@
     width: rem(60px);
     height: rem(60px);
 
-    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
-      &:hover {
-        //transform: rotate(45deg);
+    @include media-hover {
+      //transform: rotate(45deg);
 
-        svg {
-          path {
-            stroke: $pink;
-          }
+      svg {
+        path {
+          stroke: $pink;
         }
       }
     }

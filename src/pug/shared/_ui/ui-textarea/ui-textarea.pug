@@ -1,0 +1,7 @@
+mixin ui-textarea(mods)
+  label.ui-textarea(data-input-parent='')
+    textarea(data-input='', name=name ? name : '')&attributes(attributes)
+    .ui-textarea__placeholder
+      span
+        | #{ attributes.placeholder }
+    .ui-input__error(data-error-container='')

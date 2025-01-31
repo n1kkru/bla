@@ -1,4 +1,4 @@
-.cards {
+.contacts-cards {
   position: relative;
 
   display: grid;
@@ -19,7 +19,7 @@
 }
 
 @media #{media('<',d)} {
-  .cards {
+  .contacts-cards {
     grid-template-columns: 1fr 1fr;
     gap: rem(12px);
     margin-top: rem(24px);
@@ -27,7 +27,7 @@
 }
 
 @media #{media('<',m)} {
-  .cards {
+  .contacts-cards {
     grid-template-columns: 1fr;
   }
 }

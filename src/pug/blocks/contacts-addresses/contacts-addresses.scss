@@ -1,4 +1,4 @@
-.addresses {
+.contacts-addresses {
   position: relative;
   display: flex;
   gap: rem(24px);
@@ -23,7 +23,7 @@
 }
 
 @media #{media('<',d)} {
-  .addresses {
+  .contacts-addresses {
     gap: rem(13px);
     margin-top: rem(48px);
 
@@ -34,7 +34,7 @@
 }
 
 @media #{media('<',m)} {
-  .addresses {
+  .contacts-addresses {
     flex-direction: column;
 
     &__blocks {

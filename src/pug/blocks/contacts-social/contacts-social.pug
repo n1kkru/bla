@@ -1,6 +1,6 @@
 mixin contacts-socials(mods)
   -
-    const baseName = 'socials'
+    const baseName = 'contacts-socials'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,9 +10,9 @@ mixin contacts-socials(mods)
       allMods = allMods.trim()
     }
 
-  .socials(class=allMods)&attributes(attributes)
+  .contacts-socials(class=allMods)&attributes(attributes)
     h3 Мы в социальных сетях
-    .socials__block
+    .contacts-socials__block
       +social-link('#', '_blue')
         +vk-icon
       +social-link('#', '_red')

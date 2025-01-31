@@ -31,7 +31,7 @@ class InputValidator {
       this.errorContainer = document.querySelector(
         `[data-error-container=${input.dataset.errorContainer}]`
       )
-      this.errorContainer.classList.add('input-ui__error')
+      this.errorContainer.classList.add('ui-input__error')
     } else this.errorContainer = input.parentNode.querySelector('[data-error-container]')
   }
 
@@ -67,7 +67,7 @@ class InputValidator {
             break
           case 'text-only':
             this.isValid =
-              validator.isAlpha(myValue, 'ru-RU') || validator.isAlpha(myValue, 'en-US')
+              validator.isAlpha(textValue, 'ru-RU') || validator.isAlpha(textValue, 'en-US')
             this.errorMessage = errorMessages.textOnly
             break
           case 'text-cyrillic':
@@ -109,10 +109,12 @@ class InputValidator {
 
   #switchError(message) {
     if (!this.isValid) {
-      this.errorContainer.classList.add('input-ui__error_visible') // Добавить стили для ошибки в соответствии с проектом
+      this.errorContainer.classList.add('ui-input__error_visible') // Добавить стили для ошибки в соответствии с проектом
+      this.errorContainer.parentNode.classList.add('invalid')
       this.errorContainer.innerHTML = message
     } else {
-      this.errorContainer.classList.remove('input-ui__error_visible')
+      this.errorContainer.classList.remove('ui-input__error_visible')
+      this.errorContainer.parentNode.classList.remove('invalid')
       this.errorContainer.innerHTML = ''
     }
   }

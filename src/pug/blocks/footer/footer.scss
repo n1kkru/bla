@@ -78,15 +78,13 @@
     color: #364a46;
     background-color: #fff;
 
-    border: 2px solid #ececec;
+    border: rem(2px) solid #ececec;
     border-radius: rem(16px);
     transition: $transition;
 
-    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
-      &:hover {
-        color: #ffffff;
-        background-color: #364a46;
-      }
+    @include media-hover {
+      color: #ffffff;
+      background-color: #364a46;
     }
   }
 
@@ -189,8 +187,9 @@
 
     &__social-link {
       border-radius: rem(8px);
-      max-width: rem(44px);
-      max-height: rem(44px);
+      width: rem(48px);
+      height: rem(48px);
+      padding: rem(12.92px);
     }
 
     &__button {

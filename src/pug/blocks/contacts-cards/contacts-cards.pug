@@ -1,6 +1,6 @@
 mixin contacts-cards(mods)
   -
-    const baseName = 'cards'
+    const baseName = 'contacts-cards'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,7 +10,7 @@ mixin contacts-cards(mods)
       allMods = allMods.trim()
     }
 
-  .cards(class=allMods)&attributes(attributes)
+  .contacts-cards(class=allMods)&attributes(attributes)
     +card("Секретарь", "Как стать умнее или избавиться от йододефицита", "8 812 448-54-65", "help_gendir@lekker.ru", "_green")
     +card("Отдел продаж", "", "8 812 702-72-62", "prodazha@lekker.ru", "_red")
     +card("Отдел рекламы", "", "", "reklama@lekker.ru", "_yellow")

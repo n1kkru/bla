@@ -3,7 +3,7 @@
   flex-direction: column;
 
   width: rem(450px);
-  height: rem(288px);
+  height: 100%;
   padding: rem(32px);
 
   color: #ffffff;
@@ -37,6 +37,8 @@
 
   time {
     text-transform: uppercase;
+    display: flex;
+    align-items: end;
   }
 
   &_green {
@@ -51,7 +53,6 @@
 @media #{media('<',d)} {
   .address {
     width: rem(177px);
-    height: rem(160px);
     padding: rem(12px);
     border-radius: rem(12px);
 

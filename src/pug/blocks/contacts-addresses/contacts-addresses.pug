@@ -1,0 +1,20 @@
+mixin contacts-addresses(mods)
+  -
+    const baseName = 'contacts-addresses'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .contacts-addresses(class=allMods)&attributes(attributes)
+    .contacts-addresses__blocks
+      +address('Офис', '194044', 'Санкт-петербург, Беловодский переулок,&nbsp;6', 'пн-пт: 9–17:30', '_green')
+      +address('Производство', '194044', 'Санкт-Петербург, пер. Зеленков, 6, лит. А, корп.&nbsp;1, пом.&nbsp;11', 'пн-пт: 9–17:30', '_blue')
+    .contacts-addresses__map
+      +picture('map.webp').desktop
+      +picture('map-tablet.webp').tablet
+      +picture('map-mobile.webp').mobile

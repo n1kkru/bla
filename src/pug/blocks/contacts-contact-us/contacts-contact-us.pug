@@ -1,0 +1,66 @@
+mixin contacts-contact-us(mods)
+  -
+    const baseName = 'contacts-contact-us'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .contacts-contact-us(class=allMods)&attributes(attributes)
+    h4.contacts-contact-us__title Связаться с нами
+    form.contacts-contact-us__form(data-form-id='main-form', action='#')
+      +ui-input(
+        type='text',
+        placeholder='Ваше имя',
+        name='name',
+        required='true',
+        data-error-message='бла бла бла',
+        data-validate='text-only'
+      )
+      +ui-input(
+        type='email',
+        placeholder='E-mail',
+        name='email',
+        required='true',
+        data-validate='email',
+        data-error-message='пкпук'
+      )
+      +ui-input(
+        type='tel',
+        data-mask-phone='',
+        placeholder='Телефон',
+        name='phone',
+        required='',
+        data-validate='tel'
+      )
+      +ui-textarea.contacts-contact-us__form-input_big(
+        type='text',
+        placeholder='Сообщение',
+        name='name',
+        required='true',
+        data-validate='text',
+        data-error-message='пукпукп'
+      )
+      //- label.contacts-contact-us__form-label
+      //-   input(type='text', required='')
+      //-   .contacts-contact-us__form-placeholder Ваше имя
+      //- label.contacts-contact-us__form-label
+      //-   input(type='email', required='')
+      //-   .contacts-contact-us__form-placeholder E-mail
+      //- label.contacts-contact-us__form-label
+      //-   input(type='tel', required='')
+      //-   .contacts-contact-us__form-placeholder Телефон
+      //- label.contacts-contact-us__form-label.contacts-contact-us__form-label_big
+      //-   input(type='text', required='')
+      //-   .contacts-contact-us__form-placeholder Сообщение
+      .contacts-contact-us__form-submit
+        .contacts-contact-us__text
+          p Нажимая на кнопку «Отправить» я даю согласие на условия&nbsp;
+          +link политики в отношении обработки персональных данных
+        +button("Отправить", "_accent").contacts-contact-us__btn
+    +picture('decor-form-first.webp').contacts-contact-us__decor.contacts-contact-us__decor_first
+    +picture('decor-form-second.webp').contacts-contact-us__decor.contacts-contact-us__decor_second

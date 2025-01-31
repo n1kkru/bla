@@ -1,8 +1,8 @@
-.ui-input {
+.ui-textarea {
   $comp: &;
   position: relative;
   cursor: text;
-  input {
+  textarea {
     position: relative;
     width: 100%;
     display: flex;
@@ -24,7 +24,7 @@
     }
 
     // когда пустой инпут
-    &:placeholder-shown + .ui-input__placeholder {
+    &:placeholder-shown + .ui-textarea__placeholder {
       top: rem(28px);
       left: rem(24px);
       font-size: rem(20px);
@@ -37,8 +37,8 @@
       border-color: #00aa88;
     }
 
-    &:active + .ui-input__placeholder,
-    &:focus + .ui-input__placeholder {
+    &:active + .ui-textarea__placeholder,
+    &:focus + .ui-textarea__placeholder {
       top: rem(18px);
       bottom: 0;
       left: rem(24px);
@@ -55,7 +55,7 @@
     }
   }
 
-  &.invalid input {
+  &.invalid textarea {
     border-color: #e40e20;
   }
 
@@ -83,24 +83,24 @@
     font-weight: 400;
     line-height: normal;
 
-    & ~ input {
+    & ~ textarea {
       border-color: red;
     }
   }
 }
 
 @media #{media('<',d)} {
-  .ui-input {
-    input {
+  .ui-textarea {
+    textarea {
       padding-inline: rem(16px);
-      &:placeholder-shown + .ui-input__placeholder {
+      &:placeholder-shown + .ui-textarea__placeholder {
         font-size: rem(14px);
       }
-      &:active + .ui-input__placeholder,
-      &:focus + .ui-input__placeholder {
+      &:active + .ui-textarea__placeholder,
+      &:focus + .ui-textarea__placeholder {
         left: rem(16px);
       }
-      &:placeholder-shown + .ui-input__placeholder {
+      &:placeholder-shown + .ui-textarea__placeholder {
         left: rem(16px);
       }
     }
