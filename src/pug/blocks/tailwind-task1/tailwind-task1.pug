@@ -1,0 +1,30 @@
+mixin tailwind-task1(mods)
+  -
+    const baseName = 'tailwind-task1'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .tailwind-task1.font-display.rounded-5.flex.flex-col.border.border-solid.border-gray-500.bg-white.p-6(
+    class='t:rounded-4 max-w-[36.3125rem] gap-[4.25rem] t:max-w-[22.0625rem] t:gap-[1.5rem] t:p-4'
+  )&attributes(attributes)
+    .tailwind-task1__block.flex.justify-between
+      .tailwind-task1__file.flex.gap-3(class='t:gap-2')
+        .tailwind-task1__file-icon(class='size-[3.75rem] t:size-10')
+          +file-icon.size-full
+        .tailwind-task1__file-size.font-normal.text-gray-600(
+          class='text-base/6 tracking-[-0.16px] t:text-[0.875rem]'
+        ) 1,55 МБ
+      button.tailwind-task1__btn.p-md.rounded-md.border.border-solid.border-gray-500.bg-transparent(
+        class='t:rounded-2 p-3'
+      )
+        .tailwind-task1__btn-icon.size-lg(class='t:size-4')
+          +download-icon.size-full
+    .tailwind-task1__text.text-5.font-semibold.text-dark(
+      class='tracking-[-0.2px] t:text-[0.875rem] t:tracking-[-0.14px]'
+    ) Прайс от 20 октября 2023 года

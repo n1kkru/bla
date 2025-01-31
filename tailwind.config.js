@@ -4,16 +4,36 @@ export default {
   content: ['./src/**/*.{pug,js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      transitionTimingFunction: {
-        DEFAULT: 'cubic-bezier(0.33, 1, 0.68, 1)'
-      },
-      transitionDuration: {
-        DEFAULT: '0.5s'
-      },
       colors: {
-        dark: '#0c0c0c',
-        light: '#f2f2f2'
+        dark: '#0B1226',
+        white: '#fff',
+        light: '#f2f2f2',
+        gray: {
+          700: '#747884',
+          500: '#E4E4E4'
+        }
+      },
+      fontFamily: {
+        'display': ['TT Firs Neue', 'serif'],
+      },
+      borderRadius: {
+        '2': '0.5rem',
+        '3': '0.75rem',
+        '4': '1rem',
+        '5': '1.25rem',
+        'full': '9999px'
+      },
+      padding: {
+        'm': '1rem',
+        'md': '1.125rem',
+        'lg': '1.5rem',
+      },
+      size: {
+        'lg': '1.5rem',
       }
+      // leading: {
+      //   '6': '22.4px'
+      // }
     },
 
     screens: {
