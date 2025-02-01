@@ -1,0 +1,28 @@
+mixin tailwind-currentNews(mods)
+  -
+    const baseName = 'tailwind-currentNews'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  section.tailwind-currentNews(class=allMods)&attributes(attributes)
+    h1.tailwind-currentNews__title(class='text-dark font-semibold font-display text-5xl leading-[3.6rem] tracking-[-0.32px] t:text-2xl/[1.75rem] m:leading-[1.8rem] size-full') Итоги выставки EcwaTech
+    .tailwind-currentNews__tags(class='').flex.gap-4
+      .tailwind-currentNews__tag(class='') Новости
+      time.tailwind-currentNews__date(class='') 18 октября 2023
+      .tailwind-currentNews__hashtag(class='') #выставки
+    p.tailwind-currentNews__text(class='')
+    |В середине сентября прошла выставка EcwaTech, которая в 17-ый раз стала
+    |международной площадкой для встречи специалистов в области коммунальной и
+    |промышленной водоподготовки, водоснабжения, водоотведения и очистки
+    |сточных вод. Мы наконец готовы рассказать и показать вам, как это было!
+    +picture('')
+    p.tailwind-currentNews__text(class='')
+
+
+

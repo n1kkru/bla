@@ -8,6 +8,7 @@ export default {
         dark: '#0B1226',
         white: '#fff',
         light: '#f2f2f2',
+        accent: '#0070B8',
         gray: {
           700: '#747884',
           500: '#E4E4E4'
@@ -24,7 +25,7 @@ export default {
         'full': '9999px'
       },
       padding: {
-        
+
         'm': '1rem', // 16px
         'md': '1.125rem', // 18px
         'lg': '1.5rem', // 24px
