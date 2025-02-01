@@ -11,7 +11,7 @@ mixin tailwind-task1(mods)
     }
 
   .tailwind-task1.font-display.rounded-5.flex.flex-col.border.border-solid.border-gray-500.bg-white.p-6(
-    class='t:rounded-4 max-w-[36.3125rem] gap-[4.25rem] t:max-w-[22.0625rem] t:gap-[1.5rem] t:p-4'
+    class='t:rounded-4 max-w-[36.3125rem] gap-[4.25rem] t:max-w-[22.0625rem] t:gap-[1.5rem] t:p-4 m:max-w-[21.4375rem]'
   )&attributes(attributes)
     .tailwind-task1__block.flex.justify-between
       .tailwind-task1__file.flex.gap-3(class='t:gap-2')
@@ -21,7 +21,7 @@ mixin tailwind-task1(mods)
           class='text-base/6 tracking-[-0.16px] t:text-[0.875rem]'
         ) 1,55 МБ
       button.tailwind-task1__btn.p-md.rounded-md.border.border-solid.border-gray-500.bg-transparent(
-        class='t:rounded-2 p-3'
+        class='t:rounded-2 t:p-3'
       )
         .tailwind-task1__btn-icon.size-lg(class='t:size-4')
           +download-icon.size-full

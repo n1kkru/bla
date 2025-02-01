@@ -24,9 +24,10 @@ export default {
         'full': '9999px'
       },
       padding: {
-        'm': '1rem',
-        'md': '1.125rem',
-        'lg': '1.5rem',
+        
+        'm': '1rem', // 16px
+        'md': '1.125rem', // 18px
+        'lg': '1.5rem', // 24px
       },
       size: {
         'lg': '1.5rem',
