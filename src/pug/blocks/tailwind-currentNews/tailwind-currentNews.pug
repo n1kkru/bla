@@ -11,18 +11,39 @@ mixin tailwind-currentNews(mods)
     }
 
   section.tailwind-currentNews(class=allMods)&attributes(attributes)
-    h1.tailwind-currentNews__title(class='text-dark font-semibold font-display text-5xl leading-[3.6rem] tracking-[-0.32px] t:text-2xl/[1.75rem] m:leading-[1.8rem] size-full') Итоги выставки EcwaTech
-    .tailwind-currentNews__tags(class='').flex.gap-4
-      .tailwind-currentNews__tag(class='') Новости
-      time.tailwind-currentNews__date(class='') 18 октября 2023
-      .tailwind-currentNews__hashtag(class='') #выставки
-    p.tailwind-currentNews__text(class='')
-    |В середине сентября прошла выставка EcwaTech, которая в 17-ый раз стала
-    |международной площадкой для встречи специалистов в области коммунальной и
-    |промышленной водоподготовки, водоснабжения, водоотведения и очистки
-    |сточных вод. Мы наконец готовы рассказать и показать вам, как это было!
-    +picture('')
-    p.tailwind-currentNews__text(class='')
-
-
-
+    .flex.flex-col.gap-6(class='d:gap-4')
+      h1(
+        class='size-full font-display text-5xl font-semibold leading-[3.6rem] tracking-[-0.32px] text-dark d:text-2xl/[1.75rem] m:leading-[1.8rem]'
+      ) Итоги выставки EcwaTech
+      .flex.items-center.gap-4(
+        class='font-display text-base/[1.4rem] font-normal tracking-[-0.16px] d:text-sm/[1.2125rem] d:tracking-[-0.14px]'
+      )
+        +tag('Новости')
+        time(class='px-3 py-1 text-dark d:px-2 d:py-[0.125rem]') 18 октября 2023
+        a(href='#', class='text-accent') #выставки
+    p(class='inline font-display text-xl/8 tracking-[-0.2px] d:text-base/[1.6rem] d:tracking-[-0.16px]')
+      | В середине сентября прошла выставка&nbsp;
+      a(href='#', class='inline text-accent underline underline-offset-auto') EcwaTech
+      | , которая в 17-ый раз стала
+      | международной площадкой для встречи специалистов в области коммунальной и
+      | промышленной водоподготовки, водоснабжения, водоотведения и очистки
+      | сточных вод. Мы наконец готовы рассказать и показать вам, как это было!
+    div(class='w-full')
+      +picture('/tw/image.webp')(class='rounded-5 d:rounded-4')
+    .flex.flex-col.gap-4(class='gap-3')
+      p(class='inline font-display text-xl/8 tracking-[-0.2px] d:text-base/[1.6rem] d:tracking-[-0.16px]')
+        | Больше фотографий вы можете найти в нашем&nbsp;
+        a(href='#', class='inline text-accent underline underline-offset-auto') официальном сообществе ВКонтакте
+        | , где мы всегда оперативно публикуем новости компании, фото и видео с наших мероприятий.
+      p(class='inline font-display text-xl/8 tracking-[-0.2px] d:text-base/[1.6rem] d:tracking-[-0.16px]')
+        | Неотъемлемой изюминкой наших стендов стало то, что мы всегда готовы вас удивлять! Ecwatech2023
+        | не стал исключением. Впервые на территории РФ нами была представлена модель серии CDM в
+        | высокотемпературном исполнении.
+      p(class='inline font-display text-xl/8 tracking-[-0.2px] d:text-base/[1.6rem] d:tracking-[-0.16px]')
+        | Помимо этого, мы презентовали установку повышения давления нового поколения, собранную на новом
+        | производстве в Подмосковье на базе насосов&nbsp;
+        a(href='#', class='inline text-accent underline underline-offset-auto') CDM&nbsp;
+        | от компании CNP в паре с автоматикой Aikon. И это еще не всё! Подробнее вы можете узнать в
+        | нашем видео.
+      p(class='inline font-display text-xl/8 tracking-[-0.2px] d:text-base/[1.6rem] d:tracking-[-0.16px]')
+        | Мы благодарим всех гостей за посещение выставки и нашего стенда! До новых встреч!

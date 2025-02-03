@@ -5,6 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        bgblur: 'rgba(255, 255, 255, 0.10)',
         dark: '#0B1226',
         white: '#fff',
         light: '#f2f2f2',
@@ -24,8 +25,9 @@ export default {
         '5': '1.25rem',
         'full': '9999px'
       },
-      padding: {
 
+      sizing: {
+        's': '0.875rem',
         'm': '1rem', // 16px
         'md': '1.125rem', // 18px
         'lg': '1.5rem', // 24px
@@ -34,7 +36,7 @@ export default {
         'lg': '1.5rem',
       }
       // leading: {
-      //   '6': '22.4px'
+      //   '1.4rem': '22.4px'
       // }
     },
 

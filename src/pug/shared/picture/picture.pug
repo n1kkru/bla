@@ -51,5 +51,6 @@ mixin picture(fileName, mobileBreakpoint)
     img.picture__img.lazyload(
       src=`${file.getPath(fileTitle, fileExtension)}`,
       data-src=`${file.getPath(fileTitle, fileExtension)}`,
-      alt=fileName
+      alt=fileName,
+      class=attributes.class
     )
