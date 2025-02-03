@@ -1,0 +1,7 @@
+.tailwind-bla {
+  @media #{media('<',d)} {
+    width: calc(100% + rem(24px));
+    margin-left: rem(-12px);
+    padding-inline: rem(12px);
+  }
+}

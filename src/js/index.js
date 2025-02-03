@@ -12,6 +12,10 @@ import { lenisInit } from './libs/lenis/lenis'
 import { scrollBarWidth } from './utils/scrollbarWidth'
 import { initSlideFunction } from './utils/slideFunction'
 
+import { initFlowbite } from "flowbite";
+
+
+
 window.addEventListener('load', scrollBarWidth, false)
 window.addEventListener('resize', scrollBarWidth, false)
 
@@ -24,6 +28,10 @@ export const commonFunction = () => {
   config()
   cssDebug(true)
   initSlideFunction()
+  
+  useVisibleTask$(() => {
+    initFlowbite();
+  });
 
   // libs
   setTimeout(() => {

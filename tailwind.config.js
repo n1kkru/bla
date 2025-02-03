@@ -1,7 +1,10 @@
 import plugin from 'tailwindcss/plugin'
 
 export default {
-  content: ['./src/**/*.{pug,js,ts,jsx,tsx}'],
+  content: [
+    './src/**/*.{pug,js,ts,jsx,tsx}',
+    './node_modules/flowbite/**/*.js'
+  ],
   theme: {
     extend: {
       colors: {
@@ -56,6 +59,7 @@ export default {
     }
   },
   plugins: [
+    require('flowbite/plugin'),
     plugin(function ({ theme, addUtilities }) {
       const screens = theme('screens')
 

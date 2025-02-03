@@ -1,0 +1,94 @@
+mixin tailwind-task3(mods)
+  -
+    const baseName = 'tailwind-task3'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .tailwind-task3.font-display(class=allMods)&attributes(attributes)
+    button(
+      data-modal-target='default-modal',
+      data-modal-toggle='default-modal',
+      class='linear block size-24 rounded-5 bg-accent px-5 py-2.5 text-center text-sm font-semibold text-white transition-all hover:bg-gray-500',
+      type='button'
+    ) Удалить
+
+    #default-modal(
+      tabindex='-1',
+      aria-hidden='true',
+      class='fixed left-0 right-0 top-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden backdrop-blur-lg'
+    )
+      div(class='relative mx-auto max-h-[90vh] max-w-[90vw]')
+        div(class='relative rounded-5 bg-white p-20 shadow-sm m:px-4 m:pb-4 m:pt-[3.25rem]')
+          div(
+            class='relative flex flex-col items-center justify-between gap-5 overflow-auto text-center m:gap-[1.125rem]'
+          )
+            h3(class='text-5xl/[3.6rem] font-semibold text-gray-900 m:text-2xl/[1.8rem]') Удалить партнера
+            p(class='text-2xl/[2.4rem] m:text-base/[1.2rem]')
+              | Вы действительно хотите удалить партнера&nbsp;
+              br
+              strong ts@cloudmill.ru&nbsp;
+              | из проекта&nbsp;
+              br
+              strong(class='leading-[1.2rem]') Ижевская ТЭЦ-1
+            div(class='flex items-center gap-5 m:w-full m:flex-col m:gap-3')
+              button(
+                data-modal-hide='default-modal',
+                type='button',
+                class='linear rounded-5 border border-gray-500 bg-white px-12 py-6 text-xl/6 font-semibold text-dark transition-all hover:bg-gray-500 m:order-1 m:w-full'
+              ) Отменить
+              button(
+                data-modal-show='default-modal-new',
+                data-modal-target='default-modal-new',
+                type='button',
+                class='linear rounded-5 border border-accent bg-accent px-12 py-6 text-xl/6 font-semibold text-white transition-all hover:bg-gray-500 m:w-full'
+              ) Да, удалить
+
+          button(
+            type='button',
+            class='linear absolute right-10 top-10 box-border size-[3.75rem] rounded-3 border border-gray-500 p-5 transition-all hover:bg-gray-500 m:right-2 m:top-2 m:size-10 m:p-3',
+            data-modal-hide='default-modal'
+          )
+            +close-icon
+
+    #default-modal-new(
+      tabindex='-1',
+      aria-hidden='true',
+      class='fixed left-0 right-0 top-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden backdrop-blur-lg'
+    )
+      div(class='relative mx-auto max-h-[90vh] max-w-[90vw]')
+        div(class='relative rounded-5 bg-white p-20 shadow-sm m:px-4 m:pb-4 m:pt-[3.25rem]')
+          div(
+            class='relative flex flex-col items-center justify-between gap-5 overflow-auto text-center m:gap-[1.125rem]'
+          )
+            h3(class='text-5xl/[3.6rem] font-semibold text-gray-900 m:text-2xl/[1.8rem]') Удалить партнера
+            p(class='text-2xl/[2.4rem] m:text-base/[1.2rem]')
+              | Вы действительно хотите удалить партнера&nbsp;
+              br
+              strong ts@cloudmill.ru&nbsp;
+              | из проекта&nbsp;
+              br
+              strong(class='leading-[1.2rem]') Ижевская ТЭЦ-1
+            div(class='flex items-center gap-5 m:w-full m:flex-col m:gap-3')
+              button(
+                data-modal-hide='default-modal-new',
+                type='button',
+                class='linear rounded-5 border border-gray-500 bg-white px-12 py-6 text-xl/6 font-semibold text-dark transition-all hover:bg-gray-500 m:order-1 m:w-full'
+              ) Отменить
+              button(
+                data-modal-hide='default-modal-new',
+                type='button',
+                class='linear rounded-5 border border-accent bg-accent px-12 py-6 text-xl/6 font-semibold text-white transition-all hover:bg-gray-500 m:w-full'
+              ) Да, удалить
+
+          button(
+            type='button',
+            class='linear absolute right-10 top-10 box-border size-[3.75rem] rounded-3 border border-gray-500 p-5 transition-all hover:bg-gray-500 m:right-2 m:top-2 m:size-10 m:p-3',
+            data-modal-hide='default-modal-new'
+          )
+            +close-icon
