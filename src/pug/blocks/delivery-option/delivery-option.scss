@@ -30,13 +30,25 @@
       line-height: rem(24px);
       letter-spacing: -0.4px;
     }
+    @media (#{media('<','m')}) {
+      font-size: rem(24px);
+      line-height: rem(28.8px);
+      letter-spacing: -0.96px;
+    }
   }
 
   &__options {
     display: flex;
     gap: rem(20px);
+    &_in-row {
+      flex-direction: column;
+    }
     @media (#{media('<',d)}) {
       gap: rem(16px);
+    }
+    @media (#{media('<',m)}) {
+      gap: rem(12px);
+      flex-direction: column;
     }
   }
 
@@ -150,9 +162,9 @@
     }
   }
 
-  &__textarea {
+  &__textarea,
+  &__input {
     padding: rem(24px) rem(40px);
-    min-height: rem(160px);
     border-radius: rem(20px);
     border: 1px solid #e4e4e4;
     background: #f5f5f5;
@@ -211,20 +223,23 @@
         background: #fff;
         transition: $transition;
       }
+
+      a {
+        display: inline;
+        color: #0070b8;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: none;
+        text-decoration-thickness: auto;
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+      }
+
       @include media-hover {
         &::before {
           background-color: #0070b8;
         }
       }
-    }
-    a {
-      color: #0070b8;
-      text-decoration-line: underline;
-      text-decoration-style: solid;
-      text-decoration-skip-ink: none;
-      text-decoration-thickness: auto;
-      text-underline-offset: auto;
-      text-underline-position: from-font;
     }
 
     @media (#{media('<',d)}) {
@@ -235,15 +250,15 @@
         line-height: rem(19.6px);
         letter-spacing: -0.14px;
         &::before {
-          top: (-2px);
+          top: (1px);
           width: rem(24px);
           height: rem(24px);
         }
-      }
-      a {
-        font-size: rem(14px);
-        line-height: rem(19.6px);
-        letter-spacing: -0.14px;
+        a {
+          font-size: rem(14px);
+          line-height: rem(19.6px);
+          letter-spacing: -0.14px;
+        }
       }
     }
   }
@@ -285,11 +300,118 @@
       font-size: rem(16px);
       line-height: rem(19.2px);
       letter-spacing: -0.16px;
+      margin-top: rem(16px);
       &-icon {
         padding: rem(9px);
         width: rem(32px);
         height: rem(32px);
       }
+    }
+  }
+
+  &__text {
+    color: #0b1226;
+    font-size: rem(20px);
+    font-weight: 400;
+    line-height: rem(24px);
+    letter-spacing: -0.2px;
+    @media (#{media('<',d)}) {
+      font-size: rem(16px);
+      line-height: rem(25.6px);
+      letter-spacing: -0.16px;
+    }
+  }
+
+  &__textarea {
+    min-height: rem(160px);
+  }
+
+  &__input {
+    min-height: rem(80px);
+    @media (#{media('<',d)}) {
+      border-radius: rem(12px);
+      font-size: rem(14px);
+      line-height: rem(16.8px);
+      letter-spacing: -0.14px;
+      padding-block: rem(11px);
+      min-height: rem(48px);
+      &-icon {
+        width: rem(24px);
+        height: rem(24px);
+      }
+    }
+  }
+
+  // для контента который повлется динамически
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20px);
+    &_buttons {
+      flex-direction: row;
+      button {
+        padding: rem(24px) rem(36px);
+        width: 100%;
+        @media (#{media('<',d)}) {
+          padding-block: rem(14px);
+        }
+      }
+
+      @media (#{media('<',m)}) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__button {
+    position: relative;
+    border-radius: rem(20px);
+    border: 1px solid #e4e4e4;
+    display: flex;
+    padding: rem(12px) rem(32px);
+    justify-content: center;
+    align-items: center;
+    gap: rem(8px);
+    max-width: 50%;
+
+    color: #0b1226;
+    font-size: rem(20px);
+    font-weight: 600;
+    line-height: rem(24px);
+    letter-spacing: -0.2px;
+    &-icon {
+      width: rem(32px);
+      height: rem(32px);
+    }
+    &-icon_download {
+      position: absolute;
+      right: rem(8px);
+      bottom: center;
+      border-radius: rem(12px);
+      border: 1px solid #e4e4e4;
+      background: #fff;
+      padding: rem(9px);
+      width: rem(48px);
+      height: rem(48px);
+    }
+
+    @media (#{media('<',d)}) {
+      border-radius: rem(12px);
+      font-size: rem(14px);
+      line-height: rem(16.8px);
+      letter-spacing: -0.14px;
+      &-icon {
+        width: rem(24px);
+        height: rem(24px);
+      }
+      &-icon_download {
+        width: rem(34px);
+        height: rem(34px);
+      }
+    }
+
+    @media (#{media('<',m)}) {
+      max-width: 100%;
     }
   }
 }
