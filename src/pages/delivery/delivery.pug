@@ -1,0 +1,13 @@
+extends ../../layout/layout
+
+block variables
+  -
+    const pageName = 'delivery'
+    const pageTitle = 'delivery'
+
+block content
+  main.font-main(data-barba='container', data-barba-namespace=pageName)
+    h1(
+      class='mx-auto max-w-[43.1875vw] text-[3.75rem]/[3.75rem] font-semibold tracking-[-2.4px] text-dark'
+    ) Заявка на отгрузку
+    +delivery-option.mx-auto.flex.flex-col

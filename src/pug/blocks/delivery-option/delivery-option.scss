@@ -1,0 +1,168 @@
+.delivery-option {
+  $comp: &;
+  position: relative;
+  line-height: rem(38.4px);
+
+  fieldset {
+    padding: 0;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40px);
+  }
+
+  &__title {
+    color: #0b1226;
+    font-size: rem(32px);
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: -0.64px;
+  }
+
+  &__options {
+    display: flex;
+    gap: rem(20px);
+  }
+
+  &__radio {
+    display: none;
+    &:checked + #{$comp}__label {
+      background-color: #0070b8;
+      color: #fff;
+      &::before {
+        border-width: rem(8px);
+        background-color: #0070b8;
+      }
+    }
+  }
+
+  &__label {
+    position: relative;
+    padding: rem(12px) rem(20px);
+    padding-left: rem(68px);
+    border-radius: rem(20px);
+    border: 1px solid #e4e4e4;
+    background: #fff;
+    transition: $transition;
+    cursor: pointer;
+    font-size: rem(24px);
+    font-weight: 400;
+    letter-spacing: -0.24px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: center;
+      left: rem(20px);
+      width: rem(32px);
+      height: rem(32px);
+      border-radius: rem(18px);
+      border: 2px solid #e4e4e4;
+      background: #fff;
+      transition: $transition;
+    }
+    @include media-hover {
+      background-color: #0070b8;
+      color: #fff;
+      &::before {
+        border-width: rem(8px);
+        background-color: #0070b8;
+      }
+    }
+  }
+
+  &__block-head {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button-reset {
+    position: relative;
+    color: #747884;
+    font-size: rem(20px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: rem(24px);
+    letter-spacing: -0.2px;
+    &::after {
+      content: '';
+      position: absolute;
+      top: auto;
+      left: rem(-32px);
+      width: rem(24px);
+      height: rem(24px);
+      background-image: url('/images/reset-icon.svg');
+    }
+  }
+
+  &__input {
+    padding: rem(24px) rem(40px);
+    min-height: rem(160px);
+    border-radius: rem(20px);
+    border: 1px solid #e4e4e4;
+    background: #f5f5f5;
+    box-shadow: 0px 0px rem(12px) 0px rgba(0, 0, 0, 0.04) inset;
+
+    font-family: 'TT Firs Neue';
+    font-size: rem(24px);
+    color: #0b1226;
+    font-style: normal;
+    font-weight: 400;
+    line-height: rem(38.4px);
+
+    letter-spacing: -0.24px;
+    &::placeholder {
+      max-width: 95.5%;
+      color: #747884;
+    }
+  }
+
+  // политика
+  &__privacy {
+    &-checkbox {
+      display: none;
+    }
+    &-text {
+      color: #747884;
+      font-size: rem(16px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: rem(19.2px);
+      letter-spacing: -0.16px;
+      a {
+        color: #0070b8;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: none;
+        text-decoration-thickness: auto;
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+      }
+    }
+  }
+
+  &__submit {
+    position: relative;
+    padding: rem(20px);
+    height: rem(100px);
+    max-width: 100%;
+    background-color: #0070b8;
+    border-radius: rem(20px);
+    display: flex;
+    text-align: start;
+    color: #fff;
+    font-size: rem(20px);
+    line-height: rem(24px);
+    letter-spacing: -0.2px;
+    &-icon {
+      position: absolute;
+      right: rem(8px);
+      bottom: rem(8px);
+      border-radius: 12px;
+      border: 1px solid #e4e4e4;
+      background: #fff;
+      padding: rem(10px);
+    }
+  }
+}

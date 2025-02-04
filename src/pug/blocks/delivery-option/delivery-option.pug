@@ -1,0 +1,37 @@
+mixin delivery-option(mods)
+  -
+    const baseName = 'delivery-option'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .delivery-option(class='mt-[6.25rem] max-w-[43.1875vw]')&attributes(attributes)
+    hr
+    .delivery-option__block
+      h2.delivery-option__title.mt-6 Спооб доставки
+      fieldset.delivery-option__options
+        input#option-pickup.delivery-option__radio(type='radio', name='option', value='pickup') 
+        label.delivery-option__label(for='option-pickup') Самовывоз
+        input#option-shipping.delivery-option__radio(type='radio', name='option', value='shipping') 
+        label.delivery-option__label(for='option-shipping') Транспортной компанией
+    hr.mt-20
+    .delivery-option__block
+      .delivery-option__block-head.mt-6
+        h2.delivery-option__title Дополнительные требования к доставке
+        button.delivery-option__button-reset Очистить все
+      textarea.delivery-option__input(
+        placeholder='Комментарий (например, инструкция, паспорт и другое). Если доставка через ТК, укажите вид упаковки'
+      )
+      .delivery-option__privacy
+        input.delivery-option__privacy-checkbox(type='checkbox')
+        label.delivery-option__privacy-text
+          | Нажимая на кнопку «Отправить», я принимаю&nbsp;
+          a(href='#') условия политики конфиденциальности
+    button.delivery-option__submit.mt-10 Отправить
+      .delivery-option__submit-icon
+        +arrow-right
