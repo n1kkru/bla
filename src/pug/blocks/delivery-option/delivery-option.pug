@@ -10,28 +10,28 @@ mixin delivery-option(mods)
       allMods = allMods.trim()
     }
 
-  .delivery-option(class='mt-[6.25rem] max-w-[43.1875vw]')&attributes(attributes)
+  .delivery-option(class='mt-[6.25rem] max-w-[43.1875vw] d:mt-6 d:max-w-full')&attributes(attributes)
     hr
     .delivery-option__block
-      h2.delivery-option__title.mt-6 Спооб доставки
+      h2.delivery-option__title(class='mt-6 d:mt-4') Спооб доставки
       fieldset.delivery-option__options
         input#option-pickup.delivery-option__radio(type='radio', name='option', value='pickup') 
         label.delivery-option__label(for='option-pickup') Самовывоз
         input#option-shipping.delivery-option__radio(type='radio', name='option', value='shipping') 
         label.delivery-option__label(for='option-shipping') Транспортной компанией
-    hr.mt-20
-    .delivery-option__block
-      .delivery-option__block-head.mt-6
+    hr(class='mt-20 d:mt-6')
+    .delivery-option__block.delivery-option__block_gap
+      .delivery-option__block-head(class='mt-6 d:mt-4')
         h2.delivery-option__title Дополнительные требования к доставке
         button.delivery-option__button-reset Очистить все
-      textarea.delivery-option__input(
+      textarea.delivery-option__textarea(
         placeholder='Комментарий (например, инструкция, паспорт и другое). Если доставка через ТК, укажите вид упаковки'
       )
       .delivery-option__privacy
-        input.delivery-option__privacy-checkbox(type='checkbox')
-        label.delivery-option__privacy-text
+        input#privacy.delivery-option__privacy-checkbox(type='checkbox')
+        label.delivery-option__privacy-text(for='privacy')
           | Нажимая на кнопку «Отправить», я принимаю&nbsp;
-          a(href='#') условия политики конфиденциальности
+        a(href='#') условия политики конфиденциальности
     button.delivery-option__submit.mt-10 Отправить
       .delivery-option__submit-icon
         +arrow-right
