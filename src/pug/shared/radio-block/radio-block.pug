@@ -1,0 +1,24 @@
+mixin radio-block(title, group, values, mods)
+  -
+    const baseName = 'radio-block'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .radio-block(class=allMods)&attributes(attributes)
+    hr(class='mt-20 d:mt-6')
+    .radio-block__block
+      h2.radio-block__title(class='mt-6 d:mt-4')
+        = title
+        span.text-accent &nbsp;*
+      fieldset.radio-block__options
+        each name, value in values
+          input.radio-block__radio(id=group + '-' + name, type='radio', name=group, value=name)
+          label.radio-block__label(for=group + '-' + name)= value
+
+      block
