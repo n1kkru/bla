@@ -13,7 +13,7 @@ mixin delivery-option(mods)
   .delivery-option(class='mt-[6.25rem] max-w-[45.25vw] d:mt-6 d:max-w-full')&attributes(attributes)
     // статичный первый блок с радиокнопками
     hr
-    .delivery-option__block
+    //- .delivery-option__block
       h2.delivery-option__title(class='mt-6 d:mt-4') Спооб доставки
       fieldset.delivery-option__options
         input#option-pickup.delivery-option__radio(type='radio', name='option', value='pickup') 
@@ -22,7 +22,7 @@ mixin delivery-option(mods)
         label.delivery-option__label(for='option-shipping') Транспортной компанией
 
     // динамический если нажали 'Самовывоз'
-    +radio-block('Кто будет забирать', 'who', { 'Конечный получатель' : 'pickup', 'Транспортная компания' : 'shipping', 'Доверенное лицо' : 'agent' })
+    //- +radio-block('Кто будет забирать', 'who', { 'Конечный получатель' : 'pickup', 'Транспортная компания' : 'shipping', 'Доверенное лицо' : 'agent' })
       .delivery-option__wrapper
         input.delivery-option__input(type='text', placeholder='Наименование')
         input.delivery-option__input(type='text', placeholder='ИНН (необязательно)')
@@ -36,7 +36,7 @@ mixin delivery-option(mods)
         | Если данной информации нет на момент заполнения шаблона, то предоставление необходимо после информирования о дате забора.
 
     // динамический если нажали 'Самовывоз'
-    +radio-block('Вариант отгрузки документов', 'how', { 'Оригиналы отгрузочных документов передать с грузом (доверенному лицу)' : 'value1', 'Оригиналы отгрузочных документов вложить в ящик с грузом' : 'value2', 'Отправка третьим лицам, документы с ценами не прикладывать к грузу, оригиналы отгрузочных документов отправить почтой по адресу' : 'value3' })
+    //- +radio-block('Вариант отгрузки документов', 'how', { 'Оригиналы отгрузочных документов передать с грузом (доверенному лицу)' : 'value1', 'Оригиналы отгрузочных документов вложить в ящик с грузом' : 'value2', 'Отправка третьим лицам, документы с ценами не прикладывать к грузу, оригиналы отгрузочных документов отправить почтой по адресу' : 'value3' })
       .delivery-option__wrapper
         input.delivery-option__input(type='text', placeholder='Адрес')
       p.delivery-option__text
@@ -45,7 +45,7 @@ mixin delivery-option(mods)
 
     // статичный
     hr(class='mt-20 d:mt-6')
-    .delivery-option__block.delivery-option__block_gap
+    //- .delivery-option__block.delivery-option__block_gap
       .delivery-option__block-head(class='mt-6 d:mt-4')
         h2.delivery-option__title Дополнительные требования к доставке
         button.delivery-option__button-reset Очистить все
@@ -58,7 +58,6 @@ mixin delivery-option(mods)
           | Нажимая на кнопку «Отправить», я принимаю&nbsp;
           a(href='#') условия политики конфиденциальности
 
-      //
       .delivery-option__wrapper.delivery-option__wrapper_buttons
         label.delivery-option__button(for='input-file2')
           input#input-file2.hidden(type='file')
@@ -69,6 +68,11 @@ mixin delivery-option(mods)
             +download
           p Скачать файл в PDF
 
-    button.delivery-option__submit.mt-10 Отправить
+    button.delivery-option__submit.mt-10(
+      data-modal-target='authentication-modal',
+      data-modal-toggle='authentication-modal'
+    ) Отправить
       .delivery-option__submit-icon.delivery-option__submit-icon_download
         +arrow-right
+
+    +modalka

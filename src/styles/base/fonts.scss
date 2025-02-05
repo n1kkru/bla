@@ -1,4 +1,17 @@
 @font-face {
+  font-family: 'Foundry Monoline OT3';
+  src: url('https://db.onlinewebfonts.com/t/3667294720d83f234b42bffb2367a2b2.eot');
+  src:
+    url('https://db.onlinewebfonts.com/t/3667294720d83f234b42bffb2367a2b2.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://db.onlinewebfonts.com/t/3667294720d83f234b42bffb2367a2b2.woff2') format('woff2'),
+    url('https://db.onlinewebfonts.com/t/3667294720d83f234b42bffb2367a2b2.woff') format('woff'),
+    url('https://db.onlinewebfonts.com/t/3667294720d83f234b42bffb2367a2b2.ttf') format('truetype'),
+    url('https://db.onlinewebfonts.com/t/3667294720d83f234b42bffb2367a2b2.svg#Foundry Monoline OT3 W08 Medium')
+      format('svg');
+}
+
+@font-face {
   font-family: 'TT Firs Neue';
   font-weight: 400;
   font-style: normal;
