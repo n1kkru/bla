@@ -42,7 +42,7 @@
     display: none;
     &:checked + #{$comp}__label::before {
       border-width: rem(8px);
-      background-color: #0070b8;
+      border-color: #0070b8;
     }
 
     @media (#{media('<',d)}) {
@@ -62,6 +62,7 @@
     font-size: rem(24px);
     font-weight: 400;
     letter-spacing: -0.24px;
+    width: max-content;
     &::before {
       content: '';
       position: absolute;
@@ -77,7 +78,7 @@
     @include media-hover {
       &::before {
         border-width: rem(8px);
-        background-color: #0070b8;
+        border-color: #0070b8;
       }
     }
 

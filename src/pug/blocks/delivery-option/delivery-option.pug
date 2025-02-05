@@ -26,9 +26,10 @@ mixin delivery-option(mods)
       .delivery-option__wrapper
         input.delivery-option__input(type='text', placeholder='Наименование')
         input.delivery-option__input(type='text', placeholder='ИНН (необязательно)')
-        button.delivery-option__button(type='button')
+        label.delivery-option__button(for='input-file')
           .delivery-option__button-icon
             +paperclip 
+          input#input-file.hidden(type='file')
           p Прикрепить файл доверенности
       p.delivery-option__text
         span.text-accent *&nbsp;
@@ -59,10 +60,14 @@ mixin delivery-option(mods)
 
       //
       .delivery-option__wrapper.delivery-option__wrapper_buttons
-        button.delivery-option__button(type='button') Прикрепить файл доверенности
-        button.delivery-option__button(type='button') Скачать заявку в PDF
+        label.delivery-option__button(for='input-file2')
+          input#input-file2.hidden(type='file')
+          p Прикрепить файл доверенности
+
+        a.delivery-option__button(download='', href='')
           .delivery-option__button-icon_download
             +download
+          p Скачать файл в PDF
 
     button.delivery-option__submit.mt-10 Отправить
       .delivery-option__submit-icon.delivery-option__submit-icon_download

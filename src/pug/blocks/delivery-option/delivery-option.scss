@@ -349,7 +349,8 @@
     gap: rem(20px);
     &_buttons {
       flex-direction: row;
-      button {
+      label,
+      a {
         padding: rem(24px) rem(36px);
         width: 100%;
         @media (#{media('<',d)}) {
@@ -364,6 +365,7 @@
   }
 
   &__button {
+    cursor: pointer;
     position: relative;
     border-radius: rem(20px);
     border: 1px solid #e4e4e4;
@@ -393,6 +395,11 @@
       padding: rem(9px);
       width: rem(48px);
       height: rem(48px);
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
     }
 
     @media (#{media('<',d)}) {
