@@ -39,6 +39,9 @@ export default {
       size: {
         'lg': '1.5rem',
       }
+      // leading: {
+      //   '1.4rem': '22.4px'
+      // }
     },
 
     screens: {

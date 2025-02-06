@@ -21,6 +21,14 @@
 
 @font-face {
   font-family: 'TT Firs Neue';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/TT-Firs-Neue-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TT Firs Neue';
   font-weight: 600;
   font-style: normal;
   font-display: swap;
