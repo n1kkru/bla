@@ -1,0 +1,356 @@
+.modalka {
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  left: 50%;
+  top: 50%;
+  z-index: 50;
+  max-width: 90vw;
+  max-height: 90vh;
+  align-items: unset;
+  justify-content: center;
+  overflow: hidden;
+  background: #fff;
+  color: #242424;
+  padding: rem(80px);
+
+  font-family: 'Foundry Monoline OT3', 'serif';
+  border: 1px solid #7f7f7f;
+  transform: translate(-50%, -50%);
+  @media #{media('<',d)} {
+    padding: rem(52px) rem(16px);
+    width: 90vw;
+  }
+
+  &__content {
+    position: relative;
+    overflow: auto;
+
+    &_done {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: rem(40px);
+      @media #{media('<',d)} {
+        gap: rem(20px);
+      }
+
+      .modalka__title {
+        max-width: rem(440px);
+      }
+
+      .modalka__text {
+        max-width: rem(440px);
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    button {
+      position: absolute;
+      top: rem(20px);
+      width: rem(40px);
+      height: rem(40px);
+      padding: rem(8px);
+      border: 1px solid #e0e0e0;
+      background: rgba(255, 255, 255, 0.01);
+      backdrop-filter: blur(6px);
+      transition: $transition;
+      @include media-hover {
+        background-color: #e0e0e0;
+      }
+    }
+    &-back {
+      left: rem(20px);
+    }
+    &-close {
+      right: rem(20px);
+    }
+    @media #{media('<',d)} {
+      button {
+        top: rem(12px);
+        width: rem(32px);
+        height: rem(32px);
+        padding: rem(6.4px);
+      }
+      &-back {
+        left: rem(12px);
+      }
+      &-close {
+        right: rem(12px);
+      }
+    }
+  }
+
+  &__title {
+    font-style: italic;
+    text-align: center;
+    font-size: rem(40px);
+    font-weight: 800;
+    line-height: rem(44px);
+    letter-spacing: -1.6px;
+    text-transform: uppercase;
+    @media #{media('<',d)} {
+      font-size: rem(20px);
+      line-height: rem(22px);
+      letter-spacing: -0.6px;
+    }
+  }
+
+  &__text {
+    margin-top: rem(12px);
+    text-align: center;
+    font-size: rem(20px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: rem(28px);
+    letter-spacing: -0.2px;
+    @media #{media('<',d)} {
+      margin-top: rem(8px);
+      font-size: rem(14px);
+      line-height: rem(19.6px);
+      letter-spacing: -0.14px;
+    }
+  }
+
+  &__body {
+    margin-top: rem(40px);
+    @media #{media('<',d)} {
+      margin-top: rem(20px);
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20px);
+    width: 100%;
+    @media #{media('<',d)} {
+      gap: rem(12px);
+    }
+
+    &-row {
+      position: relative;
+      input[type='tel'],
+      input[type='password'] {
+        width: 100%;
+        color: #242424;
+        font-size: rem(16px);
+        font-weight: 500;
+        line-height: rem(22.4px);
+        letter-spacing: -0.16px;
+        padding: rem(29px) rem(20px) rem(11px);
+        min-height: rem(62px);
+        border: 1px solid #e0e0e0;
+        background: #fbfbfb;
+        box-shadow: 0px 0px rem(20px) 0px rgba(0, 0, 0, 0.08) inset;
+        @media #{media('<',d)} {
+          min-height: rem(44px);
+          padding: rem(20px) rem(12px) rem(7px);
+          font-size: rem(12px);
+          line-height: rem(16.8px);
+          letter-spacing: -0.12px;
+        }
+      }
+      label {
+        color: #7f7f7f;
+        font-size: rem(13px);
+        line-height: rem(18.2px);
+        letter-spacing: -0.13px;
+        position: absolute;
+        text-transform: uppercase;
+        left: rem(20px);
+        top: rem(11px);
+        @media #{media('<',d)} {
+          left: rem(12px);
+          top: rem(7px);
+          font-size: rem(8px);
+          line-height: rem(11.2px);
+          letter-spacing: -0.08px;
+        }
+      }
+    }
+    &-icon {
+      position: absolute;
+      right: rem(20px);
+      top: rem(20px);
+      width: rem(20px);
+      height: rem(20px);
+      color: #7f7f7f;
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+      @media #{media('<',d)} {
+        right: rem(12px);
+        top: (calc(50% - 8px));
+        width: rem(16px);
+        height: rem(16px);
+      }
+    }
+
+    &-button {
+      padding: rem(20px) rem(40px);
+      backdrop-filter: blur(6px);
+      font-size: rem(16px);
+      font-style: normal;
+      font-weight: 800;
+      line-height: rem(22.4px);
+      letter-spacing: -0.14px;
+      text-transform: uppercase;
+      border: 1px solid #e0e0e0;
+      background-color: #fff;
+      color: #242424;
+      transition: $transition;
+      @include media-hover {
+        background-color: #e0e0e0;
+      }
+      @media #{media('<',d)} {
+        padding: rem(12px) rem(24px);
+        font-size: rem(14px);
+        line-height: rem(19.6px);
+        letter-spacing: -0.14px;
+      }
+
+      &_small {
+        position: relative;
+        padding: rem(8px) rem(16px);
+        width: max-content;
+        align-self: center;
+        justify-content: center;
+        display: flex;
+        gap: rem(8px);
+        align-items: center;
+        @media #{media('<',d)} {
+          font-size: rem(10px);
+          line-height: rem(14px);
+          letter-spacing: -0.1px;
+          span {
+            width: rem(16px);
+            height: rem(16px);
+          }
+        }
+
+        span {
+          position: relative;
+          color: #db2e27;
+          width: rem(20px);
+          height: rem(20px);
+          padding-bottom: 1px;
+          border: 1px solid #e0e0e0;
+          border-radius: rem(40px);
+          transition: $transition;
+          &::after {
+            transition: $transition;
+            font-size: rem(12px);
+            content: '?';
+            position: absolute;
+            top: 0;
+            left: rem(6px);
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: rem(16.8px);
+            letter-spacing: -0.12px;
+          }
+        }
+        @include media-hover {
+          span {
+            background-color: #db2e27;
+            &::after {
+              color: #fff;
+            }
+          }
+        }
+      }
+
+      &_submit {
+        color: #fff;
+        background-color: #1d3c85;
+        @include media-hover {
+          background-color: #7f7f7f;
+          color: #000;
+        }
+      }
+    }
+
+    a {
+      color: #1d3c85;
+      display: inline;
+      text-align: center;
+      font-size: rem(16px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: rem(22.4px);
+      letter-spacing: -0.16px;
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-decoration-skip-ink: none;
+      text-decoration-thickness: auto;
+      text-underline-offset: auto;
+      text-underline-position: from-font;
+      transition: $transition;
+      @include media-hover {
+        color: #242424;
+      }
+      @media #{media('<',d)} {
+        font-size: rem(14px);
+        line-height: rem(16.8px);
+        letter-spacing: -0.12px;
+      }
+    }
+  }
+
+  &__message,
+  &__error {
+    text-align: center;
+    font-weight: 500;
+    font-size: rem(16px);
+    line-height: rem(22.4px);
+    letter-spacing: -0.16px;
+    @media #{media('<',d)} {
+      font-size: rem(12px);
+      line-height: rem(19.6px);
+      letter-spacing: -0.14px;
+    }
+  }
+  &__error {
+    color: #db2e27;
+  }
+
+  &__politic {
+    color: #7f7f7f;
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: rem(19.6px);
+    letter-spacing: -0.14px;
+    a {
+      text-align: start;
+      font-size: rem(14px);
+    }
+    @media #{media('<',d)} {
+      font-size: rem(10px);
+      line-height: rem(14px);
+      letter-spacing: -0.1px;
+      a {
+        font-size: rem(10px);
+      }
+    }
+  }
+
+  &__icon {
+    width: rem(100px);
+    height: rem(100px);
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+    @media #{media('<',d)} {
+      width: rem(64px);
+      height: rem(64px);
+    }
+  }
+}

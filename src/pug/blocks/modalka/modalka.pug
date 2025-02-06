@@ -1,0 +1,20 @@
+mixin modalka(modalID, mods)
+  -
+    const baseName = 'modalka__content'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .modalka.hidden(tabindex='-1', aria-hidden='true')(id=modalID)
+    .modalka__nav
+      button.modalka__nav-back(type='button', data-modal-hide=modalID) 
+        +go-back
+      button.modalka__nav-close(type='button', data-modal-hide=modalID) 
+        +close
+    .modalka__content(class=allMods)
+      block

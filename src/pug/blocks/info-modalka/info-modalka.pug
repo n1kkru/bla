@@ -1,0 +1,9 @@
+mixin info-modalka(mods)
+  #info-modal.info-modalka.hidden(tabindex='-1', aria-hidden='true')&attributes(attributes)
+    .info-modalka__overlay
+      .info-modalka__content
+        h4 Возможные причины
+        ol(type='1')
+          li Проверьте что вы правильно ввели номер телефона
+          li Проблемы у сотового оператора, обратитесь в его службу поддержки
+          li Вы не зарегестрированы

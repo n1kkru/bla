@@ -1,7 +1,10 @@
 import plugin from 'tailwindcss/plugin'
 
 export default {
-  content: ['./src/**/*.{pug,js,ts,jsx,tsx}'],
+  content: [
+    './src/**/*.{pug,js,ts,jsx,tsx}',
+    './node_modules/flowbite/**/*.js'
+  ],
   theme: {
     extend: {
       colors: {
@@ -15,11 +18,10 @@ export default {
           500: '#E4E4E4'
         }
       },
-
       fontFamily: {
-        'main': ['TT Firs Neue', 'serif'],
+        'display': ['TT Firs Neue', 'serif'],
+        'fm' : ['Foundry Monoline OT3', "serif"]
       },
-
       borderRadius: {
         '2': '0.5rem',
         '3': '0.75rem',
@@ -33,6 +35,9 @@ export default {
         'm': '1rem', // 16px
         'md': '1.125rem', // 18px
         'lg': '1.5rem', // 24px
+      },
+      size: {
+        'lg': '1.5rem',
       }
     },
 
@@ -52,6 +57,7 @@ export default {
     }
   },
   plugins: [
+    require('flowbite/plugin'),
     plugin(function ({ theme, addUtilities }) {
       const screens = theme('screens')
 
