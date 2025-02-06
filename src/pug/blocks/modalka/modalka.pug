@@ -1,88 +1,20 @@
-mixin modalka(title, text,)
-  #authentication-modal.modalka.hidden(tabindex='-1', aria-hidden='true')&attributes(attributes)
-    .modalka__overlay
-      .modalka__content
-        .modalka__nav
-          button.modalka__nav-back(type='button', data-modal-hide='authentication-modal') 
-            +go-back
-          button.modalka__nav-close(type='button', data-modal-hide='authentication-modal') 
-            +close
-        h3.modalka__title КАБИНЕТ ДИЛЕРА
-        p.modalka__text Для получения данных входа обратитесь к своему персональному менеджеру.
-        .modalka__body
-          form.modalka__form(action='#')
-            .modalka__form-row
-              input#tel(type='tel', name='tel', required='')
-              label(for='tel') Телефон *
-              button.modalka__form-icon(type='button')
-                +close
+mixin modalka(modalID, mods)
+  -
+    const baseName = 'modalka__content'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
 
-            .modalka__form-row
-              input#password(type='password', name='password', required='')
-              label(for='password') Пароль *
-              button.modalka__form-icon.hidden(type='button')
-                +eye
-              button.modalka__form-icon(type='button')
-                +eye-close
-
-            span.modalka__error Неверный телефон или пароль
-            button.modalka__form-button(type='submit') ВОЙТИ
-
-            a(href='#') Забыли пароль?
-            button.modalka__form-button(type='button') заявка на дилерство
-
-        hr.my-2
-
-        h3.modalka__title Подтвердите номер телефона
-        p.modalka__text Сейчас вы получите код на номер <br/> + 7 981 ***-**-22
-        .modalka__body
-          form.modalka__form(action='#')
-            .modalka__form-row
-              input#tel(type='tel', name='tel', required='')
-              label(for='tel') Код *
-            button.modalka__form-button(type='submit') ВОЙТИ
-            span.modalka__message Отправим код повторно через 45 секунд
-            button.modalka__form-button.modalka__form-button_small(
-              type='button',
-              data-modal-target='info-modal',
-              data-modal-toggle='info-modal'
-            ) Не приходит код
-              span
-              +info-modalka
-
-        hr.my-2
-
-        h3.modalka__title Восстановление пароля
-        p.modalka__text Если вы забыли пароль, введите номер телефона
-        .modalka__body
-          form.modalka__form(action='#')
-            .modalka__form-row
-              input#tel(type='tel', name='tel', required='')
-              label(for='tel') Телефон *
-              .modalka__form-icon
-                +close
-
-            span.modalka__error Профиль пользователя не найден
-
-            .modalka__form-row
-              input#password(type='password', name='password', required='')
-              label(for='password') Новый пароль *
-              .modalka__form-icon.hidden
-                +eye
-              .modalka__form-icon
-                +eye-close
-
-            .modalka__form-row
-              input#password(type='password', name='password', required='')
-              label(for='password') Повторите новый пароль *
-              .modalka__form-icon.hidden
-                +eye
-              .modalka__form-icon
-                +eye-close
-
-            button.modalka__form-button(type='submit') ДАЛЕЕ
-
-            p.modalka__politic
-              | Нажимая на кнопку «Отправить», я соглашаюсь на получение информации и уведомлений
-              | от интернет-сайта, а также принимаю&nbsp;
-              a(href='#') условия политики конфиденциальности.
+  .modalka.hidden(tabindex='-1', aria-hidden='true')(id=modalID)
+    .modalka__nav
+      button.modalka__nav-back(type='button', data-modal-hide=modalID) 
+        +go-back
+      button.modalka__nav-close(type='button', data-modal-hide=modalID) 
+        +close
+    .modalka__content(class=allMods)
+      block

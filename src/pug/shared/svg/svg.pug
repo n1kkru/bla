@@ -157,3 +157,16 @@ mixin close
 mixin go-back 
   svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 25", fill="none")
     path(d="M15 20.5L7 12.5L15 4.5", stroke="#242424", stroke-width="1.5", stroke-linejoin="bevel")
+
+mixin triangle 
+  svg(xmlns="http://www.w3.org/2000/svg", width="24", height="9", viewBox="0 0 24 9", fill="none")
+    path(d="M12 9L0.741672 0.75L23.2583 0.749998L12 9Z", fill="white")
+
+mixin done-image 
+  svg(xmlns="http://www.w3.org/2000/svg", width="100", height="101", viewBox="0 0 100 101", fill="none")
+    rect(y="0.5", width="100", height="100", rx="50", fill="url(#paint0_angular_1_3143)")
+    path(d="M38 51.0667L45.6364 59L62 42", stroke="white", stroke-width="6")
+    defs
+      radialGradient#paint0_angular_1_3143(cx="0", cy="0", r="1", gradientUnits="userSpaceOnUse", gradientTransform="translate(50 50.5) rotate(135) scale(49.4975 49.4234)")
+        stop(stop-color="#1D3C85")
+        stop(offset="1", stop-color="#1AD881")

@@ -1,23 +1,34 @@
 .info-modalka {
   position: absolute;
   left: auto;
-  bottom: rem(40px);
+  bottom: rem(60px);
   z-index: 100;
   width: 172.5%;
   height: rem(172px);
   align-items: center;
   justify-content: center;
-  overflow-x: hidden;
   color: #242424;
   box-shadow: 0px 20px 32px 0px rgba(0, 0, 0, 0.24);
   font-family: 'Foundry Monoline OT3', 'serif';
-  border: 1px solid #7f7f7f;
   background: #fff;
+  &::after {
+    content: '';
+    position: absolute;
+    width: rem(30px);
+    height: rem(14px);
+
+    bottom: rem(-10px);
+    left: auto;
+    background-image: url('/images/triangle.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
   &__overlay {
     position: relative;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
   }
 
   &__content {
