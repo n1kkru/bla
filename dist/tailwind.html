@@ -9,7 +9,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>ui</title>
+    <title>tailwind</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta name="theme-color" content="#4285f4">
@@ -75,8 +75,50 @@
         <button class="button header__partners desktop">Стать партнером
         </button>
       </header>
-      <main class="ui-page" data-barba="container" data-barba-namespace="ui">
-        <div class="inner"><br><br><br><br><br><br></div>
+      <main data-barba="container" data-barba-namespace="tailwind">
+        <div class="tailwind-task3 font-display">
+          <button class="linear block size-24 rounded-5 bg-accent px-5 py-2.5 text-center text-sm font-semibold text-white transition-all hover:bg-gray-500" data-modal-target="default-modal" data-modal-toggle="default-modal" type="button">Удалить</button>
+          <div class="fixed left-0 right-0 top-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden backdrop-blur-lg" id="default-modal" tabindex="-1" aria-hidden="true">
+            <div class="relative mx-auto max-h-[90vh] max-w-[90vw]">
+              <div class="relative rounded-5 bg-white p-20 shadow-sm m:px-4 m:pb-4 m:pt-[3.25rem]">
+                <div class="relative flex flex-col items-center justify-between gap-5 overflow-auto text-center m:gap-[1.125rem]">
+                  <h3 class="text-5xl/[3.6rem] font-semibold text-gray-900 m:text-2xl/[1.8rem]">Удалить партнера</h3>
+                  <p class="text-2xl/[2.4rem] m:text-base/[1.2rem]">Вы действительно хотите удалить партнера&nbsp;<br/><strong>ts@cloudmill.ru&nbsp;</strong>из проекта&nbsp;<br/><strong class="leading-[1.2rem]">Ижевская ТЭЦ-1</strong></p>
+                  <div class="flex items-center gap-5 m:w-full m:flex-col m:gap-3">
+                    <button class="linear rounded-5 border border-gray-500 bg-white px-12 py-6 text-xl/6 font-semibold text-dark transition-all hover:bg-gray-500 m:order-1 m:w-full" data-modal-hide="default-modal" type="button">Отменить</button>
+                    <button class="linear rounded-5 border border-accent bg-accent px-12 py-6 text-xl/6 font-semibold text-white transition-all hover:bg-gray-500 m:w-full" data-modal-show="default-modal-new" data-modal-target="default-modal-new" type="button">Да, удалить</button>
+                  </div>
+                </div>
+                <button class="linear absolute right-10 top-10 box-border size-[3.75rem] rounded-3 border border-gray-500 p-5 transition-all hover:bg-gray-500 m:right-2 m:top-2 m:size-10 m:p-3" type="button" data-modal-hide="default-modal">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 35" fill="none">
+                    <path d="M12.8333 13.3326L21.1666 21.666" stroke="#0B1226" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.8334 21.666L21.1667 13.3326" stroke="#0B1226" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="fixed left-0 right-0 top-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden backdrop-blur-lg" id="default-modal-new" tabindex="-1" aria-hidden="true">
+            <div class="relative mx-auto max-h-[90vh] max-w-[90vw]">
+              <div class="relative rounded-5 bg-white p-20 shadow-sm m:px-4 m:pb-4 m:pt-[3.25rem]">
+                <div class="relative flex flex-col items-center justify-between gap-5 overflow-auto text-center m:gap-[1.125rem]">
+                  <h3 class="text-5xl/[3.6rem] font-semibold text-gray-900 m:text-2xl/[1.8rem]">Удалить партнера</h3>
+                  <p class="text-2xl/[2.4rem] m:text-base/[1.2rem]">Вы действительно хотите удалить партнера&nbsp;<br/><strong>ts@cloudmill.ru&nbsp;</strong>из проекта&nbsp;<br/><strong class="leading-[1.2rem]">Ижевская ТЭЦ-1</strong></p>
+                  <div class="flex items-center gap-5 m:w-full m:flex-col m:gap-3">
+                    <button class="linear rounded-5 border border-gray-500 bg-white px-12 py-6 text-xl/6 font-semibold text-dark transition-all hover:bg-gray-500 m:order-1 m:w-full" data-modal-hide="default-modal-new" type="button">Отменить</button>
+                    <button class="linear rounded-5 border border-accent bg-accent px-12 py-6 text-xl/6 font-semibold text-white transition-all hover:bg-gray-500 m:w-full" data-modal-hide="default-modal-new" type="button">Да, удалить</button>
+                  </div>
+                </div>
+                <button class="linear absolute right-10 top-10 box-border size-[3.75rem] rounded-3 border border-gray-500 p-5 transition-all hover:bg-gray-500 m:right-2 m:top-2 m:size-10 m:p-3" type="button" data-modal-hide="default-modal-new">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 35" fill="none">
+                    <path d="M12.8333 13.3326L21.1666 21.666" stroke="#0B1226" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.8334 21.666L21.1667 13.3326" stroke="#0B1226" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
       <footer>
         <div class="footer"><a class="footer__logo desktop" href="#">

@@ -13,7 +13,6 @@ import { scrollBarWidth } from './utils/scrollbarWidth'
 import { initSlideFunction } from './utils/slideFunction'
 import { initFlowbite } from "flowbite";
 
-import { initFlowbite } from "flowbite";
 
 
 
@@ -30,10 +29,6 @@ export const commonFunction = () => {
   cssDebug(true)
   initSlideFunction()
   
-  useVisibleTask$(() => {
-    initFlowbite();
-  });
-
   useVisibleTask$(() => {
     initFlowbite();
   });
