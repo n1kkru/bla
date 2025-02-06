@@ -1,3 +1,13 @@
+### Практическое задание 1
+https://n1kkru.github.io/bla/dist/contacts
+### Практическое задание 2
+https://n1kkru.github.io/bla/dist/delivery
+### Практическое задание 3
+https://n1kkru.github.io/bla/dist/modal-windows
+### Практическое задание tailwind
+https://n1kkru.github.io/bla/dist/tailwind
+
+
 ### Как пользоваться Валидатором:**
 
 *В контейнере с инпутом должен быть контейнер с атрибутом data-error-container (если его не будет, то передать инпуту этот атрибутом с айдишником)
